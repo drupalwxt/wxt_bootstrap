@@ -1,0 +1,6 @@
+{
+    "name": "drupal/THEMENAME_bootstrap",
+    "description": "WxT Bootstrap sub-theme for Drupal WxT.",
+    "type": "drupal-theme",
+    "license": "GPL-2.0+"
+}

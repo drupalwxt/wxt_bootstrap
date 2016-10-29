@@ -1,0 +1,16 @@
+// Default variables.
+@import "default-variables";
+
+// Bootstrap Framework minimum dependencies to build overrides file.
+@import '../bootstrap/assets/stylesheets/bootstrap/variables';
+@import '../bootstrap/assets/stylesheets/bootstrap/mixins';
+@import '../bootstrap/assets/stylesheets/bootstrap/utilities';
+
+// Bootstrap core framework which is already provided by WxT.
+//@import '../bootstrap/assets/stylesheets/bootstrap';
+
+// Base-theme overrides.
+@import 'overrides';
+
+// Modules overrides.
+@import 'modules';

@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Template to display a view as a calendar week.
+ *
+ * Available variables:
+ * - day_names: An array of the day of week names for the table header.
+ * - rows: The rendered data for this week.
+ *
+ * For each day of the week, you have:
+ * - rows['date'] - the date for this day, formatted as YYYY-MM-DD.
+ * - rows['datebox'] - the formatted datebox for this day.
+ * - rows['empty'] - empty text for this day, if no items were found.
+ * - rows['all_day'] - an array of formatted all day items.
+ * - rows['items'] - an array of timed items for the day.
+ * - rows['items'][$time_period]['hour'] - the formatted hour for a time period.
+ * - rows['items'][$time_period]['ampm'] - the formatted ampm value, if any for a time period.
+ * - rows['items'][$time_period]['values'] - An array of formatted items for a time period.
+ *
+ * @see template_preprocess_calendar_week()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="wb-clndr calendar-calendar"><div class="week-view">
+<table class="full">
+  <thead>
+    <tr>
+      {% if by_hour_content > 0 or start_times is not empty %}
+      <th class="calendar-agenda-hour">{% trans %}Time{% endtrans %}</th>
+      {% endif %}
+      {% for cell in day_names %}
+        <th class="{{ cell.class }}" id="{{ cell.header_id }}">
+          <abbr>{{ cell.data }}</abbr>
+        </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody class="cal-days">
+    {% for time in items %}
+    <tr class="not-all-day">
+      <td class="calendar-agenda-hour">
+        <span class="calendar-hour">{{ time.hour }}</span><span class="calendar-ampm">{{ time.ampm }}</span>
+      </td>
+      {% set current_position = 0 %}
+      {% for column in columns %}
+        {% set column_position = time.values.column[0] ? time.values.column[0].wday : loop.index %}
+        {% for i in column_position %}
+          <td class="calendar-agenda-items single-day">
+            <div class="calendar">
+              <div class="inner">&nbsp</div>
+            </div>
+          </td>
+        {% endfor %}
+        {% set current_position = column_position + 1 %}
+        <td class="calendar-agenda-items single-day" headers="{{ header_ids[loop.index - 1] }}">
+          <div class="calendar">
+            <div class="inner">
+              {% for item in time.values[column] %}
+                {{ item.entry }}
+              {% endfor %}
+            </div>
+          </div>
+        </td>
+      {% endfor %}
+      {% if current_position < 7 %}
+        {% for i in current_position..6 %}
+          <td class="calendar-agenda-items single-day">
+            <div class="calendar">
+              <div class="inner">&nbsp</div>
+            </div>
+          </td>
+        {% endfor %}
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div></div>

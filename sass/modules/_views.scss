@@ -1,0 +1,17 @@
+// Theme Customizations to Views
+
+.filters-wrapper-toggle {
+    margin: 15px 0;
+}
+
+.filters-wrapper {
+  display: block;
+}
+
+.filters-wrapper.collapse {
+  display: none;
+}
+
+.filters-wrapper.collapse.in {
+  display: block;
+}

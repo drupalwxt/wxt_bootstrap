@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+    - wxt_core
+    - wxt_library
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  wxt_core:
+    classes: ''
+id: user_account_block
+theme: wxt_bootstrap
+region: header
+weight: -6
+provider: null
+plugin: user_account_block
+settings:
+  id: user_account_block
+  label: 'User Account'
+  provider: wxt_library
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - wxt_library
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  wxt_core:
+    classes: col-md-6
+id: datemodifiedblock
+theme: wxt_bootstrap
+region: content_footer
+weight: -8
+provider: null
+plugin: date_modified_block
+settings:
+  id: date_modified_block
+  label: 'Date Modified'
+  provider: wxt_library
+  label_display: '0'
+  date_format:
+    page: page
+  date_modified: tiny
+visibility: {  }

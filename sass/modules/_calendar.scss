@@ -1,0 +1,40 @@
+// Theme Customizations to Calendar
+
+.view-content {
+  .wb-clndr {
+    th {
+      background: #555;
+      border: 1px solid #333;
+      abbr {
+          padding: 5% 0;
+          text-align: center;
+      }
+    }
+    .month-view {
+      .full {
+        tr, tr.odd, tr.even {
+          td.today {
+            border-left: 2px solid #176ca7;
+            border-right: 2px solid #176ca7;
+          }
+        }
+        tr {
+          td.single-day.today {
+            border-bottom: 2px solid #176ca7;
+          }
+          td.multi-day.starts-today {
+            border-left: 2px solid #176ca7;
+          }
+          td.multi-day.ends-today {
+            border-right: 2px solid #176ca7;
+          }
+        }
+        td.date-box.today {
+          border-width: 2px 2px 0px 2px;
+          border-style: solid;
+          border-color: #176ca7;
+        }
+      }
+    }
+  }
+}

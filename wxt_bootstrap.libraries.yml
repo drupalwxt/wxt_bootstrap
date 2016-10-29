@@ -1,0 +1,29 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+bootstrap-scripts:
+  js:
+    # js/bootstrap/affix.js: {}
+    js/bootstrap/alert.js: {}
+    # js/bootstrap/button.js: {}
+    # js/bootstrap/carousel.js: {}
+    js/bootstrap/collapse.js: {}
+    # js/bootstrap/dropdown.js: {}
+    js/bootstrap/modal.js: {}
+    js/bootstrap/tooltip.js: {}
+    js/bootstrap/popover.js: {}
+    # js/bootstrap/scrollspy.js: {}
+    # js/bootstrap/tab.js: {}
+    # js/bootstrap/transition.js: {}
+  dependencies:
+    - core/jquery
+
+drupal.wxt_bootstrap:
+  js:
+    js/drupal.wxt_bootstrap.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

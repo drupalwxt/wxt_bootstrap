@@ -1,0 +1,44 @@
+
+/* =============================================================================
+   WxT inconsistencies with Bootstrap
+   ========================================================================== */
+
+.icon {
+  font-size: inherit;
+  min-height: 0px;
+  min-width: 0px;
+}
+
+.btn {
+  .icon {
+    padding-left: 0px;
+  }
+}
+
+.form-item {
+  .input-group-addon {
+    .icon {
+      padding-left: 0px;
+    }
+  }
+}
+
+.theme-gcweb {
+  .block-user-account-block {
+    padding-top: 20px;
+  }
+  .panel-primary  {
+    border-color: #335075;
+    & > .panel-heading {
+      background-color: #335075;
+    }
+  }
+}
+
+.theme-wet-boew {
+  .highlighted {
+    .region-highlighted {
+      background-color: #fff;
+    }
+  }
+}

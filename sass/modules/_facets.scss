@@ -1,0 +1,11 @@
+// Theme Customizations to Facets
+
+ul.js-facets-checkbox-links {
+  list-style-type: none;
+  padding-left: 0px;
+  .facet-item {
+    label {
+      margin-left: 5px;
+    }
+  }
+}

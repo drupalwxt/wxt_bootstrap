@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a facet result item.
+ *
+ * Available variables:
+ * - value: The item value.
+ * - show_count: If this facet provides count.
+ * - count: The amount of results.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ value }} {% if show_count %}<span class="facet-count badge">{{ count }}</span>{% endif %}

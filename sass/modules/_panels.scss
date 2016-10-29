@@ -1,0 +1,11 @@
+// Theme Customizations to Panels
+
+#panels-ipe-tray {
+  z-index: 500;
+}
+
+// Correct visual panels inconsistency
+// todo: fix upstream
+.ipe-actions a {
+    text-decoration: none;
+}

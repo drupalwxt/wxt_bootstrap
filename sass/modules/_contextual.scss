@@ -1,0 +1,48 @@
+// Theme Customizations to Contextual
+
+#wb-srch {
+  .contextual {
+    &.open {
+      .trigger {
+        border: 1px solid #ccc;
+        border-bottom-color: transparent;
+        border-radius: 13px 13px 0 0;
+      }
+    }
+    .trigger {
+      background-image: url(/core/misc/icons/bebebe/pencil.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 13px;
+      &:focus {
+        background-image: url(/core/misc/icons/5181c6/pencil.svg);
+        outline: none;
+      }
+      &:hover {
+        background-image: url(/core/misc/icons/787878/pencil.svg);
+      }
+    }
+  }
+}
+
+#wb-info {
+  .ftr-urlt-lnk {
+    .contextual {
+      ul {
+        li {
+          display: block;
+          padding: 0.25em 0;
+          &:before {
+            content: none;
+          }
+          a {
+            font-size: small;
+          }
+        }
+      }
+    }
+  }
+}

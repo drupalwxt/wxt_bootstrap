@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - wxt_library
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  wxt_core:
+    classes: 'col-md-6 mrgn-tp-lg'
+id: sharewidgetblock
+theme: wxt_bootstrap
+region: content_footer
+weight: -7
+provider: null
+plugin: share_widget_block
+settings:
+  id: share_widget_block
+  label: 'Share widget block'
+  provider: wxt_library
+  label_display: '0'
+  share_widget:
+    facebook: facebook
+    gmail: gmail
+    twitter: twitter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
+    context_mapping: {  }

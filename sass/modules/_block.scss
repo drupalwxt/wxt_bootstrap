@@ -1,0 +1,65 @@
+// Theme Customizations to Blocks
+
+body {
+  margin-top: 0px !important;
+  &.theme-gcwu-fegc.toolbar-tray-open {
+    background-position: center 7.7em !important;
+  }
+  &.theme-gcwu-fegc.toolbar-fixed {
+    background-position: center 5.2em;
+  }
+}
+
+header {
+  &.navbar {
+    margin-bottom: 0em;
+    border: none;
+  }
+  &.navbar-default {
+    border-color: transparent;
+  }
+}
+
+.theme-base {
+  header {
+    &.navbar-default {
+      background-color: #ccc;
+    }
+  }
+}
+
+.theme-gcwu-fegc{
+  header {
+    &.navbar-default {
+      background-color: transparent;
+    }
+  }
+}
+
+#wb-srch button.form-submit span {
+  min-height: initial;
+  min-width: initial;
+  padding-left: 0px;
+}
+
+#wb-srch-sub .glyphicon {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+
+#wb-srch-sub-imprt .glyphicon {
+  margin-left: inherit;
+  margin-right: inherit;
+  min-height: initial;
+  min-width: initial;
+  padding-left: 0px;
+}
+
+.block-region {
+  background-color: #d7faff;
+  color: #000;
+}
+
+.region-help > .glyphicon {
+  margin: 0.5em 0.5em 0 15px;
+}
