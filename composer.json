@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.0.20",
-        "cweagans/composer-patches": "~1.0",
+        "composer/installers": "^1.0",
+        "cweagans/composer-patches": "^1.5.0",
         "drupal/core": "8.*",
-        "drupal/bootstrap": "3.0-rc2"
+        "drupal/bootstrap": "3.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -35,11 +35,6 @@
                 "type:drupal-drush"
             ]
         },
-        "patches": {
-            "drupal/bootstrap": {
-                "Enter drupal/bootstrap patch #2779755 description here":
-                "https://www.drupal.org/files/issues/bootstrap-alt_text_image-2779755-3-from_rc2.patch"
-            }
-        }
+        "patches": {}
     }
 }

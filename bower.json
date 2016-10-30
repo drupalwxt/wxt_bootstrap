@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bootstrap": "bootstrap-sass#~3.3.7"
+  },
+  "name": "wxt",
+  "version": "0.0.1",
+  "authors": [
+    "William Hearn <sylus1984@gmail.com>"
+  ],
+  "description": "WxT Bootstrap Dependencies",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libraries",
+    "test",
+    "tests"
+  ]
+}

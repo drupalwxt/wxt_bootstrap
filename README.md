@@ -54,23 +54,24 @@ dependencies:
 Download and extract the **latest** 3.x.x version of
 [Bootstrap Framework Source Files][bootstrap_sass] into the root of your new
 sub-theme. After it has been extracted, the directory should be renamed
-(if needed) so it reads `./wxt_bootstrap/bootstrap`. Even though WxT ships with
-the compiled bootstrap files as libraries we still need the source files to
-compile the bootstrap overrides.
+(if needed) so it reads `./wxt_bootstrap/libraries/bootstrap`. Even though WxT
+ships with the compiled bootstrap files as libraries we still need the source
+files to compile the bootstrap overrides. For your convenience you can simply
+run `bower install` to retrieve the library.
 
-### Option 1: With Grunt (Deprecated)
-
-Run the following commands inside the theme directory to compile SASS to CSS:
-
-- `grunt init` (Creates the initial css file)
-- `grunt watch` (Watches the sass folder for changes)
-
-### Option 2: With Gulp (Preferred + Tested)
+### Option 1: With Gulp (Preferred + Tested)
 
 Run the following commands inside the theme directory to compile SASS to CSS:
 
 - `gulp sass` (Creates the initial css file)
 - `gulp sass:watch` (Watches the sass folder for changes)
+
+### Option 2: With Grunt (Needs Work)
+
+Run the following commands inside the theme directory to compile SASS to CSS:
+
+- `grunt init` (Creates the initial css file)
+- `grunt watch` (Watches the sass folder for changes)
 
 ## BROWSERSYNC
 

@@ -4,6 +4,7 @@ namespace Drupal\wxt_bootstrap\Plugin\Alter;
 
 use Drupal\bootstrap\Plugin\Alter\ThemeSuggestions as BootstrapThemeSuggestions;
 use Drupal\block\Entity\Block;
+use Drupal\bootstrap\Utility\Variables;
 
 /**
  * Implements hook_theme_suggestions_alter().
@@ -17,7 +18,9 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
   /**
    * {@inheritdoc}
    */
-  public function alter(&$suggestions, &$variables = NULL, &$hook = NULL) {
+  public function alter(&$suggestions, &$context1 = NULL, &$hook = NULL) {
+    $variables = Variables::create($context1);
+
     /** @var \Drupal\wxt_library\LibraryService $wxt */
     $wxt = \Drupal::service('wxt_library.service_wxt');
     $wxt_active = $wxt->getLibraryName();
@@ -65,7 +68,7 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
 
     }
 
-    parent::alter($suggestions, $variables, $hook);
+    parent::alter($suggestions, $context1, $hook);
   }
 
 }

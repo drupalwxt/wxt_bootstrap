@@ -1,6 +1,7 @@
 # Node
 node_modules
 bower_components
+libraries
 bootstrap
 
 # SASS
