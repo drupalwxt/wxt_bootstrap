@@ -1,5 +1,5 @@
 {
-    "name": "drupalwxt/wxt_bootstrap",
+    "name": "drupal/wxt_bootstrap",
     "description": "WxT Bootstrap theme for Drupal WxT.",
     "type": "drupal-theme",
     "license": "GPL-2.0+",
