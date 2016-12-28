@@ -4,7 +4,6 @@ namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 
-
 /**
  * Pre-processes variables for the "page" theme hook.
  *

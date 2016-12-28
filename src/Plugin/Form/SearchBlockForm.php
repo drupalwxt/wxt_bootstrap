@@ -18,8 +18,10 @@ class SearchBlockForm extends FormBase {
    * {@inheritdoc}
    */
   public function alterFormElement(Element $form, FormStateInterface $form_state, $form_id = NULL) {
+    // @codingStandardsIgnoreStart
     /** @var \Drupal\wxt_library\LibraryService $wxt */
     $wxt = \Drupal::service('wxt_library.service_wxt');
+    // @codingStandardsIgnoreEnd
     $wxt_active = $wxt->getLibraryName();
     $form->keys->setProperty('input_group_button', FALSE);
     if ($wxt_active == 'gcweb') {

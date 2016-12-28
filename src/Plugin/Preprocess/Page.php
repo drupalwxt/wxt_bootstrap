@@ -23,7 +23,7 @@ class Page extends BootstrapPage {
     $wxt_active = $wxt->getLibraryName();
     $library_path = $wxt->getLibraryPath();
 
-    // Language Handling
+    // Language Handling.
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $language_prefix = \Drupal::config('language.negotiation')->get('url.prefixes');
     $variables['language'] = $language;
@@ -33,7 +33,7 @@ class Page extends BootstrapPage {
     // Visibility settings.
     $pages = $this->theme->getSetting('wxt_search_box');
     $path = \Drupal::service('path.current')->getPath();
-    $page_match = \Drupal::service('path.matcher')->matchPath($path, $pages) ;
+    $page_match = \Drupal::service('path.matcher')->matchPath($path, $pages);
     $page_match = !(0 xor $page_match);
     if (!$page_match) {
       $variables['page']['search'] = '';

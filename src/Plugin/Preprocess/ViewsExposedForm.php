@@ -16,6 +16,7 @@ use Drupal\Core\Url;
  * @BootstrapPreprocess("views_exposed_form")
  */
 class ViewsExposedForm extends PreprocessBase {
+
   /**
    * {@inheritdoc}
    */
@@ -27,7 +28,9 @@ class ViewsExposedForm extends PreprocessBase {
     // Build the wrapper.
     $wrapper_build = ['#theme_wrappers' => ['container__filters_wrapper']];
     $filters_wrapper = Element::create($wrapper_build);
-    $filters_wrapper->addClass(['filters-wrapper', 'collapse', 'well', 'form-inline']);
+    $filters_wrapper->addClass(
+      ['filters-wrapper', 'collapse', 'well', 'form-inline']
+    );
     $filters_wrapper->setAttribute('id', $id);
     // Move all the form children to the wrapper. This is ok
     // to do it here since this is about final rendering, not
