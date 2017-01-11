@@ -7,7 +7,7 @@ dependencies:
   theme:
     - wxt_bootstrap
 third_party_settings:
-  wxt_core:
+  block_class:
     classes: 'col-md-6 mrgn-tp-lg'
 id: sharewidgetblock
 theme: wxt_bootstrap

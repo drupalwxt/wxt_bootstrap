@@ -6,7 +6,7 @@ dependencies:
   theme:
     - wxt_bootstrap
 third_party_settings:
-  wxt_core:
+  block_class:
     classes: col-md-6
 id: datemodifiedblock
 theme: wxt_bootstrap

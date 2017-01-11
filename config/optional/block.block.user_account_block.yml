@@ -9,7 +9,7 @@ dependencies:
   theme:
     - wxt_bootstrap
 third_party_settings:
-  wxt_core:
+  block_class:
     classes: ''
 id: user_account_block
 theme: wxt_bootstrap
