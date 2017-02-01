@@ -718,3 +718,10 @@ ul.js-facets-checkbox-links {
 
 .theme-wet-boew .highlighted .region-highlighted {
   background-color: #fff; }
+
+.zbra div.brdr-tp:nth-child(odd) {
+  background: #eee; }
+
+.zbra div.brdr-tp .row {
+  margin-left: -5px;
+  margin-right: -5px; }

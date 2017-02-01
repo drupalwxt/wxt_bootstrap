@@ -51,17 +51,23 @@
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
     'mrgn-tp-lg',
+    'panel',
+    'panel-default',
     'clearfix',
   ]
 %}
 <section{{ attributes.addClass(classes).removeClass('container') }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
+    <div{{ title_attributes.addClass('panel-heading', 'h4', 'mrgn-tp-0') }}>
+      <strong>{{ label }}</strong>
+    </div>
   {% endif %}
   {{ title_suffix }}
 
   {% block content %}
-    {{ content }}
+    <div class="panel-body">
+      {{ content }}
+    </div>
   {% endblock %}
 </section>
