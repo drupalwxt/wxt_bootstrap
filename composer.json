@@ -20,7 +20,7 @@
     "extra": {
         "installer-paths": {
             "html/core": [
-                "type:drupal/core"
+                "type:drupal-core"
             ],
             "html/libraries/{$name}" : [
                 "type:drupal-library"
