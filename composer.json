@@ -20,13 +20,22 @@
     "extra": {
         "installer-paths": {
             "html/core": [
-                "drupal/core"
+                "type:drupal-core"
+            ],
+            "html/libraries/{$name}" : [
+                "type:drupal-library"
+            ],
+            "html/modules/custom/{$name}": [
+                "drupal/wxt_library"
             ],
             "html/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
             "html/profiles/{$name}": [
                 "type:drupal-profile"
+            ],
+            "html/themes/custom/{$name}": [
+                "drupal/wxt_bootstrap"
             ],
             "html/themes/contrib/{$name}": [
                 "type:drupal-theme"
@@ -35,6 +44,7 @@
                 "type:drupal-drush"
             ]
         },
+        "enable-patching": true,
         "patches": {}
     }
 }
