@@ -12,6 +12,10 @@
 # @see \Drupal\bootstrap\Plugin\Form\SystemThemeSettings
 # @see \Drupal\bootstrap\ThemeSettings
 
+# This file cannot be empty, so install an initial empty array for "schemas".
+# @see https://www.drupal.org/node/2813829
+schemas: []
+
 # Disable the CDN provider so compiled source files can be used.
 cdn_provider: ''
 # Allow for breadcrumb to be shown.

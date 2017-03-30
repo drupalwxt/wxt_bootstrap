@@ -37,8 +37,8 @@
         <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
       {%
         set item_classes = [
-          'expanded',
-          'dropdown',
+          item.is_expanded? 'expanded',
+          item.is_expanded and menu_level == 0 ? 'dropdown',
           item.in_active_trail ? 'active',
           item.in_active_trail ? 'wb-navcurr',
         ]

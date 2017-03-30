@@ -13,7 +13,7 @@
         "composer/installers": "^1.0",
         "cweagans/composer-patches": "^1.5.0",
         "drupal/core": "8.*",
-        "drupal/bootstrap": "3.1"
+        "drupal/bootstrap": "3.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

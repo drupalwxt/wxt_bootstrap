@@ -1,4 +1,4 @@
-<!-- @file Instructions on how to sub-theme the Drupal Bootstrap base theme using the CDN Starterkit. -->
+<!-- @file Instructions on how to sub-theme the Drupal Bootstrap base theme. -->
 <!-- @defgroup sub_theming_cdn -->
 <!-- @ingroup sub_theming -->
 # WxT Starterkit
