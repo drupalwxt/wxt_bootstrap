@@ -26,12 +26,19 @@
 .theme-gcweb {
   .block-user-account-block {
     padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .gc-nttvs img {
+    margin-bottom: 15px;
   }
   .panel-primary  {
     border-color: #335075;
     & > .panel-heading {
       background-color: #335075;
     }
+  }
+  .wb-srch-multi {
+    padding-top: 1em;
   }
 }
 

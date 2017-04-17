@@ -709,12 +709,19 @@ ul.js-facets-checkbox-links {
   padding-left: 0px; }
 
 .theme-gcweb .block-user-account-block {
-  padding-top: 20px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.theme-gcweb .gc-nttvs img {
+  margin-bottom: 15px; }
 
 .theme-gcweb .panel-primary {
   border-color: #335075; }
   .theme-gcweb .panel-primary > .panel-heading {
     background-color: #335075; }
+
+.theme-gcweb .wb-srch-multi {
+  padding-top: 1em; }
 
 .theme-wet-boew .highlighted .region-highlighted {
   background-color: #fff; }

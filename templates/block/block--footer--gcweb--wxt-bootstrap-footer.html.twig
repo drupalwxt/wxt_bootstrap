@@ -44,10 +44,8 @@
 <nav role="navigation"{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   <h2>{{ 'About this site'|t }}</h2>
-  <div class="row">
   {{ title_suffix }}
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </nav>
