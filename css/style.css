@@ -674,7 +674,8 @@ ul.js-facets-checkbox-links {
   list-style-type: none;
   padding-left: 0px; }
   ul.js-facets-checkbox-links .facet-item label {
-    margin-left: 5px; }
+    margin-left: 5px;
+    display: inline; }
 
 #panels-ipe-tray {
   z-index: 500; }
