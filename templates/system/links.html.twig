@@ -43,9 +43,9 @@
     {%- endif -%}
   {%- endif -%}
   {%- if attributes.hasClass('inline') -%}
-  <ul{{ attributes.addClass('list-inline') }}>
+  <ul{{ attributes.addClass('list-inline', 'mrgn-tp-lg') }}>
   {%- else -%}
-  <ul{{ attributes }}>
+  <ul{{ attributes.addClass('mrgn-tp-lg') }}>
   {%- endif -%}
     {%- for key, item in links|reverse -%}
       {% if key == language %}

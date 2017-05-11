@@ -23,6 +23,9 @@ class Links extends BootstrapLinks {
     $variables['language'] = $language;
     $variables['language_prefix'] = $language_prefix[$language];
 
+    if (isset($variables['links']['comment-add'])) {
+      $variables['links']['comment-add']['link']['#options']['attributes']['class'][] = 'btn btn-default';
+    }
     parent::preprocess($variables, $hook, $info);
   }
 
