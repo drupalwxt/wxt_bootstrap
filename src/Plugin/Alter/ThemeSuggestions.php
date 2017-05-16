@@ -76,6 +76,13 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         $suggestions[] = 'maintenance_page__' . $wxt_active;
         break;
 
+      case 'table':
+        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+          $suggestions[] = 'table__' . $node->getType();
+          $suggestions[] = 'table__' . $node->getType() . '__' . $wxt_active;
+        }
+        $suggestions[] = 'table__' . $wxt_active;
+        break;
     }
 
     parent::alter($suggestions, $context1, $hook);
