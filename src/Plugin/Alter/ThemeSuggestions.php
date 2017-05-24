@@ -37,6 +37,7 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . end($plugin_id);
           $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . $wxt_active . '__' . end($plugin_id);
         }
+
         // Block suggestions for custom block bundles.
         if (isset($variables['elements']['content']['#block_content'])) {
           $block_bundle = $variables['elements']['content']['#block_content']->bundle();
@@ -66,6 +67,14 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'page__' . $node->getType() . '__' . $wxt_active;
         }
         $suggestions[] = 'page__' . $wxt_active;
+        break;
+
+      case 'page_title':
+        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+          $suggestions[] = 'page_title__' . $node->getType();
+          $suggestions[] = 'page_title__' . $node->getType() . '__' . $wxt_active;
+        }
+        $suggestions[] = 'page_title__' . $wxt_active;
         break;
 
       case 'maintenance_page':
