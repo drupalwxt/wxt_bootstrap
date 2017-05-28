@@ -4,3 +4,14 @@
     border-left: 5px solid #eaebed;
     padding-left: 1.5em;
 }
+
+.ajax-comments-form-reply {
+  margin-top: 30px;
+}
+
+.js-comment {
+  &:first-of-type {
+    margin-top: 20px;
+  }
+  margin-top: 30px;
+}

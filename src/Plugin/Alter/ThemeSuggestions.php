@@ -38,14 +38,18 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . $wxt_active . '__' . end($plugin_id);
         }
 
-        // Block suggestions for custom block bundles.
         if (isset($variables['elements']['content']['#block_content'])) {
           $block_bundle = $variables['elements']['content']['#block_content']->bundle();
-          $suggestions[] = 'block__block_content__' . $block_bundle;
-          $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $wxt_active;
+          $view_modes = '';
+          if (!empty($variables['elements']['#configuration']['view_mode']) &&
+              $variables['elements']['#configuration']['view_mode'] != 'full') {
+            $view_modes = '__' . $variables['elements']['#configuration']['view_mode'];
+          }
+          $suggestions[] = 'block__block_content__' . $block_bundle . $view_modes;
+          $suggestions[] = 'block__block_content__' . $block_bundle . $view_modes . '__' . $wxt_active;
           if (!empty($variables['elements']['#id'])) {
-            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'];
-            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'] . '__' . $wxt_active;
+            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'] . $view_modes;
+            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'] . $view_modes . '__' . $wxt_active;
           }
         }
         break;

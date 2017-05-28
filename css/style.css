@@ -647,6 +647,14 @@ header.navbar-default {
   border-left: 5px solid #eaebed;
   padding-left: 1.5em; }
 
+.ajax-comments-form-reply {
+  margin-top: 30px; }
+
+.js-comment {
+  margin-top: 30px; }
+  .js-comment:first-of-type {
+    margin-top: 20px; }
+
 #wb-srch .contextual.open .trigger {
   border: 1px solid #ccc;
   border-bottom-color: transparent;
@@ -733,6 +741,38 @@ ul.js-facets-checkbox-links {
 
 .theme-wet-boew .highlighted .region-highlighted {
   background-color: #fff; }
+
+.wb-srch-multi {
+  padding-top: 1em; }
+
+.wb-srch-multi button, .wb-srch-multi input {
+  border-radius: 0; }
+
+.wb-srch-multi button {
+  background-color: #335075;
+  border: 0;
+  border-color: #335075;
+  font-size: 17px; }
+
+.wb-srch-multi button:active, .wb-srch-multi button:focus, .wb-srch-multi button:hover {
+  background: #243850; }
+
+.wb-srch-multi .glyphicon {
+  top: auto;
+  vertical-align: middle; }
+
+.wb-srch-multi input {
+  float: left;
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  border-right: 0;
+  border-style: solid;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #555;
+  margin-right: -4px;
+  min-width: 246px;
+  position: relative; }
 
 .zbra div.brdr-tp:nth-child(odd) {
   background: #eee; }
