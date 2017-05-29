@@ -52,15 +52,31 @@
     label_display == 'visually_hidden' ? 'sr-only',
   ]
 %}
-<ul role="tablist">
-{% for item in items %}
-  <li class="{{ loop.index == 1 ? 'active' : '' }}"><a href="#panel{{ loop.index }}">Tab {{ loop.index }}</a></li>
-{% endfor %}
-</ul>
-<div class="tabpanels">
-  {% for item in items %}
-    <div role="tabpanel" id="panel{{ loop.index }}" class="{{ loop.index == 1 ? 'in' : 'out' }} fade">
-    <a href="#"><figure>{{ item.content }}</figure></a>
+<figcaption>
+  {% if label_hidden %}
+    {% if multiple %}
+      <div{{ attributes.addClass(classes, 'field--items') }}>
+        {% for item in items %}
+          <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for item in items %}
+        <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
+      {% endfor %}
+    {% endif %}
+  {% else %}
+    <div{{ attributes.addClass(classes) }}>
+      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+      {% if multiple %}
+        <div class="field__items">
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
+      {% endfor %}
+      {% if multiple %}
+        </div>
+      {% endif %}
     </div>
-  {% endfor %}
-</div>
+  {% endif %}
+</figcaption>

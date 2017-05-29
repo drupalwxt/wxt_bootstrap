@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media entity.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {{ title_suffix.contextual_links }}
+
+  {% if content %}
+    {% set url = content.field_image_link[0]['#url']|render %}
+    <a href="{{ url ?? '#' }}">
+    {{ content }}
+    </a>
+  {% endif %}
+</article>
