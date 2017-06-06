@@ -15,6 +15,11 @@
 #}
 <span class="source-summary-item source-summary-item-{{ facet_id|replace("_", "-") }}">
 {% if items %}
-    {{ label }}: {{ items|safe_join(separator) }}
+    <h4>{{ label }}</h4>
+    <ul>
+      {%- for item in items -%}
+        <li>{{ item }}</li>
+      {%- endfor -%}
+    </ul>
 {% endif %}
 </span>
