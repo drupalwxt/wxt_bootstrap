@@ -157,7 +157,7 @@ html.js .ajax-new-content:empty {
     padding: 0 1em;
     top: 0;
     vertical-align: middle;
-    border-left: 1px solid inherit; }
+    border-left: 1px solid; }
     .file > .tabledrag-changed, .file > .tabledrag-changed:last-child {
       border: 1px solid #f7e1b5; }
 
