@@ -32,7 +32,7 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'block__' . $block->getRegion() . '__' . $variables['elements']['#id'];
           $suggestions[] = 'block__' . $block->getRegion() . '__' . $wxt_active . '__' . $variables['elements']['#id'];
         }
-        elseif (isset($variables['elements']['#configuration']['region'])) {
+        if (isset($variables['elements']['#configuration']['region'])) {
           $plugin_id = explode(':', $variables['elements']['#plugin_id']);
           $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . end($plugin_id);
           $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . $wxt_active . '__' . end($plugin_id);
@@ -50,6 +50,10 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           if (!empty($variables['elements']['#id'])) {
             $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'] . $view_modes;
             $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#id'] . $view_modes . '__' . $wxt_active;
+          }
+          if (isset($variables['elements']['#configuration']['region'])) {
+            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#configuration']['region'] . $view_modes;
+            $suggestions[] = 'block__block_content__' . $block_bundle . '__' . $variables['elements']['#configuration']['region'] . $view_modes . '__' . $wxt_active;
           }
         }
         break;
