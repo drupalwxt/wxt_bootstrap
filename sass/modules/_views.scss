@@ -15,3 +15,24 @@
 .filters-wrapper.collapse.in {
   display: block;
 }
+
+.mini-pager {
+  [rel=next]:after,
+  [rel=prev]:before {
+    content: none !important;
+  }
+  .previous,
+  .next {
+    a {
+      padding: 2px 6px;
+    }
+  }
+  li {
+    a {
+      margin-bottom: 0px;
+    }
+  }
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
