@@ -1,0 +1,10 @@
+// Theme Customizations to VotingAPI
+
+.votingapi-widgets {
+  .select-wrapper {
+    &::after {
+      content: none;
+    }
+  }
+
+}

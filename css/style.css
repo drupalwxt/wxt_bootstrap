@@ -719,6 +719,9 @@ ul.js-facets-checkbox-links {
   .mini-pager li a {
     margin-bottom: 0px; }
 
+.votingapi-widgets .select-wrapper::after {
+  content: none; }
+
 /* =============================================================================
    WxT inconsistencies with Bootstrap
    ========================================================================== */
