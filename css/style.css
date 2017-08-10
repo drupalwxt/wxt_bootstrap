@@ -689,6 +689,9 @@ ul.js-facets-checkbox-links {
     margin-left: 5px;
     display: inline; }
 
+.flag a {
+  text-decoration: none; }
+
 #panels-ipe-tray {
   z-index: 500; }
 
