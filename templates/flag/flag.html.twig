@@ -35,5 +35,5 @@ action_class
 {# Set nofollow to prevent search bots from crawling anonymous flag links #}
 {% set attributes = attributes.setAttribute('rel', 'nofollow') %}
 
-<div class="{{classes|join(' ')}}"><a{{ attributes }}>{{ title|raw }}</a></div>
+<div class="{{classes|join(' ')}}"><a{{ attributes }}><span class="glyphicon glyphicon-thumbs-up"></span> {{ title }}</a></div>
 {% endspaceless %}
