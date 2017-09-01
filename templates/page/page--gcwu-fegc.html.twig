@@ -100,7 +100,12 @@
           </div>
         </div>
       </div>
-      {{ page.navigation }}
+      <nav role="navigation"{{ attributes.setAttribute('id', 'wb-sm').removeClass('clearfix').addClass('wb-menu', 'visible-md', 'visible-lg')|without('role', 'aria-labelledby') }} data-trgt="mb-pnl">
+        <div class="pnl-strt {{ container }} nvbar">
+          <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+          {{ page.navigation }}
+        </div>
+      </nav>
       {{ page.breadcrumb }}
     </header>
   {% endblock %}

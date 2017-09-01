@@ -99,15 +99,20 @@
           {{ page.search }}
         </div>
       </div>
-      {% if gcweb_cdn %}
-        <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-{{ language }}.html" typeof="SiteNavigationElement">
+      {% if gcweb_cdn and gcweb_cdn_url %}
+        <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html" typeof="SiteNavigationElement">
           <div class="pnl-strt {{ container }} nvbar">
             <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
-            <div class="row">{{ page.navigation }}</div>
+           {{ page.navigation }}
           </div>
         </nav>
       {% else %}
-        {{ page.navigation }}
+        <nav role="navigation"{{ attributes.setAttribute('id', 'wb-sm').removeClass('clearfix').addClass('wb-menu', 'visible-md', 'visible-lg')|without('role', 'aria-labelledby') }} data-trgt="mb-pnl">
+          <div class="pnl-strt {{ container }} nvbar">
+            <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+            {{ page.navigation }}
+          </div>
+        </nav>
       {% endif %}
       {{ page.breadcrumb }}
     </header>
@@ -218,7 +223,7 @@
 {% endblock %}
 
 {# GCWeb #}
-{% if gcweb_cdn and not gcweb_election %}
+{% if gcweb_cdn_goc_init and not gcweb_election %}
   <aside class="gc-nttvs {{ container }}">
     <h2>{{ 'Government of Canada activities and initiatives'|t }}</h2>
     <div id="gcwb_prts" class="wb-eqht row" data-ajax-replace="//cdn.canada.ca/gcweb-cdn-live/features/features-{{ language }}.html">

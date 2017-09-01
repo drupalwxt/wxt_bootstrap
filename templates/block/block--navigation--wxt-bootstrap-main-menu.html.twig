@@ -33,13 +33,8 @@
  * @ingroup templates
  */
 #}
-<nav role="navigation"{{ attributes.setAttribute('id', 'wb-sm').removeClass('clearfix').addClass('wb-menu', 'visible-md', 'visible-lg')|without('role', 'aria-labelledby') }} data-trgt="mb-pnl">
-  {% block content %}
-    <div class="container nvbar">
-      <h2>{{ 'Topics menu'|t }}</h2>
-      <div class="row">
-        {{ content }}
-      </div>
-    </div>
-  {% endblock %}
-</nav>
+{% block content %}
+  <div class="row">
+    {{ content }}
+  </div>
+{% endblock %}

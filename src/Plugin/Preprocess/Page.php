@@ -41,10 +41,15 @@ class Page extends BootstrapPage {
 
     // Footer Navigation (gcweb).
     if ($wxt_active == 'gcweb') {
-      // CDN Support.
+      // CDN handling.
       $gcweb_cdn = $this->theme->getSetting('wxt_gcweb_cdn');
+      $gcweb_cdn_url = $this->theme->getSetting('wxt_gcweb_cdn_cmm');
+      $gcweb_cdn_goc = $this->theme->getSetting('wxt_gcweb_cdn_goc');
       $gcweb_election = $this->theme->getSetting('wxt_gcweb_election');
+
       $variables['gcweb_cdn'] = (!empty($gcweb_cdn)) ? TRUE : FALSE;
+      $variables['gcweb_cdn_url'] = (!empty($gcweb_cdn_url)) ? $gcweb_cdn_url : '//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-';
+      $variables['gcweb_cdn_goc'] = (!empty($gcweb_cdn_goc)) ? TRUE : FALSE;
       $variables['gcweb_election'] = (!empty($gcweb_election)) ? TRUE : FALSE;
 
       $variables['gcweb'] = [
