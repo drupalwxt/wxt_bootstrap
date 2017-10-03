@@ -223,7 +223,7 @@
 {% endblock %}
 
 {# GCWeb #}
-{% if gcweb_cdn_goc_init and not gcweb_election %}
+{% if gcweb_cdn_goc and not gcweb_election %}
   <aside class="gc-nttvs {{ container }}">
     <h2>{{ 'Government of Canada activities and initiatives'|t }}</h2>
     <div id="gcwb_prts" class="wb-eqht row" data-ajax-replace="//cdn.canada.ca/gcweb-cdn-live/features/features-{{ language }}.html">

@@ -44,7 +44,7 @@ class Page extends BootstrapPage {
       // CDN handling.
       $gcweb_cdn = $this->theme->getSetting('wxt_gcweb_cdn');
       $gcweb_cdn_url = $this->theme->getSetting('wxt_gcweb_cdn_cmm');
-      $gcweb_cdn_goc = $this->theme->getSetting('wxt_gcweb_cdn_goc');
+      $gcweb_cdn_goc = $this->theme->getSetting('wxt_gcweb_cdn_goc_init');
       $gcweb_election = $this->theme->getSetting('wxt_gcweb_election');
 
       $variables['gcweb_cdn'] = (!empty($gcweb_cdn)) ? TRUE : FALSE;
