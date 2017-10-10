@@ -54,7 +54,7 @@
 %}
 <ul role="tablist">
 {% for item in items %}
-  <li class="{{ loop.index == 1 ? 'active' : '' }}"><a href="#panel{{ loop.index }}">Tab {{ loop.index }}</a></li>
+  <li class="{{ loop.index == 1 ? 'active' : '' }}"><a href="#panel{{ loop.index }}">{{ 'Tabs'|t }} {{ loop.index }}</a></li>
 {% endfor %}
 </ul>
 <div class="tabpanels">
