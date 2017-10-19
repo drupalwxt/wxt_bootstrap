@@ -70,7 +70,8 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         break;
 
       case 'page':
-        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if (is_object($node)) {
           $suggestions[] = 'page__' . $node->getType();
           $suggestions[] = 'page__' . $node->getType() . '__' . $wxt_active;
         }
@@ -78,7 +79,8 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         break;
 
       case 'page_title':
-        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if (is_object($node)) {
           $suggestions[] = 'page_title__' . $node->getType();
           $suggestions[] = 'page_title__' . $node->getType() . '__' . $wxt_active;
         }
@@ -86,7 +88,8 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         break;
 
       case 'maintenance_page':
-        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if (is_object($node)) {
           $suggestions[] = 'maintenance_page__' . $node->getType();
           $suggestions[] = 'maintenance_page__' . $node->getType() . '__' . $wxt_active;
         }
@@ -94,7 +97,8 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         break;
 
       case 'table':
-        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if (is_object($node)) {
           $suggestions[] = 'table__' . $node->getType();
           $suggestions[] = 'table__' . $node->getType() . '__' . $wxt_active;
         }
