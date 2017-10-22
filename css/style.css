@@ -604,6 +604,14 @@ header.navbar-default {
   margin-left: inherit;
   margin-right: inherit; }
 
+#wb-srch-sub.icon-before .glyphicon {
+  margin-left: 0;
+}
+
+#wb-srch-sub.icon-only .glyphicon {
+  margin-left: 0;
+}
+
 #wb-srch-sub-imprt .glyphicon {
   margin-left: inherit;
   margin-right: inherit;

@@ -42,9 +42,16 @@ header {
   padding-left: 0px;
 }
 
-#wb-srch-sub .glyphicon {
-  margin-left: inherit;
-  margin-right: inherit;
+#wb-srch-sub {
+  .glyphicon {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+
+  &.icon-before .glyphicon,
+  &.icon-only .glyphicon {
+    margin-left: 0;
+  }
 }
 
 #wb-srch-sub-imprt .glyphicon {
