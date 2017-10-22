@@ -26,6 +26,15 @@ class Links extends BootstrapLinks {
     if (isset($variables['links']['comment-add'])) {
       $variables['links']['comment-add']['link']['#options']['attributes']['class'][] = 'btn btn-default';
     }
+
+    // Add 'lang' attribute on language switcher for screen readers.
+    $languages = \Drupal::languageManager()->getLanguages();
+    foreach ($languages as $key => $lang) {
+      if (isset($variables['links'][$key])) {
+        $variables['links'][$key]['link']['#options']['attributes']['lang'] = $key;
+      }
+    }
+
     parent::preprocess($variables, $hook, $info);
   }
 
