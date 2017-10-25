@@ -5,13 +5,13 @@ namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 
 /**
- * Pre-processes variables for the "views_view_fields" theme hook.
+ * Pre-processes variables for the "views_view_field" theme hook.
  *
  * @ingroup plugins_preprocess
  *
- * @BootstrapPreprocess("views_view_fields")
+ * @BootstrapPreprocess("views_view_field")
  */
-class ViewsViewFields extends PreprocessBase {
+class ViewsViewField extends PreprocessBase {
 
   /**
    * {@inheritdoc}
