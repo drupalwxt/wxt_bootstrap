@@ -16,6 +16,6 @@
   {{ title_suffix.contextual_links }}
 
   {% if content %}
-    {{ content }}
+    {{ content|without('name') }}
   {% endif %}
 </article>

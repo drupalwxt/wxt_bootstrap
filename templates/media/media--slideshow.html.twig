@@ -16,7 +16,7 @@
 <section class="col-md-12">
   <div{{ attributes.addClass('wb-tabs', 'carousel-s2', 'playing', 'slow') }}>
     {% if content %}
-    {{ content }}
+    {{ content|without('name') }}
     {% endif %}
   </div>
 </section>
