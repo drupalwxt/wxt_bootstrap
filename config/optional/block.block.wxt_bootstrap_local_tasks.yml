@@ -1,8 +1,11 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - wxt_library
   theme:
     - wxt_bootstrap
+third_party_settings: {  }
 id: wxt_bootstrap_local_tasks
 theme: wxt_bootstrap
 region: header
@@ -16,4 +19,11 @@ settings:
   label_display: '0'
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  panels_title:
+    id: panels_title
+    enabled: 1
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
