@@ -4,23 +4,32 @@ dependencies:
   config:
     - system.menu.sidebar
   module:
-    - ctools
-    - system
+    - menu_block
+    - wxt_library
   theme:
     - wxt_bootstrap
+third_party_settings: { }
 id: sidebar
 theme: wxt_bootstrap
 region: sidebar_first
-weight: -8
+weight: 0
 provider: null
-plugin: 'system_menu_block:sidebar'
+plugin: 'menu_block:sidebar'
 settings:
-  id: 'system_menu_block:sidebar'
+  id: 'menu_block:sidebar'
   label: Sidebar
-  provider: system
+  provider: menu_block
   label_display: visible
   level: 1
+  custom_level: '1'
+  hide_children: 0
   depth: 0
+  expand: 1
+  expand_only_active_trails: 1
+  parent: 'sidebar:'
+  render_parent: false
+  follow: 1
+  suggestion: sidebar
 visibility:
   node_type:
     id: node_type
