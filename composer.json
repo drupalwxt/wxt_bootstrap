@@ -45,6 +45,11 @@
             ]
         },
         "enable-patching": true,
-        "patches": {}
+        "patches": {
+            "drupal/bootstrap": {
+                "Issue #2918685 by duncan.moo: Alert close link does not work on D8.4":
+                "https://www.drupal.org/files/issues/altert-close-switch-to-button-2918685-1.patch"
+            }
+        }
     }
 }
