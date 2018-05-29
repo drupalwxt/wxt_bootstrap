@@ -1,9 +1,7 @@
-global-styling:
+framework:
   css:
     theme:
       css/style.css: {}
-
-bootstrap-scripts:
   js:
     # js/bootstrap/affix.js: {}
     js/bootstrap/alert.js: {}
@@ -27,3 +25,4 @@ drupal.wxt_bootstrap:
     - core/jquery
     - core/drupal
     - core/drupalSettings
+    - bootstrap/framework
