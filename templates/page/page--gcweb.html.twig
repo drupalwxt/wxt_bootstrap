@@ -235,24 +235,28 @@
 {% endif %}
 
 {% if page.footer %}
-  {% block footer %}
-    <footer id="wb-info" role="contentinfo">
-      <div class="{{ container }}">
-          {{ page.footer }}
-      </div>
-      <div class="brand">
+  {% if gcweb_cdn_footer_enable %}
+    <footer id="wb-info" role="contentinfo" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
+  {% else %}
+    {% block footer %}
+      <footer id="wb-info" role="contentinfo">
         <div class="{{ container }}">
-          <div class="row ">
-            {{ page.branding }}
-            <div class="col-xs-6 visible-sm visible-xs tofpg">
-              <a href="#wb-cont">{{ 'Top of Page'|t }}<span class="glyphicon glyphicon-chevron-up"></span></a>
-            </div>
-            <div class="col-xs-6 col-md-2 text-right">
+          {{ page.footer }}
+        </div>
+        <div class="brand">
+          <div class="{{ container }}">
+            <div class="row ">
+              {{ page.branding }}
+              <div class="col-xs-6 visible-sm visible-xs tofpg">
+                <a href="#wb-cont">{{ 'Top of Page'|t }}<span class="glyphicon glyphicon-chevron-up"></span></a>
+              </div>
+              <div class="col-xs-6 col-md-2 text-right">
                 <object data='{{ logo_bottom_svg }}' role="img" tabindex="-1" type="image/svg+xml"></object>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  {% endblock %}
+      </footer>
+    {% endblock %}
+  {% endif %}
 {% endif %}
