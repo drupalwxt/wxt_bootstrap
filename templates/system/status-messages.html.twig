@@ -25,9 +25,6 @@
  * @see template_preprocess_status_messages()
  */
 #}
-{# Save original attribute classes. This is needed to override in loop below. #}
-{# @see https://www.drupal.org/project/bootstrap/issues/2892936 #}
-{% set classes = attributes.offsetGet('class')|default({}) %}
 {%
   set status_heading = {
     'status': 'Status message'|t,
@@ -45,27 +42,26 @@
   }
 %}
 {% for type, messages in message_list %}
-  {%
-    set message_classes = [
-      'alert',
-      'alert-' ~ status_classes[type],
-      'alert-dismissible',
-    ]
-  %}
-  {# Reset the attribute classes and then add the message specific classes. #}
-  <div{{ attributes.setAttribute('class', classes).addClass(message_classes, 'mrgn-tp-md', 'mrgn-bttm-md').setAttribute('role', 'alert') }} tabindex="0">
-    <button role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}"><span aria-hidden="true">&times;</span></button>
-    {% if status_headings[type] %}
-      <h4 class="sr-only">{{ status_headings[type] }}</h4>
-    {% endif %}
-    {% if messages|length > 1 %}
-      <ul class="item-list item-list--messages">
-        {% for message in messages %}
-          <li class="item item--message">{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      {{ messages|first }}
-    {% endif %}
-  </div>
+{%
+  set classes = [
+    'alert',
+    'alert-' ~ status_classes[type],
+    'alert-dismissible',
+  ]
+%}
+<div{{ attributes.addClass(classes, 'mrgn-tp-md', 'mrgn-bttm-md') }} role="alert" tabindex="0">
+  <button role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}"><span aria-hidden="true">&times;</span></button>
+  {% if status_headings[type] %}
+    <h4 class="sr-only">{{ status_headings[type] }}</h4>
+  {% endif %}
+  {% if messages|length > 1 %}
+    <ul class="item-list item-list--messages">
+      {% for message in messages %}
+        <li class="item item--message">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    {{ messages|first }}
+  {% endif %}
+</div>
 {% endfor %}

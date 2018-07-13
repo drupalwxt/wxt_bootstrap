@@ -104,10 +104,10 @@ sets up a browsersync session.)
 
 <!-- Links Referenced -->
 
-[bootstrap]:      https://drupal.org/project/bootstrap
+[bootstrap]:      http://drupal.org/project/bootstrap
 [bootstrap_sass]: https://github.com/twbs/bootstrap-sass
-[drupal_wxt]:     https://drupal.org/project/wxt
-[wet_boew]:       https://wet-boew.github.io
-[wxt]:            https://drupal.org/project/wxt
-[wxt_library]:    https://drupal.org/project/wxt_library
-[wxt_bootstrap]:  https://drupal.org/project/wxt_bootstrap
+[drupal_wxt]:     http://drupal.org/project/wxt
+[wet_boew]:       http://wet-boew.github.io
+[wxt]:            http://drupal.org/project/wxt
+[wxt_library]:    http://drupal.org/project/wxt_library
+[wxt_bootstrap]:  http://drupal.org/project/wxt_bootstrap

@@ -7,7 +7,7 @@ $wide:    "screen and (min-width: #{$screen-lg-min})";
 
 body {
   // Fix horizontal scrolling on iOS devices.
-  // https://drupal.org/node/1870076
+  // http://drupal.org/node/1870076
   position: relative;
 
   &.navbar-is-static-top {

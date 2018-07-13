@@ -26,4 +26,4 @@ Please refer to the @link registry Theme Registry @endlink topic.
 
 [Drupal Bootstrap]: https://www.drupal.org/project/bootstrap
 [WxT Bootstrap]: https://www.drupal.org/project/wxt_bootstrap
-[Bootstrap Framework]: https://getbootstrap.com/docs/3.3/
+[Bootstrap Framework]: http://getbootstrap.com

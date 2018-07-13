@@ -23,6 +23,7 @@ regions:
   footer: 'Footer'
   page_top: 'Page top'
 
-libraries-extend:
-  bootstrap/framework:
-    - 'THEMENAME/global-styling'
+libraries:
+  - 'THEMENAME/global-styling'
+  - 'wxt_bootstrap/global-styling'
+  - 'wxt_bootstrap/bootstrap-scripts'
