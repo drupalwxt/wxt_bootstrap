@@ -19,7 +19,7 @@
   <div id="wb-sttl" class="col-md-8">
     <a class="logo navbar-btn" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
       {% if site_logo %}
-        <object type="image/svg+xml" tabindex="-1" data="{{ site_logo }}"></object>
+        <img src="{{ site_logo }}" alt='' />
       {% endif %}
     {% if site_name %}
       <span>{{ site_name }}<span class="wb-inv">,</span>

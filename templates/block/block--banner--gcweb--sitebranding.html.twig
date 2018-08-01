@@ -18,9 +18,7 @@
 {% block content %}
   <div class="brand col-xs-8 col-sm-9 col-md-6">
     <a href="">
-      <object id="header-logo" data='{{ logo_svg }}' role="img" tabindex="-1" type="image/svg+xml">
-        <img alt="{{ 'Government of Canada'|t }}" src="{{ logo }}"  />
-      </object>
+      <img id="header-logo" src='{{ logo_svg }}' alt="{{ 'Government of Canada'|t }}" />
     </a>
   </div>
 {% endblock %}
