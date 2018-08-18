@@ -24,7 +24,6 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
-libraries:
-  - 'wxt_bootstrap/global-styling'
-  - 'wxt_bootstrap/bootstrap-scripts'
-  - 'wxt_bootstrap/drupal.wxt_bootstrap'
+libraries-extend:
+  bootstrap/framework:
+    - 'wxt_bootstrap/drupal.wxt_bootstrap'
