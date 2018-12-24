@@ -21,6 +21,6 @@
    * @return {string}
    *   The version of WxT being used.
    */
-  Drupal.wxt_bootstrap.version = 'WxT v4.0.27';
+  Drupal.wxt_bootstrap.version = 'WxT v4.0.29';
 
 })(window.jQuery, window.Drupal, window.drupalSettings);
