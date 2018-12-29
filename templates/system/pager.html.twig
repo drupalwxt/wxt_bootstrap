@@ -39,7 +39,7 @@
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
         <li class="pager__item pager__item--first">
-          <a href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}" rel="prev"{{ items.first.attributes }}>
+          <a href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}" rel="first"{{ items.first.attributes }}>
             <span class="visually-hidden">{{ 'First page'|t }}</span>
             <span aria-hidden="true">{{ items.first.text|default('first'|t) }}</span>
           </a>
