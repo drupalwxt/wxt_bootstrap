@@ -71,11 +71,16 @@
 // Use CSS for required mark.
 // Inspired from https://www.drupal.org/node/2152217.
 .form-required:after {
+  content:"";
+  background-image: url(../images/required.svg);
+  display: inline-block;
+  line-height:1;
   color: #e00;
-  /* Use a Unicode symbol to prevent screen-readers from announcing the text. */
-  content: " \204E ";
-  line-height: 1;
+  background-size:7px 7px;
+  width: 7px;
   vertical-align: super;
+  margin-left: 4px;
+  height: 7px;
 }
 
 .form-item {

@@ -258,12 +258,12 @@ html.js .ajax-new-content:empty {
       color: #8a6d3b; }
 
 .form-required:after {
-  content:"";
+  content: "";
   background-image: url(../images/required.svg);
   display: inline-block;
-  line-height:1;
+  line-height: 1;
   color: #e00;
-  background-size:7px 7px;
+  background-size: 7px 7px;
   width: 7px;
   vertical-align: super;
   margin-left: 4px;
