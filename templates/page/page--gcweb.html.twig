@@ -69,47 +69,30 @@
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
       ]
     %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
       <div id="wb-bnr" class="{{ container }}">
-        <section id="wb-lng" class="visible-md visible-lg text-right">
+        <section id="wb-lng" class="text-right">
           <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
-          <div class="row">
-            <div class="col-md-12">
-              {{ page.language_toggle }}
-            </div>
-          </div>
+          {{ page.language_toggle }}
         </section>
         <div class="row">
           {{ page.banner }}
-          <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
-            <h2>{{ 'Search and menus'|t }}</h2>
-            <ul class="list-inline text-right chvrn">
-              <li>
-                <a href="#mb-pnl" title="{{ 'Search and menus'|t }}" aria-controls="mb-pnl" class="overlay-lnk" role="button">
-                  <span class="glyphicon glyphicon-search">
-                    <span class="glyphicon glyphicon-th-list">
-                      <span class="wb-inv">{{ 'Search and menus'|t }}</span>
-                    </span>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <div id="mb-pnl"></div>
-          </section>
           {{ page.search }}
         </div>
       </div>
       {% if gcweb_cdn and gcweb_cdn_url %}
-        <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html" typeof="SiteNavigationElement">
-          <div class="pnl-strt {{ container }} nvbar">
-            <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+        <nav class="gcweb-v2" data-trgt="mb-pnl" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html" typeof="SiteNavigationElement">
+          <div class="{{ container }}">
+            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
            {{ page.navigation }}
           </div>
         </nav>
       {% else %}
-        <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-trgt="mb-pnl">
-          <div class="pnl-strt {{ container }} nvbar">
-            <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+        <nav class="gcweb-v2" data-trgt="mb-pnl" typeof="SiteNavigationElement">
+          <div class="{{ container }}">
+            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
             {{ page.navigation }}
           </div>
         </nav>
@@ -236,12 +219,14 @@
 
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" role="contentinfo" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
+    <footer id="wb-info" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
   {% else %}
     {% block footer %}
-      <footer id="wb-info" role="contentinfo">
-        <div class="{{ container }}">
-          {{ page.footer }}
+      <footer id="wb-info">
+        <div class="landscape">
+          <div class="{{ container }}">
+            {{ page.footer }}
+          </div>
         </div>
         <div class="brand">
           <div class="{{ container }}">

@@ -592,7 +592,8 @@ header.navbar {
   border: none; }
 
 header.navbar-default {
-  border-color: transparent; }
+  border-color: transparent;
+  background-color: transparent; }
 
 .theme-base header.navbar-default {
   background-color: #ccc; }
@@ -813,3 +814,6 @@ ul.js-facets-checkbox-links {
 .zbra div.brdr-tp .row {
   margin-left: -5px;
   margin-right: -5px; }
+
+#drupal-off-canvas .modal-dialog {
+  margin: 0px auto; }
