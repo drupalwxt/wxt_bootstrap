@@ -11,7 +11,7 @@ third_party_settings:
 id: datemodifiedblock
 theme: wxt_bootstrap
 region: content_footer
-weight: -8
+weight: -7
 provider: null
 plugin: date_modified_block
 settings:

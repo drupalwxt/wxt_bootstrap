@@ -12,7 +12,7 @@ third_party_settings:
 id: sharewidgetblock
 theme: wxt_bootstrap
 region: content_footer
-weight: -7
+weight: -8
 provider: null
 plugin: share_widget_block
 settings:
