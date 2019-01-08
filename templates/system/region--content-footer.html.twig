@@ -22,7 +22,9 @@
   ]
 %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ content }}
+  <div class="pagedetails">
+    <div{{ attributes.addClass(classes) }}>
+      {{ content }}
+    </div>
   </div>
 {% endif %}
