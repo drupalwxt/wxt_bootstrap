@@ -18,13 +18,12 @@
   set classes = [
     'region',
     'region-' ~ region|clean_class,
-    'row',
   ]
 %}
 {% if content %}
-  <div class="pagedetails">
-    <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }}>
+    <div class="row">
       {{ content }}
-    </div>
+    <div>
   </div>
 {% endif %}
