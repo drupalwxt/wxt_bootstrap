@@ -24,6 +24,19 @@ class Menu extends PreprocessBase {
     $variables['language_prefix'] = $language_prefix[$language];
 
     if ($hook == 'menu__main') {
+      /** @var \Drupal\wxt_library\LibraryService $wxt */
+      $wxt = \Drupal::service('wxt_library.service_wxt');
+      $wxt_active = $wxt->getLibraryName();
+
+      if ($wxt_active == 'gcweb') {
+        // CDN handling.
+        $gcweb_cdn = $this->theme->getSetting('wxt_gcweb_cdn');
+        $gcweb_cdn_url = $this->theme->getSetting('wxt_gcweb_cdn_cmm');
+
+        $variables['gcweb_cdn'] = (!empty($gcweb_cdn)) ? TRUE : FALSE;
+        $variables['gcweb_cdn_url'] = (!empty($gcweb_cdn_url)) ? $gcweb_cdn_url : '//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-';
+      }
+
       // More link rendered in dropdown.
       if (!$this->theme->getSetting('wxt_megamenu_more_link')) {
         foreach ($variables['items'] as $key => &$item) {

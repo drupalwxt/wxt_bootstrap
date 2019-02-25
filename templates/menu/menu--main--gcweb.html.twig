@@ -21,13 +21,17 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_name|clean_class) }}
+{{ menus.menu_links(items, attributes, 0, menu_name|clean_class, gcweb_cdn, gcweb_cdn_url, language) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_name) %}
+{% macro menu_links(items, attributes, menu_level, menu_name, gcweb_cdn, gcweb_cdn_url, language) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul role="menu" aria-orientation="vertical">
+      {% if gcweb_cdn and gcweb_cdn_url %}
+        <ul role="menu" aria-orientation="vertical" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html">
+      {% else %}
+        <ul role="menu" aria-orientation="vertical">
+      {% endif %}
     {% elseif menu_level == 1 %}
       <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
     {% else %}

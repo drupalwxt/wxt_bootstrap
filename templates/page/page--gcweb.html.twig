@@ -80,23 +80,13 @@
           {{ page.search }}
         </div>
       </div>
-      {% if gcweb_cdn and gcweb_cdn_url %}
-        <nav class="gcweb-v2" data-trgt="mb-pnl" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html" typeof="SiteNavigationElement">
-          <div class="{{ container }}">
-            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
-            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
-           {{ page.navigation }}
-          </div>
-        </nav>
-      {% else %}
-        <nav class="gcweb-v2" data-trgt="mb-pnl" typeof="SiteNavigationElement">
-          <div class="{{ container }}">
-            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
-            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
-            {{ page.navigation }}
-          </div>
-        </nav>
-      {% endif %}
+      <nav class="gcweb-v2" data-trgt="mb-pnl" typeof="SiteNavigationElement">
+        <div class="{{ container }}">
+          <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+          <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+          {{ page.navigation }}
+        </div>
+      </nav>
       {{ page.breadcrumb }}
     </header>
   {% endblock %}
