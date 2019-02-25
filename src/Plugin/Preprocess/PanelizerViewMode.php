@@ -2,7 +2,6 @@
 
 namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 
-use Drupal\Core\Render\Markup;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\bootstrap\Utility\Variables;
 use Drupal\Core\Render\Element;

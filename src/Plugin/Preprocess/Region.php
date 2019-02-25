@@ -2,7 +2,6 @@
 
 namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 
-use Drupal\bootstrap\Bootstrap;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\bootstrap\Utility\Variables;
 
@@ -29,7 +28,6 @@ class Region extends PreprocessBase {
         $variables->addClass(['container']);
       }
     }
-
   }
 
 }
