@@ -13,7 +13,7 @@ use Drupal\bootstrap\Plugin\Setting\SettingBase;
  *   id = "wxt_gcweb_cdn_cmm",
  *   type = "textfield",
  *   title = @Translation("CDN for MegaMenu"),
- *   defaultValue = "//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-",
+ *   defaultValue = "https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-",
  *   description = @Translation("The CDN to use for the MegaMenu. Will be appended with the language and .html (i.e.: en.html or fr.html)" ),
  *   groups = {
  *     "gcweb" = @Translation("GCWeb"),

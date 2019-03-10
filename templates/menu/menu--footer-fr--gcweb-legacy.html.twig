@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, library_path, gcweb, language) }}
+
+{% macro menu_links(items, attributes, menu_level, library_path, gcweb, language) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if gcweb.footer %}
+     <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+    {% endif %}
+    {% if menu_level != 0 %}
+      <ul{{ attributes.addClass('list-unstyled') }}>
+    {% endif %}
+    {% for item in items %}
+      {# default menu handling #}
+      {% if menu_level == 0 and item.is_expanded %}
+        <section{{ item.attributes.addClass('col-sm-3') }}>
+        <h3>{{ item.title }}</h3>
+      {% else %}
+        <li{{ item.attributes }}>
+        {{ link(item.title, item.url) }}
+      {% endif %}
+      {% if item.below %}
+        {{ menus.menu_links(item.below, attributes.removeClass('nav'), menu_level + 1, library_path, gcweb, language) }}
+      {% endif %}
+      {% if menu_level == 0 and item.is_expanded %}
+        </section>
+      {% else %}
+        </li>
+      {% endif %}
+    {% endfor %}
+    {% if menu_level != 0 %}
+      </ul>
+    {% endif %}
+    {% if gcweb.footer %}
+    </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

@@ -40,7 +40,7 @@ class Page extends BootstrapPage {
     }
 
     // Footer Navigation (gcweb).
-    if ($wxt_active == 'gcweb') {
+    if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
       // CDN handling.
       $gcweb_cdn = $this->theme->getSetting('wxt_gcweb_cdn');
       $gcweb_cdn_url = $this->theme->getSetting('wxt_gcweb_cdn_cmm');

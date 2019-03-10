@@ -41,7 +41,7 @@ class Block extends PreprocessBase {
         $variables['logo_sttl_svg'] = $library_path . '/assets/wmms.svg';
         $variables['logo_sig_svg'] = $library_path . '/assets/sig-' . $language . '.svg';
       }
-      elseif ($wxt_active == 'gcweb') {
+      elseif ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
         $variables['logo'] = $library_path . '/assets/sig-blk-' . $language . '.png';
         $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
       }

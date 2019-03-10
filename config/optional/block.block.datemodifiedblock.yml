@@ -7,11 +7,11 @@ dependencies:
     - wxt_bootstrap
 third_party_settings:
   block_class:
-    classes: col-md-6
+    classes: ''
 id: datemodifiedblock
 theme: wxt_bootstrap
 region: content_footer
-weight: -8
+weight: -7
 provider: null
 plugin: date_modified_block
 settings:

@@ -8,11 +8,11 @@ dependencies:
     - wxt_bootstrap
 third_party_settings:
   block_class:
-    classes: 'col-md-6 mrgn-tp-lg'
+    classes: 'col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5'
 id: sharewidgetblock
 theme: wxt_bootstrap
 region: content_footer
-weight: -7
+weight: -8
 provider: null
 plugin: share_widget_block
 settings:
@@ -25,8 +25,8 @@ settings:
     gmail: gmail
     twitter: twitter
 visibility:
-  request_path:
-    id: request_path
-    pages: '/node/*'
+  panels_title:
+    id: panels_title
+    enabled: 0
     negate: false
     context_mapping: {  }
