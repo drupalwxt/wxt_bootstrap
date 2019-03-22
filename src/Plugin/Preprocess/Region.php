@@ -22,9 +22,13 @@ class Region extends PreprocessBase {
     $variables['region'] = $region;
     $variables['content'] = $variables['elements']['#children'];
 
+    if ($region === 'header' && !empty($variables['is_front'])) {
+      $variables->addClass(['container']);
+    }
+
     if ($region === 'content_footer' && !empty($variables['content'])) {
       $variables->addClass(['pagedetails']);
-      if (isset($variables['is_front'])) {
+      if (!empty($variables['is_front'])) {
         $variables->addClass(['container']);
       }
     }
