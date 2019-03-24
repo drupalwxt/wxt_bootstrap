@@ -50,7 +50,7 @@ class Page extends BootstrapPage {
       $gcweb_election = $this->theme->getSetting('wxt_gcweb_election');
 
       $variables['gcweb_cdn'] = (!empty($gcweb_cdn)) ? TRUE : FALSE;
-      $variables['gcweb_cdn_url'] = (!empty($gcweb_cdn_url)) ? $gcweb_cdn_url : '//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-';
+      $variables['gcweb_cdn_url'] = ($wxt_active == 'gcweb') ? $gcweb_cdn_url : '//cdn.canada.ca/gcweb-cdn-live/sitemenu/sitemenu-';
       $variables['gcweb_cdn_footer_enable'] = (!empty($gcweb_cdn_footer_enable)) ? TRUE : FALSE;
       $variables['gcweb_cdn_footer_url'] = (!empty($gcweb_cdn_footer_url)) ? $gcweb_cdn_footer_url : NULL;
       $variables['gcweb_cdn_goc'] = (!empty($gcweb_cdn_goc)) ? TRUE : FALSE;
