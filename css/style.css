@@ -762,7 +762,14 @@ ul.js-facets-checkbox-links {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.theme-gcweb-legacy .block-user-account-block {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 .theme-gcweb .gc-nttvs img {
+  margin-bottom: 15px; }
+
+.theme-gcweb-legacy .gc-nttvs img {
   margin-bottom: 15px; }
 
 .theme-gcweb .panel-primary {
@@ -770,7 +777,15 @@ ul.js-facets-checkbox-links {
   .theme-gcweb .panel-primary > .panel-heading {
     background-color: #335075; }
 
+.theme-gcweb-legacy .panel-primary {
+  border-color: #335075; }
+  .theme-gcweb-legacy .panel-primary > .panel-heading {
+    background-color: #335075; }
+
 .theme-gcweb .wb-srch-multi {
+  padding-top: 1em; }
+
+.theme-gcweb-legacy .wb-srch-multi {
   padding-top: 1em; }
 
 .theme-wet-boew .highlighted .region-highlighted {
