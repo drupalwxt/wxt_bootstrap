@@ -26,7 +26,7 @@ class Region extends PreprocessBase {
       $variables->addClass(['container']);
     }
 
-    if ($region === 'content_footer' && !empty($variables['content'])) {
+    if ($region === 'content_footer' && !empty($variables['content']) && \Drupal::service('wxt_library.service_wxt')->getLibraryName()=='gcweb') {
       $variables->addClass(['pagedetails']);
       if (!empty($variables['is_front'])) {
         $variables->addClass(['container']);
