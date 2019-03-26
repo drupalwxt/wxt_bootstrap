@@ -758,33 +758,23 @@ ul.js-facets-checkbox-links {
 .quickedit-toolgroup .icon {
   padding-left: 5px; }
 
-.theme-gcweb .block-user-account-block {
-  padding-top: 20px;
-  padding-bottom: 20px; }
-
+.theme-gcweb .block-user-account-block,
 .theme-gcweb-legacy .block-user-account-block {
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.theme-gcweb .gc-nttvs img {
-  margin-bottom: 15px; }
-
+.theme-gcweb .gc-nttvs img,
 .theme-gcweb-legacy .gc-nttvs img {
   margin-bottom: 15px; }
 
-.theme-gcweb .panel-primary {
-  border-color: #335075; }
-  .theme-gcweb .panel-primary > .panel-heading {
-    background-color: #335075; }
-
+.theme-gcweb .panel-primary,
 .theme-gcweb-legacy .panel-primary {
   border-color: #335075; }
+  .theme-gcweb .panel-primary > .panel-heading,
   .theme-gcweb-legacy .panel-primary > .panel-heading {
     background-color: #335075; }
 
-.theme-gcweb .wb-srch-multi {
-  padding-top: 1em; }
-
+.theme-gcweb .wb-srch-multi,
 .theme-gcweb-legacy .wb-srch-multi {
   padding-top: 1em; }
 
