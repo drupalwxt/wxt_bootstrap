@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, menu_name|clean_class, gcweb_cdn, gcweb_cdn_url, language) }}
+
+{% macro menu_links(items, attributes, menu_level, menu_name, gcweb_cdn, gcweb_cdn_url, language) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      {% if gcweb_cdn and gcweb_cdn_url %}
+        <ul role="menu" aria-orientation="vertical" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html">
+      {% else %}
+        <ul role="menu" aria-orientation="vertical">
+      {% endif %}
+    {% elseif menu_level == 1 %}
+      <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
+    {% else %}
+      <ul{{ attributes.addClass('dropdown-menu', menu_name) }}>
+    {% endif %}
+    {% for item in items %}
+      {%
+        set item_classes = [
+          item.is_expanded? 'expanded',
+          item.is_expanded and menu_level == 0 ? 'dropdown',
+          item.in_active_trail ? 'active',
+        ]
+      %}
+      {% if menu_level == 0 and item.is_expanded %}
+        <li{{ item.attributes.addClass(item_classes) }} role="presentation">
+        <a href="{{ item.url }}" class="dropdown-toggle item" data-target="#" data-toggle="dropdown" role="menuitem">{{ item.title }}</a>
+      {% else %}
+        <li{{ item.attributes.addClass(item_classes) }} role="presentation">
+        {{ link(item.title, item.url, {'role':['menuitem']}) }}
+      {% endif %}
+      {% if item.below %}
+        {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}
+      {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
