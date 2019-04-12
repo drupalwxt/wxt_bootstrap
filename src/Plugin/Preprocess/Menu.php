@@ -23,7 +23,7 @@ class Menu extends PreprocessBase {
     $variables['language'] = $language;
     $variables['language_prefix'] = $language_prefix[$language];
 
-    if ($hook == 'menu__main') {
+    if ($hook == 'menu__main' || $hook == 'menu__main_fr') {
       /** @var \Drupal\wxt_library\LibraryService $wxt */
       $wxt = \Drupal::service('wxt_library.service_wxt');
       $wxt_active = $wxt->getLibraryName();
