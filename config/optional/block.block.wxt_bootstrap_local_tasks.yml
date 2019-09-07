@@ -27,3 +27,8 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
       taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
