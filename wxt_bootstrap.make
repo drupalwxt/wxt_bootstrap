@@ -5,6 +5,6 @@ api = 2
 
 ; Modules
 
-projects[bootstrap][version] = 3.16
+projects[bootstrap][version] = 3.18
 projects[bootstrap][type] = theme
 projects[bootstrap][subdir] = contrib

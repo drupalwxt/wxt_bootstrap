@@ -1,8 +1,8 @@
-# Schema for the theme setting configuration file of the THEMENAME theme.
+# Schema for the theme setting configuration file of the THEMETITLE theme.
 
 THEMENAME.settings:
   type: theme_settings
-  label: 'THEMENAME settings'
+  label: 'THEMETITLE settings'
   mapping:
     cdn_provider:
       type: string

@@ -26,4 +26,4 @@ regions:
 
 libraries-extend:
   bootstrap/framework:
-    - 'THEMENAME/global-styling'
+    - 'THEMENAME/framework'

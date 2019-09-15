@@ -1,9 +1,11 @@
 {
   "name": "wxt_bootstrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WxT theme(s) support leveraging Bootstrap.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@bower_components/bootstrap": "twbs/bootstrap-sass#~3.4.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
@@ -19,12 +21,15 @@
     "gulp-watch": "^4.3.3"
   },
   "scripts": {
-    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete && node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'libraries', 'junction') } catch (e) { }\""
   },
   "author": "William Hearn",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://drupal.org/project/wxt_bootstrap"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
   }
 }

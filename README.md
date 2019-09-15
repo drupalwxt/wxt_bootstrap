@@ -54,13 +54,13 @@ set it to be the default active theme in Drupal.
 You will need to have the following required dependencies for the following
 commands to execute successfully:
 
-- NodeJS (v4.2.x+) + NPM (v3.x+)
+- NodeJS (v11.0.0) + NPM (v6.4.1) + Yarn (v1.17.3)
 - Grunt or Gulp install globally with the -g option
 
 Inside the theme directory run the following to install the required NodeJS
 dependencies:
 
-`npm install`
+`yarn install`
 
 ### Pre-requisites
 
@@ -69,8 +69,7 @@ Download and extract the **latest** 3.x.x version of
 sub-theme. After it has been extracted, the directory should be renamed
 (if needed) so it reads `./wxt_bootstrap/libraries/bootstrap`. Even though WxT
 ships with the compiled bootstrap files as libraries we still need the source
-files to compile the bootstrap overrides. For your convenience you can simply
-run `bower install` to retrieve the library.
+files to compile the bootstrap overrides.
 
 ### Option 1: With Gulp (Preferred + Tested)
 
