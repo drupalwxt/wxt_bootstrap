@@ -1,0 +1,44 @@
+# Node
+node_modules
+bower_components
+libraries
+libraries/bootstrap
+
+# SASS
+.sass-cache
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+# Development Files
+compass_app_log.txt
+*.DS_Store
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+.*
+!.bowerrc
+!.gitignore
+*~

@@ -1,27 +1,28 @@
-core: 8.x
-type: theme
-base theme: wxt_bootstrap
-
 name: 'WxT Sub-Theme'
 description: 'WxT sub-theme(s) support leveraging WxT Bootstrap. Source files for Bootstrap are defined as part of the WxT Library module.'
+type: theme
+core: 8.x
 package: 'WxT'
+base theme: wxt_bootstrap
 
 regions:
+  branding: 'Branding'
   breadcrumb: 'Breadcrumbs'
   language_toggle: 'Language Toggle'
   banner: 'Banner'
   search: 'Search'
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
-  header: 'Top Bar'
+  header: 'Header'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
   content_footer: 'Content Footer'
-  sidebar_first: 'Primary'
-  sidebar_second: 'Secondary'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
   footer: 'Footer'
   page_top: 'Page top'
+  page_bottom: 'Page bottom'
 
 libraries-extend:
   bootstrap/framework:
