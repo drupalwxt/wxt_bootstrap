@@ -39,7 +39,6 @@ class Block extends PreprocessBase {
       }
       elseif ($wxt_active == 'gcwu_fegc') {
         $variables['logo_sttl_svg'] = $library_path . '/assets/wmms.svg';
-        $variables['logo_sig_svg'] = $library_path . '/assets/sig-' . $language . '.svg';
       }
       elseif ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
         $variables['logo'] = $library_path . '/assets/sig-blk-' . $language . '.png';
@@ -47,6 +46,17 @@ class Block extends PreprocessBase {
       }
       elseif ($wxt_active == 'gc_intranet') {
         $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
+      }
+    }
+
+    if (isset($variables['plugin_id']) && $variables['plugin_id'] == 'wxt_language_block:language_interface') {
+      /** @var \Drupal\wxt_library\LibraryService $wxt */
+      $wxt = \Drupal::service('wxt_library.service_wxt');
+      $wxt_active = $wxt->getLibraryName();
+      $library_path = $wxt->getLibraryPath();
+
+      if ($wxt_active == 'gcwu_fegc') {
+        $variables['logo_sig_svg'] = $library_path . '/assets/sig-' . $language . '.svg';
       }
     }
 
