@@ -20,3 +20,5 @@ schemas: []
 cdn_provider: ''
 # Allow for breadcrumb to be shown.
 breadcrumb_home: 1
+# Necessary for Layout Builder.
+modal_jquery_ui_bridge: 0

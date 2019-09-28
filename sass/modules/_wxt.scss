@@ -113,4 +113,10 @@
   .modal-dialog {
     margin: 0px auto;
   }
+  [data-drupal-selector^='edit-layout-settings'] {
+    select {
+      -webkit-appearance: listbox;
+      -moz-appearance: listbox;
+    }
+  }
 }
