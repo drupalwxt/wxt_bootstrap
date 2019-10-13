@@ -25,15 +25,15 @@ class SearchBlockForm extends FormBase {
     $wxt_active = $wxt->getLibraryName();
     $form->keys->setProperty('input_group_button', FALSE);
     if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
-      $form->submit->addClass('btn-primary');
-      $form->submit->setProperty('icon', Bootstrap::glyphicon('search'));
+      $form->submit_container->submit->addClass('btn-primary');
+      $form->submit_container->submit->setProperty('icon', Bootstrap::glyphicon('search'));
       $form->actions->submit->setProperty('icon_only', FALSE);
       $form->keys->setProperty('input_group_button', FALSE);
     }
     else {
-      $form->submit->addClass('btn-default');
-      $form->submit->setProperty('icon', Bootstrap::glyphicon(''));
-      $form->submit->unsetProperty('icon_only');
+      $form->submit_container->submit->addClass('btn-default');
+      $form->submit_container->submit->setProperty('icon', Bootstrap::glyphicon(''));
+      $form->submit_container->submit->unsetProperty('icon_only');
     }
   }
 
