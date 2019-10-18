@@ -67,3 +67,43 @@ p:last-child,
     margin-top: 0;
   }
 }
+
+// theme-gcwu-fegc specifics.
+.theme-gcwu-fegc {
+  #wb-sttl {
+    font-size: 1em;
+    height: 6.85em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  #wb-sttl a {
+    font-size: 1.9em;
+    text-shadow: 1px 1px 1px #333;
+  }
+
+  #site-slogan {
+    font-size: 0.95em;
+    vertical-align: top;
+    color: #fff !important;
+    text-shadow: 1px 1px 1px #333;
+  }
+
+  @media screen and (max-width: 991px) {
+    #wb-sttl a {
+      font-size: 1.9em;
+      height: 2.4em;
+      line-height: normal;
+      text-shadow: 1px 1px 1px #333;
+      vertical-align: bottom;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    #wb-sttl a {
+      height: 2.4em;
+      vertical-align: bottom;
+      line-height: normal;
+    }
+  }
+}

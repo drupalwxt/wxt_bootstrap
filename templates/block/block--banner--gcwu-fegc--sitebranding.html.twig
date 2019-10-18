@@ -22,6 +22,9 @@
       <span>{{ site_name }}</span>
     {% endif %}
     </a>
+    {% if site_slogan %}
+      <div id="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
   </div>
   <img id="wmms" src="{{ logo_sttl_svg }}" alt="{{ 'Symbol of the Government of Canada'|t }}" />
 {% endblock %}
