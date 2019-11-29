@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   id = "wxt_gcweb_cdn_footer_url",
  *   type = "textfield",
  *   title = @Translation("CDN for footer"),
- *   defaultValue = @Translation(""),
+ *   defaultValue = "",
  *   description = @Translation("If checked the GCWeb theme will use the CDN for the footer."),
  *   groups = {
  *     "gcweb" = @Translation("GCWeb"),
@@ -30,7 +30,6 @@ class GCWebCDNFooterURL extends SettingBase {
    */
   public function alterFormElement(Element $form, FormStateInterface $form_state, $form_id = NULL) {
     $setting = $this->getSettingElement($form, $form_state);
-    $setting->setProperty('disabled', 'disabled');
   }
 
 }

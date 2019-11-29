@@ -214,6 +214,9 @@
 {% endblock %}
 
 {% if page.footer %}
+  {% if gcweb_cdn_footer_enable %}
+    <footer id="wb-info" role="contentinfo" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html"></footer>
+  {% endif %}
   {% block footer %}
     <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info" role="contentinfo">
       <div class="{{ container }}">
