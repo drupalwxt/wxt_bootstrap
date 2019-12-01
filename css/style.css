@@ -11,16 +11,16 @@
  * ./THEMENAME/bootstrap/assets/stylesheets/_variables.scss
  */
 .clearfix:before, .filter-wrapper:before, .clearfix:after, .filter-wrapper:after {
-  display: table;
-  content: " "; }
+  content: " ";
+  display: table; }
 
 .clearfix:after, .filter-wrapper:after {
   clear: both; }
 
 .center-block {
   display: block;
-  margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
 .pull-right {
   float: right !important; }
@@ -218,11 +218,11 @@ html.js .ajax-new-content:empty {
   .input-group .select-wrapper {
     display: table-cell; }
     .input-group .select-wrapper:first-child .form-control:first-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
     .input-group .select-wrapper:last-child .form-control:first-child {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px; }
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px; }
   .select-wrapper select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -579,20 +579,23 @@ p:last-child,
   padding: 0; }
   .help-block:first-child, .control-group .help-inline:first-child {
     margin-top: 0; }
-	
+
 .theme-gcwu-fegc #wb-sttl {
   font-size: 1em;
   height: 6.85em;
   display: table-cell;
   vertical-align: middle; }
+
 .theme-gcwu-fegc #wb-sttl a {
   font-size: 1.9em;
   text-shadow: 1px 1px 1px #333; }
+
 .theme-gcwu-fegc #site-slogan {
   font-size: 0.95em;
   vertical-align: top;
   color: #fff !important;
   text-shadow: 1px 1px 1px #333; }
+
 @media screen and (max-width: 991px) {
   .theme-gcwu-fegc #wb-sttl a {
     font-size: 1.9em;
@@ -600,6 +603,7 @@ p:last-child,
     line-height: normal;
     text-shadow: 1px 1px 1px #333;
     vertical-align: bottom; } }
+
 @media screen and (min-width: 992px) {
   .theme-gcwu-fegc #wb-sttl a {
     height: 2.4em;
@@ -806,6 +810,9 @@ ul.js-facets-checkbox-links {
 
 .theme-wet-boew .highlighted .region-highlighted {
   background-color: #fff; }
+
+.theme-wet-boew #edit-submit-container {
+  width: inherit !important; }
 
 .wb-srch-multi {
   padding-top: 1em; }

@@ -59,6 +59,9 @@
       background-color: #fff;
     }
   }
+  #edit-submit-container {
+    width: inherit !important;
+  }
 }
 
 .wb-srch-multi {
@@ -116,7 +119,7 @@
   [data-drupal-selector^='edit-layout-settings'] {
     select {
       -webkit-appearance: listbox;
-      -moz-appearance: listbox;
+      -moz-appearance: menulist;
     }
   }
 }
