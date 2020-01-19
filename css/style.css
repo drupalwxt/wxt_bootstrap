@@ -859,3 +859,6 @@ ul.js-facets-checkbox-links {
 #drupal-off-canvas [data-drupal-selector^='edit-layout-settings'] select {
   -webkit-appearance: listbox;
   -moz-appearance: menulist; }
+
+.display-inline {
+  display:inline; }
