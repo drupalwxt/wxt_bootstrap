@@ -24,7 +24,7 @@ class Html extends PreprocessBase {
     $variables['language_prefix'] = $language_prefix[$language];
 
     // Theme variables.
-    $variables['wxt_theme'] = \Drupal::config('wxt_library.settings')->get('wxt.theme');;
+    $variables['wxt_theme'] = \Drupal::config('wxt_library.settings')->get('wxt.theme');
 
     // Assign skip link variables.
     $variables['wxt_skip_link_primary'] = $this->theme->getSetting('wxt_skip_link_primary');
