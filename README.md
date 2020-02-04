@@ -34,9 +34,11 @@ integrations and workflow improvements.
 
 WxT Library at a minimum requires the following dependencies:
 
-- [Bootstrap][bootstrap] (8.x-3.5+)
-- [WxT Library][wxt_library] (8.x-1.0+)
+- [Bootstrap][bootstrap]
+- [WxT Library][wxt_library]
 - [WxT jQuery Framework assets][wet_boew]
+
+> Note: The wet-boew assets need to be under the `/libraries` folder with the proper naming scheme.
 
 You can easily retrieve these dependencies via composer:
 
@@ -118,7 +120,7 @@ sets up a browsersync session.)
 [bootstrap]:      https://drupal.org/project/bootstrap
 [bootstrap_sass]: https://github.com/twbs/bootstrap-sass
 [drupal_wxt]:     https://drupal.org/project/wxt
-[wet_boew]:       https://wet-boew.github.io
+[wet_boew]:       https://github.com/drupalwxt/composer-extdeps
 [wxt]:            https://drupal.org/project/wxt
 [wxt_library]:    https://drupal.org/project/wxt_library
 [wxt_bootstrap]:  https://drupal.org/project/wxt_bootstrap
