@@ -45,6 +45,11 @@
             ]
         },
         "enable-patching": true,
-        "patches": { }
+        "patches": { 
+            "drupal/core": {
+                "Enter drupal/core patch #2752443 description here":
+                "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch"
+            }
+        }
     }
 }
