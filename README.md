@@ -44,10 +44,22 @@ You can easily retrieve these dependencies via composer:
 composer require drupal/wxt_bootstrap
 ```
 
+> Note: We heavily recommend that you use the distribution method. 
+> Limited support is provided for standalone.
+>
+> * Extra configuration of WxT components and additional custom plugins
+> * Drupal application lifecycle and timely updates of core and additional Lightning extensions
+> * Workflow improvements from Lightning and configuration of key contributed modules
+
 ## Setup
 
 Enable either The [WxT Bootstrap][wxt_bootstrap] theme or derived sub-theme and
 set it to be the default active theme in Drupal.
+
+## Sub-Theming
+
+We provide a starterkit under the `starterkits` folder that contains the 
+template for inheriting from `wxt_bootstrap`.
 
 ## Sass Compilation
 
