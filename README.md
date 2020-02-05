@@ -10,6 +10,8 @@ consists of leveraging block layouts and twig templates by default. Over time
 full support for various contributed modules such as Display Suite and Panels
 will be added for more complex layout functionality.
 
+> Note: For up-to-date documentation please always consult our [README.md][readme] file.
+
 ## Installation
 
 There are two possible installation methods to leverage the
@@ -124,3 +126,4 @@ sets up a browsersync session.)
 [wxt]:            https://drupal.org/project/wxt
 [wxt_library]:    https://drupal.org/project/wxt_library
 [wxt_bootstrap]:  https://drupal.org/project/wxt_bootstrap
+[readme]:         https://github.com/drupalwxt/wxt_bootstrap/blob/8.x-1.x/README.md
