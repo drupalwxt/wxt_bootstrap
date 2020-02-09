@@ -209,7 +209,9 @@
 
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
+    <footer id="wb-info" role="contentinfo" data-ajax-append="{{ gcweb_cdn_footer_url }}{{ language }}.html .brand">
+      <div class="landscape" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html .wb-navcurr"></div>
+    </footer>
   {% else %}
     {% block footer %}
       <footer id="wb-info">
