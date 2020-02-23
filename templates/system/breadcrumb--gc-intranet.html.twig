@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup templates
+ */
+#}
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% if breadcrumb %}
+  <nav id="wb-bc" property="breadcrumb">
+    <h2>{{ 'You are here'|t }}</h2>
+    <div class="{{ container }}">
+      <div class="row">
+        <ol class="breadcrumb">
+          {% for item in breadcrumb %}
+            <li {{ item.attributes }}>
+              {% if item.url %}
+                <a href="{{ item.url }}">{{ item.text }}</a>
+              {% else %}
+                {{ item.text }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+  </div>
+</nav>
+{% endif %}

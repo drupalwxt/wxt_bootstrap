@@ -58,6 +58,10 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         }
         break;
 
+      case 'breadcrumb':
+        $suggestions[] = 'breadcrumb__' . $wxt_active;
+        break;
+
       case 'form':
         if ($variables['element']['#form_id'] == 'wxt_search_block_form') {
           $suggestions[] = 'form__wxt_search_block_form';
