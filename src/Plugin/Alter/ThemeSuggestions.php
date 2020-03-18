@@ -90,7 +90,7 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           if ($entity->hasField('field_slideshow_style')) {
             $value = $entity->field_slideshow_style->value;
             if (!empty($value)) {
-              $suggestions[] =  'media__slideshow__' . $value;
+              $suggestions[] = 'media__slideshow__' . $value;
             }
           }
         }
