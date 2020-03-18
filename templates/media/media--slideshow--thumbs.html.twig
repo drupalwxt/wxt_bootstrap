@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media entity.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="row">
+<section class="col-md-12">
+  <div{{ attributes.addClass('wb-tabs', 'carousel-s2', 'playing', 'slow', 'show-thumbs') }}>
+    {% if content %}
+    {{ content|without('name') }}
+    {% endif %}
+  </div>
+</section>
+</div>

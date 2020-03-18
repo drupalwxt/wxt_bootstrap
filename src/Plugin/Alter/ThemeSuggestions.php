@@ -62,10 +62,37 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         $suggestions[] = 'breadcrumb__' . $wxt_active;
         break;
 
+      case 'field':
+        $element = $variables['element'];
+        if (isset($element['#field_name'])) {
+          if ($element['#field_name'] == 'slideshow_items') {
+            $entity = $element['#object'];
+            if ($entity->hasField('field_slideshow_style')) {
+              $value = $entity->field_slideshow_style->value;
+              if (!empty($value)) {
+                $suggestions[] = 'field__media__slideshow_items__slideshow__' . $value;
+              }
+            }
+          }
+        }
+        break;
+
       case 'form':
         if ($variables['element']['#form_id'] == 'wxt_search_block_form') {
           $suggestions[] = 'form__wxt_search_block_form';
           $suggestions[] = 'form__wxt_search_block_form__' . $wxt_active;
+        }
+        break;
+
+      case 'media':
+        $entity = $variables->element['#media'];
+        if ($entity->bundle() == 'slideshow') {
+          if ($entity->hasField('field_slideshow_style')) {
+            $value = $entity->field_slideshow_style->value;
+            if (!empty($value)) {
+              $suggestions[] =  'media__slideshow__' . $value;
+            }
+          }
         }
         break;
 
