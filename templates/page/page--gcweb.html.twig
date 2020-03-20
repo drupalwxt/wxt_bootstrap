@@ -95,7 +95,7 @@
 {# Main #}
 {% block main %}
 
-  <div class="{{ is_front ? "container-fluid" : container }}">
+  <div class="{{ (is_front and wxt_homepage) ? "container-fluid" : container }}">
     <div class="row">
 
       {# Highlighted #}

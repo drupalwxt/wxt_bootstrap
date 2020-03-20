@@ -30,6 +30,20 @@ class Page extends BootstrapPage {
     $variables['language_prefix'] = $language_prefix[$language];
     $variables['library_path'] = $library_path;
 
+    // WxT homepage special handling for container-fluid.
+    if (!empty($variables['node'])) {
+      $node = $variables['node'];
+      if ($node->hasField('layout_builder__layout')) {
+        $field = $node->layout_builder__layout;
+        if ($field->count() > 0) {
+          $layout = $field->getSection(0)->getLayoutId();
+          if ($layout === 'wxt_homepage') {
+            $variables['wxt_homepage'] = TRUE;
+          }
+        }
+      }
+    }
+
     // Visibility settings.
     $pages = $this->theme->getSetting('wxt_search_box');
     $path = \Drupal::service('path.current')->getPath();

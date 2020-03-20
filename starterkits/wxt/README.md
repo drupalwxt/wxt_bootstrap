@@ -16,36 +16,23 @@ The following provides an example of how you can configure the theme on module i
 
 ```php
 /**
- * Implements hook_install().
+ * Implements hook_modules_installed().
  */
-function subtheme_install() {
-  $theme_list = [
-    'claro',
-    'subtheme',
-  ];
-
-  // Install themes.
-  \Drupal::service('theme_installer')->install($theme_list);
-
-  // Get theme manager
-  $system_theme = \Drupal::configFactory()->getEditable('system.theme');
-
-  // Set default and admin themes.
-  $system_theme
-    ->set('default', 'subtheme')
-    ->set('admin', 'claro')
-    ->save();
-
-  // GCWeb
-  $config = \Drupal::configFactory()->getEditable('wxt_library.settings');
-  $config->set('wxt.theme', 'theme-gcweb');
-  $config->save();
+function MODULENAME_modules_installed($modules) {
+    if (in_array('wxt', $modules)) {
+      \Drupal::configFactory()
+        ->getEditable('system.theme')
+        ->set('default', 'THEMENAME')
+        ->set('admin', 'claro')
+        ->save(TRUE);
+    }
+  }
 }
 ```
 
-Additionally you can configure the `wxt_library` module to support your subtheme.
+Afterwards you can configure the `wxt_library` module to support your subtheme.
 
-Create the `config/install/wxt_library.settings.yml` file with the following contents:
+Create the `config/rewrite/wxt_library.settings.yml` file in your module with the following contents:
 
 ```yaml
 url:
@@ -74,7 +61,7 @@ url:
 theme:
   visibility: 1
   themes:
-    subtheme: subtheme
+    subtheme: THEMENAME
     wxt_bootstrap: wxt_bootstrap
 minimized:
   options: 1
