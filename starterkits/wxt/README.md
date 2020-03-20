@@ -12,7 +12,7 @@ Please remember to enable your theme for WxT Library under Themes Visibility at 
 
 ## Configuration of Theme
 
-The following provides an example of how you can configure the theme on module install.
+1. The following provides an example of how you can configure the theme to be installed as the default on module / profile install.
 
 ```php
 /**
@@ -30,9 +30,7 @@ function MODULENAME_modules_installed($modules) {
 }
 ```
 
-Afterwards you can configure the `wxt_library` module to support your subtheme.
-
-Create the `config/rewrite/wxt_library.settings.yml` file in your module with the following contents:
+2. Additionally for your new subtheme you will need to configure the `wxt_library` module settings to support it. This can be done programmatically b creating the `config/install/wxt_library.settings.yml` file with the following contents:
 
 ```yaml
 url:
@@ -71,4 +69,22 @@ files:
     js: js
 wxt:
   theme: theme-gcweb
+```
+
+3. Finally if the theme you are extending has custom block templates these won't be immediately inherited because a sub-theme creates copies of all the blocks in the parent theme and renames them with the sub-theme's name as a prefix. Twig block templates are derived from the block's name, so this breaks the link between these templates and their block. Fixing this problem currently requires a hook in the sub-theme. The THEMENAME.theme has the following contents:
+
+```php
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ */
+function THEMENAME_theme_suggestions_block_alter(&$suggestions, $variables) {
+
+  // Load theme suggestions for blocks from parent theme.
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('THEMENAME_', 'wxt_bootstrap_', $suggestion);
+  }
+}
+
 ```
