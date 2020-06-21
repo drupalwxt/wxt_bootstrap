@@ -104,36 +104,46 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         $node = \Drupal::routeMatch()->getParameter('node');
         if (is_object($node)) {
           $suggestions[] = 'page__' . $node->getType();
-          $suggestions[] = 'page__' . $node->getType() . '__' . $wxt_active;
         }
         $suggestions[] = 'page__' . $wxt_active;
+        if (is_object($node)) {
+          $suggestions[] = 'page__' . $node->getType() . '__' . $wxt_active;
+          $suggestions[] = 'page__node__' . $node->id() . '__' . $wxt_active;
+        }
         break;
 
       case 'page_title':
         $node = \Drupal::routeMatch()->getParameter('node');
         if (is_object($node)) {
           $suggestions[] = 'page_title__' . $node->getType();
-          $suggestions[] = 'page_title__' . $node->getType() . '__' . $wxt_active;
         }
         $suggestions[] = 'page_title__' . $wxt_active;
+        if (is_object($node)) {
+          $suggestions[] = 'page_title__' . $node->getType() . '__' . $wxt_active;
+          $suggestions[] = 'page_title__node__' . $node->id() . '__' . $wxt_active;
+        }
         break;
 
       case 'maintenance_page':
         $node = \Drupal::routeMatch()->getParameter('node');
         if (is_object($node)) {
           $suggestions[] = 'maintenance_page__' . $node->getType();
-          $suggestions[] = 'maintenance_page__' . $node->getType() . '__' . $wxt_active;
         }
         $suggestions[] = 'maintenance_page__' . $wxt_active;
+        if (is_object($node)) {
+          $suggestions[] = 'maintenance_page__' . $node->getType() . '__' . $wxt_active;
+        }
         break;
 
       case 'table':
         $node = \Drupal::routeMatch()->getParameter('node');
         if (is_object($node)) {
           $suggestions[] = 'table__' . $node->getType();
-          $suggestions[] = 'table__' . $node->getType() . '__' . $wxt_active;
         }
         $suggestions[] = 'table__' . $wxt_active;
+        if (is_object($node)) {
+          $suggestions[] = 'table__' . $node->getType() . '__' . $wxt_active;
+        }
         break;
     }
 
