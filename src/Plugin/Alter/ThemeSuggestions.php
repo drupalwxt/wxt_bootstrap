@@ -29,6 +29,9 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
       case 'block':
         if (!empty($variables['elements']['#id'])) {
           $block = Block::load($variables['elements']['#id']);
+          if (is_null($block)) {
+            return;
+          }
           $suggestions[] = 'block__' . $block->getRegion() . '__' . $variables['elements']['#id'];
           $suggestions[] = 'block__' . $block->getRegion() . '__' . $wxt_active . '__' . $variables['elements']['#id'];
         }
