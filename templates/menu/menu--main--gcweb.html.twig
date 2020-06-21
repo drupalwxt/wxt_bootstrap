@@ -47,7 +47,7 @@
       %}
       {% if menu_level == 0 and item.is_expanded %}
         <li{{ item.attributes.addClass(item_classes) }} role="presentation">
-        <a href="{{ item.url }}" class="dropdown-toggle item" data-target="#" data-toggle="dropdown" role="menuitem">{{ item.title }}</a>
+        <a href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown" role="menuitem">{{ item.title }}</a>
       {% else %}
         <li{{ item.attributes.addClass(item_classes) }} role="presentation">
         {{ link(item.title, item.url, {'role':['menuitem']}) }}
