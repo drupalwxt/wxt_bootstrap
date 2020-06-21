@@ -60,9 +60,7 @@
 <div class="tabpanels">
   {% for item in items %}
     <div role="tabpanel" id="panel{{ loop.index }}" class="{{ loop.index == 1 ? 'in' : 'out' }} fade">
-      <figure>
-        {{ item.content }}
-      </figure>
+      {{ item.content }}
     </div>
   {% endfor %}
 </div>

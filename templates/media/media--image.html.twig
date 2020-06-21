@@ -13,9 +13,11 @@
  */
 #}
 <article{{ attributes }}>
-  {{ title_suffix.contextual_links }}
+  <figure>
+    {{ title_suffix.contextual_links }}
 
-  {% if content %}
-    {{ content|without('name') }}
-  {% endif %}
+    {% if content %}
+      {{ content|without('name') }}
+    {% endif %}
+  </figure>
 </article>
