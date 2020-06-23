@@ -38,9 +38,9 @@
       </button>
     {% else %}
       {% if icon_position == 'after' %}
-        <button{{ attributes.addClass(classes) }}>{{ label }}{{ icon }}</button>{{ children }}
+        <button{{ attributes.addClass(classes) }}>{{ label }}{{ icon }}<span class="wb-inv">{{ 'Search'|t }}</span></button>{{ children }}
       {% else %}
-        <button{{ attributes.addClass(classes) }}>{{ icon }}{{ label }}</button>{{ children }}
+        <button{{ attributes.addClass(classes) }}>{{ icon }}{{ label }}<span class="wb-inv">{{ 'Search'|t }}</span></button>{{ children }}
       {% endif %}
     {% endif %}
     {{ children }}
