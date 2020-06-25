@@ -113,6 +113,9 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'page__' . $node->getType() . '__' . $wxt_active;
           $suggestions[] = 'page__node__' . $node->id() . '__' . $wxt_active;
         }
+        else {
+          $suggestions = array_merge($suggestions, self::currentPageSuggestions('page', $wxt_active));
+        }
         break;
 
       case 'page_title':
@@ -124,6 +127,9 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         if (is_object($node)) {
           $suggestions[] = 'page_title__' . $node->getType() . '__' . $wxt_active;
           $suggestions[] = 'page_title__node__' . $node->id() . '__' . $wxt_active;
+        }
+        else {
+          $suggestions = array_merge($suggestions, self::currentPageSuggestions('page_title', $wxt_active));
         }
         break;
 
@@ -151,6 +157,27 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
     }
 
     parent::alter($suggestions, $context1, $hook);
+  }
+
+  /**
+   * Append active wxt theme to all current page theme suggestions.
+   *
+   * @param string $base
+   *   The base 'thing' from which more specific suggestions are derived.
+   * @param string $wxt_active
+   *   The active wxt theme.
+   *
+   * @return array
+   *   The modified list of current page suggestions.
+   *
+   * @see system_theme_suggestions_page()
+   * @see theme_get_suggestions()
+   */
+  private static function currentPageSuggestions($base, $wxt_active) {
+    $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
+    return array_map(function ($suggestion) use ($wxt_active) {
+      return $suggestion . '__' . $wxt_active;
+    }, theme_get_suggestions($path_args, $base));
   }
 
 }
