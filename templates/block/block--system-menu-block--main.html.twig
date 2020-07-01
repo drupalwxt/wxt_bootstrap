@@ -33,7 +33,7 @@
  * @ingroup templates
  */
 #}
-{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+{% set heading_id = attributes.id ~ 'mainmenu'|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.removeClass('clearfix')|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
