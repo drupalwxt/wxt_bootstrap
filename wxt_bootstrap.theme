@@ -22,3 +22,15 @@
  * @see bootstrap_theme()
  * @see \Drupal\bootstrap\Registry
  */
+
+/**
+ * Implements hook_form_alter.
+ */
+function wxt_bootstrap_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'wxt_search') >= 0 && isset($form['form_build_id'])) {
+    if ($form['form_build_id']['#type'] == 'hidden') {
+      // WCAG forbids hidden input elements with an autocomplete on/off.
+      unset($form['form_build_id']['#attributes']['autocomplete']);
+    }
+  }
+}
