@@ -29,7 +29,7 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('list-inline', 'menu', 'nav', 'navbar-nav') }}>
     {% elseif menu_level == 1 %}
-      <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
+      <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }} role='menu'>
     {% else %}
       <ul{{ attributes.addClass('dropdown-menu', menu_name) }}>
     {% endif %}
