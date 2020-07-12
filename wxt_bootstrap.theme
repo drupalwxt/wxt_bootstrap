@@ -1,7 +1,5 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
-
 /**
  * @file
  * The primary PHP file for the Drupal WxT Bootstrap base theme.
@@ -24,6 +22,8 @@ use Drupal\Core\Form\FormStateInterface;
  * @see bootstrap_theme()
  * @see \Drupal\bootstrap\Registry
  */
+
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_alter.
