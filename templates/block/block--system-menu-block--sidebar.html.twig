@@ -33,9 +33,9 @@
  * @ingroup templates
  */
 #}
-<nav typeof="SiteNavigationElement" role="navigation"{{ attributes.setAttribute('id', 'wb-sec').removeClass('clearfix')|without('role', 'aria-labelledby') }}>
+<nav typeof="SiteNavigationElement" aria-labelledby="sectionMenu"{{ attributes.setAttribute('id', 'wb-sec').removeClass('clearfix')|without('role', 'aria-labelledby') }}>
   {{ title_prefix }}
-  <h2>{{ 'Section Menu'|t }}</h2>
+  <h2{{ title_attributes.setAttribute('id', 'sectionMenu') }}>{{ 'Section Menu'|t }}</h2>
   {{ title_suffix }}
   {% block content %}
     {{ content }}
