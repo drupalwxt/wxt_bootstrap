@@ -11,8 +11,8 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {% if breadcrumb %}
-  <nav id="wb-bc" property="breadcrumb">
-    <h2>{{ 'You are here'|t }}</h2>
+  <nav id="wb-bc" property="breadcrumb" aria-labelledby="breadcrumbTitle">
+    <h2{{ title_attributes.setAttribute('id', 'breadcrumbTitle') }}>{{ 'You are here'|t }}</h2>
     <div class="{{ container }}">
       <ol class="breadcrumb">
         {% for item in breadcrumb %}
