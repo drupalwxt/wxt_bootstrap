@@ -75,7 +75,7 @@
     'clearfix',
   ]
 %}
-<article{{ attributes.addClass(classes)|without('role') }}>
+<article{{ attributes.addClass(classes)|without('role','about') }}>
 
   {{ title_prefix }}
   {% if label and not page %}
