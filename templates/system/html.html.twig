@@ -68,18 +68,20 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
-    <ul id="wb-tphp">
-      <li class="wb-slc">
-        <a class="wb-sl" href="#{{ wxt_skip_link_primary }}">
-          {{ wxt_skip_link_primary_text }}
-        </a>
-      </li>
-      <li class="wb-slc visible-sm visible-md visible-lg">
-        <a class="wb-sl" href="#{{ wxt_skip_link_secondary }}">
-          {{ wxt_skip_link_secondary_text }}
-        </a>
-      </li>
-    </ul>
+    <nav aria-label="{{ 'Skip links'|t }}">
+      <ul id="wb-tphp">
+        <li class="wb-slc">
+          <a class="wb-sl" href="#{{ wxt_skip_link_primary }}">
+            {{ wxt_skip_link_primary_text }}
+          </a>
+        </li>
+        <li class="wb-slc visible-sm visible-md visible-lg">
+          <a class="wb-sl" href="#{{ wxt_skip_link_secondary }}">
+            {{ wxt_skip_link_secondary_text }}
+          </a>
+        </li>
+      </ul>
+    </nav>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
