@@ -29,7 +29,7 @@ class Username extends PreprocessBase {
     // that $variables['name'] is safe for printing.
     $name = $account->getDisplayName();
     $variables['name_raw'] = $account->getUsername();
-    if (Unicode::strlen($name) > 45) {
+    if (mb_strlen($name) > 45) {
       $name = Unicode::truncate($name, 40, FALSE, TRUE);
       $variables['truncated'] = TRUE;
     }

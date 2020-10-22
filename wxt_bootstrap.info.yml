@@ -2,6 +2,7 @@ name: WxT Bootstrap
 description: WxT theme(s) support leveraging Bootstrap.
 type: theme
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'WxT'
 base theme: bootstrap
 

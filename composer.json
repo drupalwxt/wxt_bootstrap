@@ -13,7 +13,7 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.0",
         "drupal/core": "8.*",
-        "drupal/bootstrap": "3.21"
+        "drupal/bootstrap": "3.23"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -45,7 +45,7 @@
             ]
         },
         "enable-patching": true,
-        "patches": { 
+        "patches": {
             "drupal/core": {
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch"
