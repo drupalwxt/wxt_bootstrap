@@ -36,3 +36,17 @@ function wxt_bootstrap_form_alter(&$form, FormStateInterface $form_state, $form_
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_page.
+ */
+function wxt_bootstrap_preprocess_page(&$variables) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  if ($language == 'en') {
+    $variables['main_menu_label'] = '<span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span>';
+  }
+  elseif ($language == 'fr') {
+    $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
+  }
+}
