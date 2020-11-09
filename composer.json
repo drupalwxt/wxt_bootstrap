@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.0",
-        "drupal/core": "8.*",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2",
+        "drupal/core": "8.* || 9.*",
         "drupal/bootstrap": "3.23"
     },
     "minimum-stability": "dev",
