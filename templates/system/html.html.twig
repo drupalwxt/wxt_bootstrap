@@ -52,7 +52,7 @@
     db_offline ? 'db-offline',
     theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
     theme.has_glyphicons ? 'has-glyphicons',
-    theme.name ? theme.name|replace('_', '-'),
+    theme.name ? theme.name|replace({'_':'-'}),
     wxt_theme ? wxt_theme|clean_class,
   ]
 %}
