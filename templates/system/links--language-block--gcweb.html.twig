@@ -49,7 +49,7 @@
       {% else %}
         {% set lang_curr = '' %}
       {% endif %}
-      <li{{ item.attributes.addClass(key|clean_class).addClass(lang_curr) }}>
+      <li>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}
