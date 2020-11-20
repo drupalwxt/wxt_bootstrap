@@ -559,11 +559,6 @@ ol, ul {
   padding-bottom: 36px;
   border-top: 1px solid #E5E5E5; }
 
-p:last-child,
-.form-group:last-child,
-.panel:last-child {
-  margin-bottom: 0; }
-
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
