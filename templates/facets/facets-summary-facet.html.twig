@@ -13,7 +13,7 @@
  * - facet_admin_label: The facet administrative label.
  */
 #}
-<span class="source-summary-item source-summary-item-{{ facet_id|replace("_", "-") }}">
+<span class="source-summary-item source-summary-item-{{ facet_id|replace({'_':'-'}) }}">
 {% if items %}
     <h4>{{ label }}</h4>
     <ul>
