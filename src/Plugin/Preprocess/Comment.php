@@ -23,7 +23,7 @@ class Comment extends PreprocessBase {
       '#theme' => 'username',
       '#account' => $account,
     ];
-    $variables['author'] = \Drupal::service('renderer')->render($elements);($username);
+    $variables['author'] = \Drupal::service('renderer')->render($elements);
 
     // Getting the node creation time stamp from the comment object.
     $date = $variables['comment']->getCreatedTime();
