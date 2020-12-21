@@ -3,6 +3,7 @@
 namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 
 use Drupal\bootstrap\Plugin\Preprocess\Page as BootstrapPage;
+use Drupal\node\Entity\Node;
 
 /**
  * Pre-processes variables for the "page" theme hook.
@@ -33,6 +34,11 @@ class Page extends BootstrapPage {
     // WxT homepage special handling for container-fluid.
     if (!empty($variables['node'])) {
       $node = $variables['node'];
+
+      if(is_numeric($node)) {
+        $node = Node::load($node);
+      }
+
       if ($node->hasField('layout_builder__layout')) {
         $field = $node->layout_builder__layout;
         if ($field->count() > 0) {
