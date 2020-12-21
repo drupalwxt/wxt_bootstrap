@@ -35,7 +35,7 @@ class Page extends BootstrapPage {
     if (!empty($variables['node'])) {
       $node = $variables['node'];
 
-      if(is_numeric($node)) {
+      if (is_numeric($node)) {
         $node = Node::load($node);
       }
 
