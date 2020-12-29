@@ -209,10 +209,13 @@ html.js .ajax-new-content:empty {
 /**
  * Form styles.
  */
+.form-type-select label.control-label {
+  width: 100%;
+}
 .select-wrapper {
   display: inline-block;
   position: relative;
-  width: 100%; }
+  width: fit-content; }
   .form-inline .select-wrapper {
     width: auto; }
   .input-group .select-wrapper {

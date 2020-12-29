@@ -1,6 +1,9 @@
 /**
  * Form styles.
  */
+ .form-type-select label.control-label {
+   width: 100%;
+ }
 
 // Browsers do not recognize pseudo :after selectors, we must create a wrapper
 // around the select element to style it properly.
@@ -8,7 +11,7 @@
 .select-wrapper {
   display: inline-block;
   position: relative;
-  width: 100%;
+  width: fit-content;
   .form-inline & {
     width: auto;
   }
