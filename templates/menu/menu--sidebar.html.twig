@@ -33,8 +33,6 @@
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 %}
-        <li{{ item.attributes }}>
-        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
       {%
         set item_classes = [
           item.is_expanded? 'expanded',
@@ -43,6 +41,8 @@
           item.in_active_trail ? 'wb-navcurr',
         ]
       %}
+        <li{{ item.attributes }}>
+        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
       {% else %}
         <li{{ item.attributes.addClass(item_classes) }}>
         {{ link(item.title, item.url, {'class':['list-group-item']}) }}
