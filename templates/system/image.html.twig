@@ -16,4 +16,4 @@
   theme.settings.image_shape ? theme.settings.image_shape,
   theme.settings.image_responsive ? 'img-responsive',
 ] %}
-<img{{ attributes.addClass(classes) }} />
+<img{{ attributes|without('alt').addClass(classes) }} alt="{{ alt }}"/>
