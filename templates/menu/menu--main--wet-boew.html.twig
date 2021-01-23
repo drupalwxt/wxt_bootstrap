@@ -27,19 +27,19 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('list-inline', 'menu', 'nav', 'navbar-nav') }}>
+      <ul role="menu"{{ attributes.addClass('list-inline', 'menu', 'nav', 'navbar-nav') }}>
     {% elseif menu_level == 1 %}
-      <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
+      <ul role="menu"{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
     {% else %}
-      <ul{{ attributes.addClass('dropdown-menu', menu_name) }}>
+      <ul role="menu"{{ attributes.addClass('dropdown-menu', menu_name) }}>
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass('expanded', 'dropdown') }}>
-        <a href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown">{{ item.title }}</a>
+        <li role="presentation"{{ item.attributes.addClass('expanded', 'dropdown') }}>
+        <a role="menuitem" href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown">{{ item.title }}</a>
       {% else %}
-        <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        <li role="presentation"{{ item.attributes }}>
+        {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}
         {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}

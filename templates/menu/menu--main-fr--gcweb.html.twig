@@ -33,9 +33,9 @@
         <ul role="menu" aria-orientation="vertical">
       {% endif %}
     {% elseif menu_level == 1 %}
-      <ul{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
+      <ul role="menu"{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
     {% else %}
-      <ul{{ attributes.addClass('dropdown-menu', menu_name) }}>
+      <ul role="menu"{{ attributes.addClass('dropdown-menu', menu_name) }}>
     {% endif %}
     {% for item in items %}
       {%
@@ -46,10 +46,10 @@
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass(item_classes) }} role="presentation">
-        <a href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown" role="menuitem">{{ item.title }}</a>
+        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
+        <a role="menuitem" href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown">{{ item.title }}</a>
       {% else %}
-        <li{{ item.attributes.addClass(item_classes) }} role="presentation">
+        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
         {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}

@@ -27,17 +27,17 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu', 'nav', 'navbar-nav') }}>
+      <ul role="menu"{{ attributes.addClass('menu', 'nav', 'navbar-nav') }}>
     {% else %}
-      <ul{{ attributes.addClass('dropdown-menu', menu_name) }}>
+      <ul role="menu"{{ attributes.addClass('dropdown-menu', menu_name) }}>
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass('expanded', 'dropdown') }}>
-        <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <span class="caret"></span></a>
+        <li role="presentation"{{ item.attributes.addClass('expanded', 'dropdown') }}>
+        <a role="menuitem" href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <span class="caret"></span></a>
       {% else %}
-        <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        <li role="presentation"{{ item.attributes }}>
+        {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}
         {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}

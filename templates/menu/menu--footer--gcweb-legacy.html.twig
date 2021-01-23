@@ -27,10 +27,10 @@
   {% import _self as menus %}
   {% if items %}
     {% if gcweb.footer %}
-     <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+     <ul role="menu" class="list-unstyled colcount-sm-2 colcount-md-3">
     {% endif %}
     {% if menu_level != 0 %}
-      <ul{{ attributes.addClass('list-unstyled') }}>
+      <ul role="menu"{{ attributes.addClass('list-unstyled') }}>
     {% endif %}
     {% for item in items %}
       {# default menu handling #}
@@ -38,8 +38,8 @@
         <section{{ item.attributes.addClass('col-sm-3') }}>
         <h3>{{ item.title }}</h3>
       {% else %}
-        <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        <li role="presentation"{{ item.attributes }}>
+        {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}
         {{ menus.menu_links(item.below, attributes.removeClass('nav'), menu_level + 1, library_path, gcweb, language) }}

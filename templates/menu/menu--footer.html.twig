@@ -27,15 +27,15 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level != 0 %}
-      <ul{{ attributes.addClass('list-unstyled') }}>
+      <ul role="menu"{{ attributes.addClass('list-unstyled') }}>
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
         <section{{ item.attributes.addClass('col-sm-3') }}>
         <h3>{{ item.title }}</h3>
       {% else %}
-        <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        <li role="presentation"{{ item.attributes }}>
+        {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}
         {{ menus.menu_links(item.below, attributes.removeClass('nav'), menu_level + 1, menu_name) }}
