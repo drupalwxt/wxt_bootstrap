@@ -50,3 +50,23 @@ function wxt_bootstrap_preprocess_page(&$variables) {
     $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
   }
 }
+
+/**
+ * Implements hook_preprocess_block.
+ */
+function wxt_bootstrap_preprocess_block(&$variables) {
+  $plugin_id = $variables['elements']['#plugin_id'];
+
+  if ($plugin_id == 'system_branding_block') {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    if ($language == 'en') {
+      $variables['language_opposite'] = 'fr';
+      $variables['label_opposite'] = 'Gouvernement du Canada';
+    }
+    elseif ($language == 'fr') {
+      $variables['language_opposite'] = 'en';
+      $variables['label_opposite'] = 'Government of Canada';
+    }
+  }
+}
