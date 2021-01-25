@@ -24,9 +24,4 @@ settings:
     facebook: facebook
     gmail: gmail
     twitter: twitter
-visibility:
-  panels_title:
-    id: panels_title
-    enabled: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }
