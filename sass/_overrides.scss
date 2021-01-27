@@ -100,3 +100,21 @@ ol, ul {
     }
   }
 }
+
+// Fix search bar
+#wb-srch {
+  input {
+    width: 100%;
+    max-width: unset;
+  }
+
+  .form-group {
+    display: block;
+  }
+
+  .submit {
+    position: absolute;
+    right: 0px;
+    top: 1em;
+  }
+}

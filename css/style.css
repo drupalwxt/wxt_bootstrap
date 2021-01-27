@@ -608,6 +608,21 @@ ol, ul {
     vertical-align: bottom;
     line-height: normal; } }
 
+#wb-srch input {
+  width: 100%;
+  max-width: unset;
+}
+
+#wb-srch .form-group {
+  display: block;
+}
+
+#wb-srch .submit {
+  position: absolute;
+  right: 0px;
+  top: 1em;
+}
+
 body {
   margin-top: 0px !important; }
   body.theme-gcwu-fegc.toolbar-tray-open {
