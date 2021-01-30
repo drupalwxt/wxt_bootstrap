@@ -608,16 +608,16 @@ ol, ul {
     vertical-align: bottom;
     line-height: normal; } }
 
-#wb-srch input {
+.theme-gcweb #wb-srch input {
   width: 100%;
   max-width: unset;
 }
 
-#wb-srch .form-group {
+.theme-gcweb #wb-srch .form-group {
   display: block;
 }
 
-#wb-srch .submit {
+.theme-gcweb #wb-srch .submit {
   position: absolute;
   right: 0px;
   top: 1em;

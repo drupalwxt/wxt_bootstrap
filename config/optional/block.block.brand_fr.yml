@@ -8,15 +8,15 @@ dependencies:
     - system
   theme:
     - wxt_bootstrap
-id: brand
+id: brand_fr
 theme: wxt_bootstrap
 region: branding
 weight: 0
 provider: null
-plugin: 'system_menu_block:brand'
+plugin: 'system_menu_block:brand_fr'
 settings:
-  id: 'system_menu_block:brand'
-  label: Brand
+  id: 'system_menu_block:brand_fr'
+  label: 'Marque du site'
   provider: system
   label_display: visible
   level: 1
@@ -26,7 +26,7 @@ visibility:
   language:
     id: language
     langcodes:
-      en: en
+      fr: fr
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'

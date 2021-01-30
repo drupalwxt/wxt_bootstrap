@@ -144,6 +144,12 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
         }
         break;
 
+      case 'region':
+        if (isset($variables['elements']['#region'])) {
+          $suggestions[] = $variables['theme_hook_original'] . '__' .$variables['elements']['#region'] . '__' . $wxt_active;
+        }
+        break;
+
       case 'table':
         $node = \Drupal::routeMatch()->getParameter('node');
         if (is_object($node)) {

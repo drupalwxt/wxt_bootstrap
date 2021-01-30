@@ -2,31 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.brand
+    - system.menu.footer
   module:
     - language
     - system
   theme:
     - wxt_bootstrap
-id: brand
+id: wxt_bootstrap_footer_fr
 theme: wxt_bootstrap
-region: branding
+region: footer
 weight: 0
 provider: null
-plugin: 'system_menu_block:brand'
+plugin: 'system_menu_block:footer_fr'
 settings:
-  id: 'system_menu_block:brand'
-  label: Brand
+  id: 'system_menu_block:footer_fr'
+  label: 'Pied de page'
   provider: system
-  label_display: visible
+  label_display: '0'
   level: 1
   depth: 0
-  expand_all_items: false
 visibility:
   language:
     id: language
     langcodes:
-      en: en
+      fr: fr
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
