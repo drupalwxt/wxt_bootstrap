@@ -114,7 +114,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <main role="main" property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
+      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
 
       {# Header #}
       {% if page.header %}
@@ -209,7 +209,7 @@
 
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" role="contentinfo" data-ajax-append="{{ gcweb_cdn_footer_url }}{{ language }}.html .brand">
+    <footer id="wb-info" data-ajax-append="{{ gcweb_cdn_footer_url }}{{ language }}.html .brand">
       <div class="landscape" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html .wb-navcurr"></div>
     </footer>
   {% else %}

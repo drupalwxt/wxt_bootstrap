@@ -69,7 +69,7 @@
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
       ]
     %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
       <div id="wb-bnr">
         <div id="wb-bar">
           <div class="container">
@@ -133,7 +133,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <main role="main" property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', 'js-quickedit-main-content') }}>
+      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', 'js-quickedit-main-content') }}>
 
       {# Header #}
       {% if page.header %}
@@ -215,16 +215,16 @@
 
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" role="contentinfo" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html"></footer>
+    <footer id="wb-info" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html"></footer>
   {% endif %}
   {% block footer %}
-    <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info" role="contentinfo">
+    <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info">
       <div class="{{ container }}">
         {{ page.footer }}
       </div>
       <div id="gc-info">
         <div class="container">
-          <nav role="navigation">
+          <nav>
           <h2>{{ 'Government of Canada footer'|t }}</h2>
             <ul class="list-inline">
               <li id="canada-ca"><a href="http://www.canada.ca/{{ language }}/index.html">Canada.ca</a></li>

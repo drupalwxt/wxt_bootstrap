@@ -69,7 +69,7 @@
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
       ]
     %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
       <div id="wb-bnr">
         <div id="wb-bar">
           <div class="container">
@@ -136,7 +136,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <main role="main" property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
+      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
 
       {# Header #}
       {% if page.header %}
@@ -218,7 +218,7 @@
 
 {% if page.footer %}
   {% block footer %}
-    <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info" role="contentinfo">
+    <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info">
       <div class="{{ container }}">
         {{ page.footer }}
       </div>

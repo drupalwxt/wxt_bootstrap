@@ -69,7 +69,7 @@
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
       ]
     %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
       <div id="wb-bnr" class="{{ container }}">
         <section id="wb-lng" class="visible-md visible-lg text-right">
           <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
@@ -141,7 +141,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <main role="main" property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
+      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
 
       {# Header #}
       {% if page.header %}
@@ -236,10 +236,10 @@
 
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" role="contentinfo" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
+    <footer id="wb-info" data-ajax-replace="{{ gcweb_cdn_footer_url }}"></footer>
   {% else %}
     {% block footer %}
-      <footer id="wb-info" role="contentinfo">
+      <footer id="wb-info">
         <div class="{{ container }}">
           {{ page.footer }}
         </div>
