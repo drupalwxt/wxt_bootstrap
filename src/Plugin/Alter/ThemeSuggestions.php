@@ -146,7 +146,7 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
 
       case 'region':
         if (isset($variables['elements']['#region'])) {
-          $suggestions[] = $variables['theme_hook_original'] . '__' .$variables['elements']['#region'] . '__' . $wxt_active;
+          $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#region'] . '__' . $wxt_active;
         }
         break;
 
