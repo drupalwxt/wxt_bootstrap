@@ -210,8 +210,8 @@ html.js .ajax-new-content:empty {
  * Form styles.
  */
 .form-type-select label.control-label {
-  width: 100%;
-}
+  width: 100%; }
+
 .select-wrapper {
   display: inline-block;
   position: relative;
@@ -610,18 +610,15 @@ ol, ul {
 
 .theme-gcweb #wb-srch input {
   width: 100%;
-  max-width: unset;
-}
+  max-width: unset; }
 
 .theme-gcweb #wb-srch .form-group {
-  display: block;
-}
+  display: block; }
 
 .theme-gcweb #wb-srch .submit {
   position: absolute;
   right: 0px;
-  top: 1em;
-}
+  top: 1em; }
 
 body {
   margin-top: 0px !important; }
@@ -866,6 +863,9 @@ ul.js-facets-checkbox-links {
   margin-right: -4px;
   min-width: 246px;
   position: relative; }
+
+.search-api #views-bootstrap-search-content-page-1 .panel {
+  margin-bottom: 1.5em; }
 
 .zbra div.brdr-tp:nth-child(odd) {
   background: #eee; }

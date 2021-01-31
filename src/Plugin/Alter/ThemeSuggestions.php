@@ -85,6 +85,14 @@ class ThemeSuggestions extends BootstrapThemeSuggestions {
           $suggestions[] = 'form__wxt_search_block_form';
           $suggestions[] = 'form__wxt_search_block_form__' . $wxt_active;
         }
+        if ($variables['element']['#form_id'] == 'wxt_search_api_block_form') {
+          $suggestions[] = 'form__wxt_search_api_block_form';
+          $suggestions[] = 'form__wxt_search_api_block_form__' . $wxt_active;
+        }
+        if ($variables['element']['#form_id'] == 'wxt_search_canada_block_form') {
+          $suggestions[] = 'form__wxt_search_canada_block_form';
+          $suggestions[] = 'form__wxt_search_canada_block_form__' . $wxt_active;
+        }
         break;
 
       case 'media':

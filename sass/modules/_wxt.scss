@@ -111,6 +111,14 @@
     position: relative
 }
 
+.search-api {
+  #views-bootstrap-search-content-page-1 {
+    .panel {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
 .zbra div.brdr-tp {
   &:nth-child(odd) {
     background: #eee;
