@@ -280,6 +280,16 @@ html.js .ajax-new-content:empty {
   color: #000;
   font-size: 100%; }
 
+#edit-initial-page {
+  margin-bottom: 0px; }
+  #edit-initial-page .h5 {
+   font-size: 1em; }
+
+.webform-confirmation__message {
+  margin-bottom: 0px; }
+  .webform-confirmation__message .h3 {
+    font-weight: normal; }
+
 /**
  * Icon styles.
  */
