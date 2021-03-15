@@ -144,3 +144,14 @@
 .display-inline {
   display:inline;
 }
+
+/* Layout Builder */
+
+#drupal-off-canvas *:not(div), #drupal-off-canvas *:not(svg *),
+#drupal-off-canvas *:after, #drupal-off-canvas *:before {
+  all: revert;
+}
+
+.ui-dialog.ui-dialog-off-canvas {
+  background: #efefef;
+}
