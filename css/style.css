@@ -898,6 +898,3 @@ ul.js-facets-checkbox-links {
 #drupal-off-canvas *:not(div), #drupal-off-canvas *:not(svg *),
 #drupal-off-canvas *:after, #drupal-off-canvas *:before {
   all: revert; }
-
-.ui-dialog.ui-dialog-off-canvas {
-  background: #efefef; }
