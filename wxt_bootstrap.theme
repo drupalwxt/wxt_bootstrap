@@ -70,3 +70,16 @@ function wxt_bootstrap_preprocess_block(&$variables) {
     }
   }
 }
+
+
+/**
+ * Implements hook_preprocess_block.
+ */
+function wxt_bootstrap_preprocess_input__button(&$vars) {
+  if (isset($vars['attributes'])) {
+    $attrObj = $vars['attributes'];
+    if ($attrObj->offsetExists('id') == 'wb-srch-sub') {
+      $attrObj->setAttribute('title', t('Search'));
+    }
+  }
+}
