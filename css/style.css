@@ -742,6 +742,12 @@ header.navbar-default {
   #wb-info .ftr-urlt-lnk .contextual ul li a {
     font-size: small; }
 
+.contextual-links a {
+  color: #000; }
+
+.contextual-links a:hover {
+  background-color: #f1f1f1; }
+
 ul.js-facets-checkbox-links {
   list-style-type: none;
   padding-left: 0px; }
