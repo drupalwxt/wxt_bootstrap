@@ -48,7 +48,7 @@ You can easily retrieve these dependencies via composer:
 composer require drupal/wxt_bootstrap
 ```
 
-> Note: We heavily recommend that you use the distribution method. 
+> Note: We heavily recommend that you use the distribution method.
 > Limited support is provided for standalone.
 >
 > * Extra configuration of WxT components and additional custom plugins
@@ -62,8 +62,12 @@ set it to be the default active theme in Drupal.
 
 ## Sub-Theming
 
-We provide a starterkit under the `starterkits` folder that contains the 
+We provide a starterkit under the `starterkits` folder that contains the
 template for inheriting from `wxt_bootstrap`.
+
+> Note: In order for your new sub-theme to inherit styles (and maybe other things)
+> from the wxt_bootstrap base theme you need to select your new sub-theme under the
+> Theme Visibility settings (`/admin/config/wxt/wxt_library`).
 
 ## Sass Compilation
 
