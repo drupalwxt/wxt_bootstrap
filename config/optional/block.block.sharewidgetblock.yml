@@ -21,7 +21,18 @@ settings:
   provider: wxt_library
   label_display: '0'
   share_widget:
+    blogger: blogger
+    diigo: diigo
+    email: email
     facebook: facebook
     gmail: gmail
+    linkedin: linkedin
+    myspace: myspace
+    pinterest: pinterest
+    reddit: reddit
+    tinyurl: tinyurl
+    tumblr: tumblr
     twitter: twitter
+    whatsapp: whatsapp
+    yahoomail: yahoomail
 visibility: {  }
