@@ -71,7 +71,6 @@ function wxt_bootstrap_preprocess_block(&$variables) {
   }
 }
 
-
 /**
  * Implements hook_preprocess_block.
  */
