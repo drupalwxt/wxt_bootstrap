@@ -28,21 +28,13 @@ class Html extends PreprocessBase {
 
     // Assign skip link variables.
     $variables['wxt_skip_link_primary'] = $this->theme->getSetting('wxt_skip_link_primary');
-    if (empty($this->theme->getSetting('wxt_skip_link_primary_text'))) {
-      // We cannot pass an empty string into the $this->t() function.
-      $variables['wxt_skip_link_primary_text'] = '';
-    }
-    else {
-      $variables['wxt_skip_link_primary_text'] = t($this->theme->getSetting('wxt_skip_link_primary_text'));
-    }
+    // For some reason getSetting sometimes returns an object.
+    // Cast to (string) to make sure t() can handle it.
+    $variables['wxt_skip_link_primary_text'] = $this->t((string)$this->theme->getSetting('wxt_skip_link_primary_text'));
     $variables['wxt_skip_link_secondary'] = $this->theme->getSetting('wxt_skip_link_secondary');
-    if (empty($this->theme->getSetting('wxt_skip_link_secondary_text'))) {
-      // We cannot pass an empty string into the $this->t() function.
-      $variables['wxt_skip_link_secondary_text'] = '';
-    }
-    else {
-      $variables['wxt_skip_link_secondary_text'] = t($this->theme->getSetting('wxt_skip_link_secondary_text'));
-    }
+    // For some reason getSetting sometimes returns an object.
+    // Cast to (string) to make sure t() can handle it.
+    $variables['wxt_skip_link_secondary_text'] = $this->t((string)$this->theme->getSetting('wxt_skip_link_secondary_text'));
 
     parent::preprocess($variables, $hook, $info);
   }
