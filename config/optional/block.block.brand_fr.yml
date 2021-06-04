@@ -16,7 +16,7 @@ provider: null
 plugin: 'system_menu_block:brand_fr'
 settings:
   id: 'system_menu_block:brand_fr'
-  label: 'Marque du site'
+  label: 'À propos de ce site'
   provider: system
   label_display: visible
   level: 1
