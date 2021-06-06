@@ -21,9 +21,6 @@ class Search extends BootstrapSearch {
   public static function processElement(Element $element, FormStateInterface $form_state, array &$complete_form) {
     $element->setProperty('title_display', 'invisible');
     $element->setAttribute('placeholder', $element->getProperty('placeholder', $element->getProperty('title', t('Search'))));
-    if (!$element->hasProperty('description')) {
-      $element->setProperty('description', t('Enter the terms you wish to search for.'));
-    }
     if ($complete_form['#form_id'] == 'wxt_search_api_block_form') {
       unset($complete_form['form_id']);
       unset($complete_form['form_build_id']);

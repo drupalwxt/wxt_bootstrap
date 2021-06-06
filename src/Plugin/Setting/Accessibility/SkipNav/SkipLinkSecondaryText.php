@@ -13,7 +13,7 @@ use Drupal\bootstrap\Plugin\Setting\SettingBase;
  *   id = "wxt_skip_link_secondary_text",
  *   type = "textfield",
  *   title = @Translation("Text for the secondary ""skip link"""),
- *   defaultValue = @Translation("Skip to ""About this site"""),
+ *   defaultValue = @Translation("Skip to ""About government"""),
  *   description = @Translation("For example: <em>Jump to navigation</em>, <em>Skip to content</em>"),
  *   groups = {
  *     "accessibility" = @Translation("Accessibility"),
