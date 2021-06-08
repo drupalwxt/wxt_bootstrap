@@ -69,6 +69,27 @@ function wxt_bootstrap_preprocess_block(&$variables) {
       $variables['label_opposite'] = 'Government of Canada';
     }
   }
+
+  if ($plugin_id == 'book_navigation') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+      // used to prepend book title to page title
+      if (isset($node->book) && !empty($node->book) && $node->book['bid'] != $node->id()) {
+        $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
+
+        if ($book) {
+          if ($book->hasTranslation($langcode)) {
+            $book = $book->getTranslation($langcode);
+          }
+
+          $variables['book_title'] = $book->getTitle();
+        }
+      }
+    }
+  }
 }
 
 /**
