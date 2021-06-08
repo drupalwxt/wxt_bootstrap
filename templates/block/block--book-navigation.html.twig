@@ -52,10 +52,10 @@
 %}
 {% if book_title %}
   <h1 id="gc-document-nav" class="wb-inv">{{ book_title }}</h1>
-{% endif %}
 
-<section{{ attributes.addClass(classes) }}>
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</section>
+	<section{{ attributes.addClass(classes) }}>
+	  {% block content %}
+	    {{ content }}
+	  {% endblock %}
+	</section>
+{% endif %}
