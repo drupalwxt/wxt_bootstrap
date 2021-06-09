@@ -38,7 +38,11 @@
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        {% if item.in_active_trail %}
+          {{ link(item.title, item.url, { 'class':['active']}) }}
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
         {% if item.below %}
           {{ book_tree.book_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
