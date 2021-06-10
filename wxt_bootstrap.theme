@@ -85,7 +85,7 @@ function wxt_bootstrap_preprocess_block(&$variables) {
     if ($node instanceof \Drupal\node\NodeInterface) {
       $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-      // used to prepend book title to page title
+      // Used to prepend book title to page title
       if (isset($node->book) && !empty($node->book) && $node->book['bid'] != $node->id()) {
         $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
