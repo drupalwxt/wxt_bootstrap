@@ -42,7 +42,7 @@
     <nav class="mrgn-bttm-lg mrgn-tp-lg">
       <h3 class="wb-inv">{{ "Document navigation"|t }}</h3>
       <ul class="pager">
-      {% if prev_url %}
+      {% if prev_url and prev_url != book_url%}
         <li class="previous">
           <a href="{{ prev_url }}" rel="prev">{{ prev_title }}</a>
         </li>
