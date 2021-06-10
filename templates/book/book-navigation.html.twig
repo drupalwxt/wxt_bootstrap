@@ -38,20 +38,22 @@
     </section>
   </div>
 {% elseif has_links %}
-  <nav class="mrgn-bttm-lg mrgn-tp-lg">
-    <h3 class="wb-inv">{{ "Document navigation"|t }}</h3>
-    <ul class="pager">
-    {% if prev_url %}
-      <li class="previous">
-        <a href="{{ prev_url }}" rel="prev">{{ prev_title }}</a>
-      </li>
-    {% endif %}
+  <div class="provisional gc-subway-section">
+    <nav class="mrgn-bttm-lg mrgn-tp-lg">
+      <h3 class="wb-inv">{{ "Document navigation"|t }}</h3>
+      <ul class="pager">
+      {% if prev_url %}
+        <li class="previous">
+          <a href="{{ prev_url }}" rel="prev">{{ prev_title }}</a>
+        </li>
+      {% endif %}
 
-    {% if next_url %}
-      <li class="next">
-        <a href="{{ next_url }}" rel="next">{{ next_title }}</a>
-      </li>
-    {% endif %}
-    </ul>
-  </nav>
+      {% if next_url %}
+        <li class="next">
+          <a href="{{ next_url }}" rel="next">{{ next_title }}</a>
+        </li>
+      {% endif %}
+      </ul>
+    </nav>
+  </div>
 {% endif %}
