@@ -46,6 +46,10 @@
         {% if item.below %}
           {{ book_tree.book_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
+        {% if item.summary %}
+          <br>
+          {{ item.summary }}
+        {% endif %}
       </li>
     {% endfor %}
     </ul>

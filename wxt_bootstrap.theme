@@ -160,3 +160,17 @@ function wxt_bootstrap_preprocess_input(&$variables) {
     $variables['search_submit'] = 'false';
   }
 }
+
+/**
+ * Implements hook_preprocess_input().
+ */
+function wxt_bootstrap_preprocess_book_navigation(&$variables) {
+  if (!empty($variables['tree']['#items'])) {
+    foreach ($variables['tree']['#items'] as $nid => &$item) {
+      $book_page =  \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+      $summary = $book_page->get('body')->getValue()[0]['summary'];
+
+      $item['summary'] = $summary;
+    }
+  }
+}
