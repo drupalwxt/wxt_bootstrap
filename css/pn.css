@@ -1,0 +1,178 @@
+@charset "utf-8";
+/*Navigation list  */
+ul.gcnav-steps {
+	list-style: none;
+	padding-left: 0.57em;
+	position: relative;
+	margin-top: 0.325em;
+}
+ul.gcnav-steps li ul.gcnav-steps {
+	margin-top: 20px;
+	padding-left: 0.55em;
+}
+/*border-right-width is for safari or apple browsers only */
+ul.gcnav-steps>li {
+	border-left: 4px solid #26374a;
+	padding: 0px 20px 30px 1em;
+	margin-top: -0.325em;
+	border-right-width: 0px;
+}
+ul.gcnav-steps>li:first-child {
+	border-left: 4px solid #26374a;
+	-o-border-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 0.4em, #26374a 0.4em, #26374a 0.4em) 1 100%;
+	border-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 0.4em, #26374a 0.4em, #26374a 0.4em) 1 100%;
+}
+ul.gcnav-steps>li ul.gcnav-steps.noline>li {
+	border-left: 4px solid transparent;
+	border-image: none;
+}
+ul.gcnav-steps>li:last-child, ul.gcnav-steps>li.gcnav-steps-end {
+	border-left: 4px solid transparent;
+}
+ul.gcnav-steps li ul.gcnav-steps>li:last-child {
+	padding-bottom: 0px;
+}
+ul.gcnav-steps>li>:first-child::before {
+	border-radius: 50%;
+	border: 3px solid #26374a;
+	background-color: #fff;
+	position: absolute;
+	left: 0.05em;
+	content: "";
+	width: 1.2em;
+	height: 1.2em;
+	transition: width 0.2s, height 0.2s, left 0.2s, margin-top 0.2s;
+	margin-top: 0.325em;
+}
+ul.gcnav-steps>li.active>:first-child::before {
+	background-color: #26374a;
+}
+ul.gcnav-steps>li>a[href]:hover::before, .gcnav-steps>li>a[href]:focus::before {
+	width: 1.4em;
+	height: 1.4em;
+	left: -0.05em;
+	margin-top: 0.225em;
+}
+ul.gcnav-steps>li ul.gcnav-steps.noline>li.active::before {
+	content: " ";
+	height: 4px;
+	width: 1.6em;
+	background-color: #26374a;
+	position: absolute;
+	margin-left: -2.8em;
+	margin-top: 0.825em;
+}
+/*Persistant navigation pattern default mobile */
+.gcnav .gcnav-menu h1#wb-cont-parent {
+	border-bottom-width: 0px;
+	padding: 0px 20px 10px 0px;
+	background-color: #fff;
+	display: inline-block;
+	font-size: 1.3em;
+	color: #555;
+	margin-top: -19px;
+	float: left;
+	margin-right: 20px;
+}
+.gcnav .gcnav-menu {
+	border-top: 4px solid #26374a;
+	border-right: 4px solid #26374a;
+	border-radius: 0px 6px 6px 0px;
+	margin-top: 38px;
+}
+.gcnav .gcnav-menu ul.gcnav-steps {
+	padding-top: 10px;
+	clear: both;
+}
+.gcnav .gcnav-menu ul.gcnav-steps>li:last-child {
+	border-left: 4px solid #26374a;
+	border-bottom: 4px solid #26374a;
+	border-bottom-left-radius: 6px;
+}
+.gcnav .gcnav-menu ul.gcnav-steps>li ul.gcnav-steps>li:last-child {
+	border-left: 4px solid transparent;
+	border-bottom: 0px;
+}
+.gcnav .gcnav-menu nav, .gcnav aside.gcnav-side {
+	clear: left;
+}
+.gcnav>h1#wb-cont {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+/*Header for navigation menu hidden in mobile except on focus*/
+@media all and (max-width:991px) {
+.gcnav .gcnav-menu #gcnav-menu-header:not(:focus) {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+}
+/* Persistant navigation desktop */
+@media all and (min-width:992px) {
+.gcnav {
+	margin: 38px -15px 0px -15px;
+}
+.gcnav::after {
+	clear: both;
+}
+.gcnav::after, .gcnav::before {
+	content: " ";
+	display: table;
+}
+.gcnav .gcnav-menu h1#wb-cont-parent {
+	font-weight: inherit;
+	padding-bottom: 0px!important;
+	margin-bottom: 0px;
+	font-size: 1.52em;
+}
+.gcnav .gcnav-menu, .gcnav .gcnav-menu h1#wb-cont-parent, .gcnav h1#wb-cont {
+	margin-top: 0px;
+}
+.gcnav .gcnav-menu h1#wb-cont-parent, .gcnav .gcnav-section {
+	width: 66.66%;
+}
+.gcnav .gcnav-menu nav, .gcnav aside.gcnav-side, .gcnav .gcnav-side {
+	width: 33.33%;
+	float: right;
+}
+.gcnav .gcnav-section {
+	display: inline-block;
+}
+.gcnav .gcnav-menu nav {
+	margin-top: -20px;
+}
+.gcnav .gcnav-menu h1#wb-cont-parent, .gcnav .gcnav-section, .gcnav .gcnav-menu nav, .gcnav aside.gcnav-side, .gcnav .gcnav-side {
+	position: relative;
+	min-height: 1px;
+	padding: 0px 15px 0px 15px;
+}
+.gcnav .gcnav-menu h1#wb-cont-parent {
+	float: left;
+}
+.gcnav aside.gcnav-side {
+	clear: right;
+}
+.gcnav .gcnav-menu #gcnav-menu-header {
+	margin-top: 0px;
+}
+.gcnav #gcnav-menu-header {
+	font-size: 1.2em;
+	display: inherit;
+}
+.gcnav .gcnav-menu {
+	border-top: 0px;
+	border-right: 0px;
+}
+.gcnav .gcnav-menu ul.gcnav-steps>li:last-child {
+	border-left: 4px solid transparent;
+	border-bottom: 0px;
+}
+}
+ul.gcnav-steps>li ul.gcnav-steps>li.active::before {
+	margin-left: -2.75em;
+}
+}
