@@ -49,6 +49,15 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   elseif ($language == 'fr') {
     $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
   }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $variables['is_book'] = FALSE;
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if (isset($node->book) && !empty($node->book)) {
+      $variables['is_book'] = TRUE;
+    }
+  }
 }
 
 /**
