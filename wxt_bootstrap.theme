@@ -162,7 +162,7 @@ function wxt_bootstrap_preprocess_input(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_input().
+ * Implements hook_preprocess_book_navigation().
  */
 function wxt_bootstrap_preprocess_book_navigation(&$variables) {
   if (!empty($variables['tree']['#items'])) {
@@ -171,6 +171,22 @@ function wxt_bootstrap_preprocess_book_navigation(&$variables) {
       $summary = $book_page->get('body')->getValue()[0]['summary'];
 
       $item['summary'] = $summary;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_book_tree().
+ */
+function wxt_bootstrap_preprocess_book_tree(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node->book['bid'] == $node->id()) {
+      $variables['book_index'] = '1';
+    }
+    else {
+      $variables['book_index'] = '0';
     }
   }
 }
