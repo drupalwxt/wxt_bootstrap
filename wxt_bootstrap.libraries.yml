@@ -2,7 +2,6 @@ framework:
   css:
     theme:
       css/style.css: {}
-      css/pn.css: {}
   js:
     # js/bootstrap/affix.js: {}
     js/bootstrap/alert.js: {}
