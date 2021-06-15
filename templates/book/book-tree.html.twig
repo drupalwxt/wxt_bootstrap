@@ -17,7 +17,6 @@
  *     that are not currently visible.
  *   - in_active_trail: TRUE if the link is in the active trail.
  *   - summary: Summary from body field of book page
-  * - book_index: If the current page is the book index page
  *
  * @ingroup themeable
  */
@@ -28,21 +27,13 @@
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ book_tree.book_links(items, attributes, 0, book_index) }}
+{{ book_tree.book_links(items, attributes, 0) }}
 
-{% macro book_links(items, attributes, menu_level, book_index) %}
+{% macro book_links(items, attributes, menu_level) %}
   {% import _self as book_tree %}
   {% if items %}
-    {% if book_index == '1' %}
-      <dl>
-    {% else %}
-      <ul{{ attributes.addClass('gcnav-steps') }}>
-    {% endif %}
-    {% for item in items %}
-      {% if book_index == '1' %}
-        <dt>{{ link(item.title, item.url) }}</dt>
-        <dd>{{ item.summary }}</dd>
-      {% else %}
+    <ul{{ attributes.addClass('gcnav-steps') }}>
+      {% for item in items %}
         <li{{ item.attributes }}>
           {% if item.in_active_trail %}
             {{ link(item.title, item.url, { 'class':['active']}) }}
@@ -50,19 +41,14 @@
             {{ link(item.title, item.url) }}
           {% endif %}
           {% if item.below %}
-            {{ book_tree.book_links(item.below, attributes, menu_level + 1, book_index) }}
+            {{ book_tree.book_links(item.below, attributes, menu_level + 1) }}
           {% endif %}
           {% if item.summary %}
             <br>
             {{ item.summary }}
           {% endif %}
         </li>
-      {% endif %}
-    {% endfor %}
-    {% if book_index == '1' %}
-      </dl>
-    {% else %}
-      </ul>
-    {% endif %}
+      {% endfor %}
+    </ul>
   {% endif %}
 {% endmacro %}

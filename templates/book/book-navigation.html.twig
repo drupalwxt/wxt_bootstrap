@@ -31,10 +31,12 @@
  */
 #}
 {% if tree %}
-  <nav class="provisional gc-subway no-blink p-0 no-lines">
-    <h2>{{ "Sections"|t }}</h2>
-    {{ tree }}
-  </nav>
+  <div class="gcnav-index">
+    <section class="gcnav-section">
+      <h2>{{ "Sections"|t }}</h2>
+      {{ tree }}
+    </section>
+  </div>
 {% elseif has_links %}
   <div class="provisional gc-subway-section">
     <nav class="mrgn-bttm-lg mrgn-tp-lg">
