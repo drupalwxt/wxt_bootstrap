@@ -83,13 +83,13 @@ function wxt_bootstrap_preprocess_block(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');
 
     if ($node instanceof \Drupal\node\NodeInterface) {
-      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
       // Used to prepend book title to page title
       if (isset($node->book) && !empty($node->book) && $node->book['bid'] != $node->id()) {
         $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
         if ($book) {
+          $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
           if ($book->hasTranslation($langcode)) {
             $book = $book->getTranslation($langcode);
           }
@@ -167,7 +167,13 @@ function wxt_bootstrap_preprocess_input(&$variables) {
 function wxt_bootstrap_preprocess_book_navigation(&$variables) {
   if (!empty($variables['tree']['#items'])) {
     foreach ($variables['tree']['#items'] as $nid => &$item) {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $book_page =  \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+
+      if ($book_page->hasTranslation($langcode)) {
+        $book_page = $book_page->getTranslation($langcode);
+      }
+
       $summary = $book_page->get('body')->getValue()[0]['summary'];
 
       $item['summary'] = $summary;
