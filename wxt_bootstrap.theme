@@ -54,7 +54,7 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   $variables['is_book'] = FALSE;
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if (isset($node->book) && !empty($node->book)) {
+    if ($node->bundle() == 'book') {
       $variables['is_book'] = TRUE;
     }
   }
