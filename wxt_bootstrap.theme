@@ -108,13 +108,13 @@ function wxt_bootstrap_preprocess_links(&$variables) {
   $links = &$variables['links'];
 
   foreach ($links as $id => &$link) {
-    if ($id == 'book_add_child') {
+    if ($id === 'book_add_child') {
       $link['link']['#options']['attributes']['class'][] = 'button button--primary btn-success btn icon-before';
       $link['attributes']->addClass('mrgn-tp-sm');
       $icon_class = 'glyphicon glyphicon-plus';
     }
 
-    if ($id == 'book_printer') {
+    if ($id === 'book_printer') {
       $link['link']['#options']['attributes']['class'][] = 'button btn-default btn icon-before';
       $link['attributes']->addClass('mrgn-tp-sm');
       $icon_class = 'glyphicon glyphicon-print';
