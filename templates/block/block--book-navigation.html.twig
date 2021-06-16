@@ -55,6 +55,7 @@
   <h1 id="gc-document-nav">{{ book_title }}</h1>
 
 	<nav{{ attributes.addClass(classes) }}>
+		<h2 id="gc-navseq-header" class="mrgn-tp-0 hidden-xs hidden-sm">{{ 'Sections'|t }}</h2>
 	  {% block content %}
 	    {{ content }}
 	  {% endblock %}

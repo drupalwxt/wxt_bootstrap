@@ -56,6 +56,14 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   if ($node instanceof \Drupal\node\NodeInterface) {
     if ($node->bundle() == 'book') {
       $variables['is_book'] = TRUE;
+
+      if (!empty($node->book['bid']) && $node->book['bid'] == $node->id()) {
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-index';
+      }
+      else {
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-index';
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-page';
+      }
     }
   }
 }
@@ -84,7 +92,7 @@ function wxt_bootstrap_preprocess_block(&$variables) {
 
     if ($node instanceof \Drupal\node\NodeInterface) {
       // Used to prepend book title to page title
-      if (isset($node->book) && !empty($node->book) && $node->book['bid'] != $node->id()) {
+      if ($node->bundle() == 'book' && $node->book['bid'] != $node->id()){
         $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
         if ($book) {
@@ -165,6 +173,15 @@ function wxt_bootstrap_preprocess_input(&$variables) {
  * Implements hook_preprocess_book_navigation().
  */
 function wxt_bootstrap_preprocess_book_navigation(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node->bundle() == 'book' && $node->book['bid'] == $node->id()) {
+      $variables['is_book_index'] = TRUE;
+    }
+  }
+
+
   if (!empty($variables['tree']['#items'])) {
     foreach ($variables['tree']['#items'] as $nid => &$item) {
       $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -179,4 +196,36 @@ function wxt_bootstrap_preprocess_book_navigation(&$variables) {
       $item['summary'] = $summary;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_book_tree().
+ */
+function wxt_bootstrap_preprocess_book_tree(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $active_nid = $node->id();
+    $variables['items'] = _book_is_active_item($variables['items'], $active_nid);
+  }
+}
+
+/**
+ * Recursive function to mark active item in hierarchy
+ */
+function _book_is_active_item(&$items, $active_nid) {
+  foreach ($items as $nid => &$item) {
+    if ($nid == $active_nid) {
+      $item['active'] = 'true';
+    }
+    else {
+      $item['active'] = 'false';
+    }
+
+    if (!empty($item['below'])) {
+      $item['below'] = _book_is_active_item($item['below'], $active_nid);
+    }
+  }
+
+  return $items;
 }

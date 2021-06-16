@@ -24,13 +24,14 @@
  * - book_url: The book/node URL of the current outline being viewed. Provided
  *   as an option. Not used by default.
  * - book_title: The book/node title of the current outline being viewed.
+ * - is_book_index: If the current book page is the book index
  *
  * @see template_preprocess_book_navigation()
  *
  * @ingroup themeable
  */
 #}
-{% if tree %}
+{% if tree and is_book_index %}
   <div class="gcnav-index">
     <section class="gcnav-section">
       <h2>{{ "Sections"|t }}</h2>

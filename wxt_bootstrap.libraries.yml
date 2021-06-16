@@ -2,7 +2,6 @@ framework:
   css:
     theme:
       css/style.css: {}
-      css/pn.css: {}
   js:
     # js/bootstrap/affix.js: {}
     js/bootstrap/alert.js: {}
@@ -18,6 +17,14 @@ framework:
     # js/bootstrap/transition.js: {}
   dependencies:
     - core/jquery
+book-index:
+  css:
+    theme:
+      css/book_index.css: {}
+book-page:
+  css:
+    theme:
+      css/book_page.css: {}
 
 drupal.wxt_bootstrap:
   js:

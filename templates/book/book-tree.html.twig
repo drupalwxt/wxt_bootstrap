@@ -32,17 +32,27 @@
 {% macro book_links(items, attributes, menu_level) %}
   {% import _self as book_tree %}
   {% if items %}
-    <ul{{ attributes.addClass('gcnav-steps') }}>
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('gc-navseq') }}>
+    {% else %}
+      <ul{{ attributes.addClass('noline') }}>
+    {% endif %}
       {% for item in items %}
-        <li{{ item.attributes }}>
-          {% if item.in_active_trail %}
+        {% if item.active == 'true' %}
+          <li{{ item.attributes.addClass('active') }}>
+        {% else %}
+          <li{{ item.attributes }}>
+        {% endif %}
+          {% if item.active == 'true' %}
             {{ link(item.title, item.url, { 'class':['active']}) }}
           {% else %}
             {{ link(item.title, item.url) }}
           {% endif %}
+
           {% if item.below %}
             {{ book_tree.book_links(item.below, attributes, menu_level + 1) }}
           {% endif %}
+
           {% if item.summary %}
             <br>
             {{ item.summary }}
