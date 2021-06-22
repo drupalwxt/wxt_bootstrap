@@ -54,7 +54,7 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   $variables['is_book'] = FALSE;
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if ($node->bundle() == 'book') {
+    if (!empty($node->book)) {
       $variables['is_book'] = TRUE;
 
       if (empty($node->book['bid']) || $node->book['bid'] == $node->id()) {
@@ -92,7 +92,7 @@ function wxt_bootstrap_preprocess_block(&$variables) {
 
     if ($node instanceof \Drupal\node\NodeInterface) {
       // Used to prepend book title to page title
-      if ($node->bundle() == 'book' && $node->book['bid'] != $node->id()){
+      if (!empty($node->book) && $node->book['bid'] != $node->id()){
         $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
         if ($book) {
@@ -176,7 +176,7 @@ function wxt_bootstrap_preprocess_book_navigation(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if ($node->bundle() == 'book' && $node->book['bid'] == $node->id()) {
+    if (!empty($node->book) && $node->book['bid'] == $node->id()) {
       $variables['is_book_index'] = TRUE;
     }
   }
