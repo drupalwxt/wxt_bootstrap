@@ -71,6 +71,9 @@ function wxt_bootstrap_preprocess_page(&$variables) {
 
       $variables['title'] = $node->getTitle();
 
+      $block_local_tasks = \Drupal::service('plugin.manager.block')->createInstance('local_tasks_block', []);
+      $variables['tabs'] = $block_local_tasks->build();
+
       if ($node->book['bid'] != $node->id()) {
         $config = [
           'label_display' => '0',
