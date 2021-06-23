@@ -15,7 +15,6 @@
  * - logged_in: A flag indicating if the user is registered and signed in.
  * - is_admin: A flag indicating if the user has permission to access
  *   administration pages.
- * - is_book: A flag indicating if the current page is a book page or not
  *
  * Site identity:
  * - front_page: The URL of the front page. Use this instead of base_path when
@@ -117,13 +116,6 @@
       %}
       <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
 
-      {# Header #}
-      {% if is_book == false and page.header %}
-        {% block header %}
-          {{ page.header }}
-        {% endblock %}
-      {% endif %}
-
       <section>
 
         {# Breadcrumbs #}
@@ -150,7 +142,20 @@
         {# Content #}
         {% block content %}
           <a id="main-content"></a>
-          {{ page.content }}
+          <section class="gc-nav">
+            <h1 id="gc-document-nav">{{ book_title }}</h1>
+            <nav aria-label="{{ 'Section menu'|t }}">
+              <h2 id="gc-navseq-header" class="mrgn-tp-0 hidden-xs hidden-sm">{{ 'Sections'|t }}</h2>
+              {{ book_navigation }}
+            </nav>
+          </section>
+
+          <section class="gc-nav-section experimental">
+            <h1 property="name" id="wb-cont" class="gc-thickline">{{ title }}</h1>
+            {{ tabs }}
+            {{ page.content }}
+          </section>
+
           {{ page.content_footer }}
         {% endblock %}
       </section>
