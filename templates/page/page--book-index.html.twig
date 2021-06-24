@@ -142,8 +142,14 @@
         {# Content #}
         {% block content %}
           <a id="main-content"></a>
-          <h1 property="name" id="wb-cont" class="gc-thickline">{{ title }}</h1>
-          {{ tabs }}
+
+          {# Header #}
+          {% if page.header %}
+            {% block header %}
+              {{ page.header }}
+            {% endblock %}
+          {% endif %}
+
           {{ page.content }}
           {{ page.content_footer }}
         {% endblock %}

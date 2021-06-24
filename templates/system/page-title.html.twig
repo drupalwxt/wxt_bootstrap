@@ -10,12 +10,18 @@
  * - title: The page title, for use in the actual content.
  * - title_suffix: Additional output populated by modules, intended to be
  *   displayed after the main title tag that appears in the template.
+ * - is_book: TRUE if current page is part of a book
  *
  * @ingroup templates
  *
  * @see template_preprocess_page_title()
  */
 #}
+
 {% if title %}
-  <h1{{ title_attributes }} id="wb-cont">{{ title }}</h1>
+  {% if is_book %}
+    <h1 property="name" id="wb-cont" class="gc-thickline">{{ title }}</h1>
+  {% else %}
+    <h1{{ title_attributes }} id="wb-cont">{{ title }}</h1>
+  {% endif %}
 {% endif %}
