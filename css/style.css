@@ -630,10 +630,6 @@ ol, ul {
   right: 0px;
   top: 1em; }
 
-.provisional.no-lines {
-  border-right: none;
-  border-top: none; }
-
 body {
   margin-top: 0px !important; }
   body.theme-gcwu-fegc.toolbar-tray-open {
