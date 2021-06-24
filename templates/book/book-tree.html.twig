@@ -16,6 +16,7 @@
  *   - is_collapsed: TRUE if the link has children within the current book tree
  *     that are not currently visible.
  *   - in_active_trail: TRUE if the link is in the active trail.
+ *   - active: TRUE if menu item is active
  *   - summary: Summary from body field of book page
  *
  * @ingroup themeable
@@ -38,12 +39,12 @@
       <ul{{ attributes.addClass('noline') }}>
     {% endif %}
       {% for item in items %}
-        {% if item.active == 'true' %}
+        {% if item.active %}
           <li{{ item.attributes.addClass('active') }}>
         {% else %}
           <li{{ item.attributes }}>
         {% endif %}
-          {% if item.active == 'true' %}
+          {% if item.active %}
             {{ link(item.title, item.url, { 'class':['active']}) }}
           {% else %}
             {{ link(item.title, item.url) }}

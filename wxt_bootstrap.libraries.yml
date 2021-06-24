@@ -17,7 +17,7 @@ framework:
     # js/bootstrap/transition.js: {}
   dependencies:
     - core/jquery
-book-index:
+book-base:
   css:
     theme:
       css/book_index.css: {}

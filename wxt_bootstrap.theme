@@ -49,51 +49,6 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   elseif ($language == 'fr') {
     $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
   }
-
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $variables['is_book'] = FALSE;
-
-  if ($node instanceof \Drupal\node\NodeInterface) {
-    if (!empty($node->book)) {
-      $variables['is_book'] = TRUE;
-
-      if (empty($node->book['bid']) || $node->book['bid'] == $node->id()) {
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-index';
-      }
-      else {
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-index';
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-page';
-      }
-
-      if ($node->hasTranslation($language)) {
-        $node = $node->getTranslation($language);
-      }
-
-      $variables['title'] = $node->getTitle();
-
-      $block_local_tasks = \Drupal::service('plugin.manager.block')->createInstance('local_tasks_block', []);
-      $variables['tabs'] = $block_local_tasks->build();
-
-      if ($node->book['bid'] != $node->id()) {
-        $config = [
-          'label_display' => '0',
-          'block_mode' => 'book pages'
-        ];
-
-        $block = \Drupal::service('plugin.manager.block')->createInstance('book_navigation', $config);
-        $variables['book_navigation'] = $block->build();
-
-        $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
-
-        if ($book->hasTranslation($language)) {
-          $book = $book->getTranslation($language);
-        }
-
-        $book_title = $book->getTitle();
-        $variables['book_title'] = $book_title;
-      }
-    }
-  }
 }
 
 /**
@@ -105,11 +60,11 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
   if ($node instanceof \Drupal\node\NodeInterface) {
     if (!empty($node->book)) {
       if ($node->book['bid'] == $node->id()) {
-        // Book index page
+        // Theme book index page
         $suggestions[] = $variables['theme_hook_original'] . '__book_index';
       }
       else {
-        // Book child page
+        // Theme book child page
         $suggestions[] = $variables['theme_hook_original'] . '__book_page';
       }
     }
@@ -132,27 +87,6 @@ function wxt_bootstrap_preprocess_block(&$variables) {
     elseif ($language == 'fr') {
       $variables['language_opposite'] = 'en';
       $variables['label_opposite'] = 'Government of Canada';
-    }
-  }
-
-  if ($plugin_id == 'book_navigation') {
-    $node = \Drupal::routeMatch()->getParameter('node');
-
-    if ($node instanceof \Drupal\node\NodeInterface) {
-      // Used to prepend book title to page title
-      if (!empty($node->book) && $node->book['bid'] != $node->id()){
-        $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
-
-        if ($book) {
-          $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
-          if ($book->hasTranslation($langcode)) {
-            $book = $book->getTranslation($langcode);
-          }
-
-          $variables['book_title'] = $book->getTitle();
-        }
-      }
     }
   }
 }
