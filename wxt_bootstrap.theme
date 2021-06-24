@@ -24,6 +24,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_alter.
@@ -60,7 +61,7 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
   if ($moduleHandler->moduleExists('wxt_ext_book')) {
     $node = \Drupal::routeMatch()->getParameter('node');
 
-    if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node instanceof NodeInterface) {
       if (!empty($node->book)) {
         if ($node->book['bid'] == $node->id()) {
           // Theme book index page
