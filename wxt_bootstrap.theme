@@ -55,17 +55,21 @@ function wxt_bootstrap_preprocess_page(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  $node = \Drupal::routeMatch()->getParameter('node');
+  $moduleHandler = \Drupal::service('module_handler');
 
-  if ($node instanceof \Drupal\node\NodeInterface) {
-    if (!empty($node->book)) {
-      if ($node->book['bid'] == $node->id()) {
-        // Theme book index page
-        $suggestions[] = $variables['theme_hook_original'] . '__book_index';
-      }
-      else {
-        // Theme book child page
-        $suggestions[] = $variables['theme_hook_original'] . '__book_page';
+  if ($moduleHandler->moduleExists('wxt_ext_book')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      if (!empty($node->book)) {
+        if ($node->book['bid'] == $node->id()) {
+          // Theme book index page
+          $suggestions[] = $variables['theme_hook_original'] . '__book_index';
+        }
+        else {
+          // Theme book child page
+          $suggestions[] = $variables['theme_hook_original'] . '__book_page';
+        }
       }
     }
   }
