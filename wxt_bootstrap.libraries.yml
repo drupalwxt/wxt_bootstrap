@@ -17,14 +17,6 @@ framework:
     # js/bootstrap/transition.js: {}
   dependencies:
     - core/jquery
-book-base:
-  css:
-    theme:
-      css/book_index.css: {}
-book-page:
-  css:
-    theme:
-      css/book_page.css: {}
 
 drupal.wxt_bootstrap:
   js:
