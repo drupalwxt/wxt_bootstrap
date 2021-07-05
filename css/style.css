@@ -622,13 +622,16 @@ ol, ul {
   width: 100%;
   max-width: unset; }
 
+.theme-gcweb #wb-srch form {
+  position: relative; }
+
 .theme-gcweb #wb-srch .form-group {
   display: block; }
 
 .theme-gcweb #wb-srch .submit {
   position: absolute;
   right: 0px;
-  top: 1em; }
+  top: 0px; }
 
 body {
   margin-top: 0px !important; }
