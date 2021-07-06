@@ -109,6 +109,10 @@ ol, ul {
     max-width: unset;
   }
 
+  form {
+    position: relative;
+  }
+
   .form-group {
     display: block;
   }
@@ -116,6 +120,6 @@ ol, ul {
   .submit {
     position: absolute;
     right: 0px;
-    top: 1em;
+    top: 0px;
   }
 }
