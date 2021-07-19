@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Default theme implementation to navigate books.
+ *
+ * Presented under nodes that are a part of book outlines.
+ *
+ * Available variables:
+ * - tree: The immediate children of the current node rendered as an unordered
+ *   list.
+ * - current_depth: Depth of the current node within the book outline. Provided
+ *   for context.
+ * - prev_url: URL to the previous node.
+ * - prev_title: Title of the previous node.
+ * - parent_url: URL to the parent node.
+ * - parent_title: Title of the parent node. Not printed by default. Provided
+ *   as an option.
+ * - next_url: URL to the next node.
+ * - next_title: Title of the next node.
+ * - has_links: Flags TRUE whenever the previous, parent or next data has a
+ *   value.
+ * - book_id: The book ID of the current outline being viewed. Same as the node
+ *   ID containing the entire outline. Provided for context.
+ * - book_url: The book/node URL of the current outline being viewed. Provided
+ *   as an option. Not used by default.
+ * - book_title: The book/node title of the current outline being viewed.
+ * - is_book_index: If the current book page is the book index
+ * - nav_enabled: TRUE if persistent navigation on book index page should be enabled
+ * - page_title_as_nav_label: TRUE if page titles should be used on book page navigation
+ * - include_home_link: TRUE if home button should be added to book page navigation
+ *
+ * @see template_preprocess_book_navigation()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if tree and is_book_index and nav_enabled %}
+  <div class="gcnav-index">
+    <section class="gcnav-section">
+      <h2>{{ "Sections"|t }}</h2>
+      {{ tree }}
+    </section>
+  </div>
+{% elseif has_links and not is_book_index %}
+  <nav class="mrgn-bttm-lg mrgn-tp-lg">
+    <h3 class="wb-inv">{{ "Document navigation"|t }}</h3>
+    <ul class="pager">
+    {% if prev_url and prev_url != book_url%}
+      <li class="previous">
+        {% if page_title_as_nav_label %}
+          <a href="{{ prev_url }}" rel="prev">{{ prev_title }}</a>
+        {% else %}
+          <a href="{{ prev_url }}" rel="prev">{{ 'Previous'|t }}</a>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    {% if parent_url and include_home_link %}
+      <li>
+        <a href="{{ book_url }}">{{ 'Home'|t }}</a>
+      </li>
+    {% endif %}
+
+    {% if next_url %}
+      <li class="next">
+        {% if page_title_as_nav_label %}
+          <a href="{{ next_url }}" rel="next">{{ next_title }}</a>
+        {% else %}
+          <a href="{{ next_url }}" rel="next">{{ 'Next'|t }}</a>
+        {% endif %}
+      </li>
+    {% endif %}
+    </ul>
+  </nav>
+{% endif %}

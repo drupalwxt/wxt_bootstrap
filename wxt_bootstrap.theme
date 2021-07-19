@@ -24,6 +24,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_alter.
@@ -48,6 +49,52 @@ function wxt_bootstrap_preprocess_page(&$variables) {
   }
   elseif ($language == 'fr') {
     $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($moduleHandler->moduleExists('wxt_ext_book')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof NodeInterface) {
+      if (!empty($node->book)) {
+        if ($node->book['bid'] == $node->id()) {
+          // Theme book index page
+          $suggestions[] = $variables['theme_hook_original'] . '__book_index';
+        }
+        else {
+          // Theme book child page
+          $suggestions[] = $variables['theme_hook_original'] . '__book_page';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_book_navigation_alter(array &$suggestions, array $variables) {
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($moduleHandler->moduleExists('wxt_ext_book')) {
+    $suggestions[] = $variables['theme_hook_original'] . '__gcweb';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_book_tree_alter(array &$suggestions, array $variables) {
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($moduleHandler->moduleExists('wxt_ext_book')) {
+    $suggestions[] = 'book_tree__gcweb';
   }
 }
 
