@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ *
+ * @ingroup themeable
+ */
+#}
+<header id="wb-bnr" class="container">
+<div class="row">
+<div class="col-sm-6">
+<img id="gcwu-sig" src="/libraries/theme-gc-intranet/assets/sig-blk-en.svg" alt="Government of Canada" />
+</div>
+<div class="col-sm-6">
+<img id="wmms" src="/libraries/theme-gc-intranet/assets/wmms-blk.svg" alt="Symbol of the Government of Canada" />
+</div>
+</div>
+</header>
+<main property="mainContentOfPage" class="container">
+<div class="row mrgn-tp-lg">
+  {% if site_name or site_slogan %}
+    {% if site_name %}
+      <h1 class="wb-inv">
+        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+      </h1>
+    {% endif %}
+
+    {% if site_slogan %}
+      <div>{{ site_slogan }}</div>
+    {% endif %}
+  {% endif %}
+<!-- MainContentStart -->
+<div class="col-md-12">
+<section>
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+  {{ page.highlighted }}
+  {{ page.content }}
+</section>
+</div>
+<div class="clear"></div>
+<!-- MainContentEnd -->
+</div>
+</main>

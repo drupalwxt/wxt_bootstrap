@@ -28,7 +28,7 @@ class Menu extends PreprocessBase {
       $wxt = \Drupal::service('wxt_library.service_wxt');
       $wxt_active = $wxt->getLibraryName();
 
-      if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
+      if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy' || $wxt_active == 'gc_intranet') {
         // CDN handling.
         $gcweb_cdn = $this->theme->getSetting('wxt_gcweb_cdn');
         $gcweb_cdn_url = $this->theme->getSetting('wxt_gcweb_cdn_cmm');
@@ -58,7 +58,7 @@ class Menu extends PreprocessBase {
       $variables['library_path'] = $library_path;
 
       // Footer Navigation (gcweb).
-      if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
+      if ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy' || $wxt_active == 'gc_intranet') {
         $variables['gcweb'] = [
           'feedback' => [
             'en' => 'http://www.canada.ca/en/contact/feedback.html',

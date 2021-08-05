@@ -16,13 +16,12 @@
  */
 #}
 {% block content %}
-  <a href="https://canada.ca/{{ language_prefix }}.html" property="url">
-    <img id="header-logo" src='{{ logo_svg }}' alt="{{ 'Government of Canada'|t }}" property="logo" />
-    <span class="wb-inv"> /
-      <span lang="{{ language_opposite }}">{{ label_opposite }}</span>
-    </span>
-  </a>
-  <meta property="name" content="{{ 'Government of Canada'|t }}">
-  <meta property="areaServed" typeof="Country" content="Canada">
-  <link property="logo" href="/libraries/theme-gcweb/assets/wmms-blk.svg">
+  <div id="wb-sttl" class="col-md-12">
+    <a class="logo navbar-btn" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+    {% if site_name %}
+      <span>{{ site_name }}</span>
+    {% endif %}
+    </a>
+    <img id="wmms" src="{{ logo_sttl_svg }}" alt="{{ 'Symbol of the Government of Canada'|t }}" />
+  </div>
 {% endblock %}

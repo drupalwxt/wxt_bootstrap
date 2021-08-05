@@ -42,14 +42,14 @@
       <h2{{ heading.attributes }}>{{ heading.text }}</h2>
     {%- endif -%}
   {%- endif -%}
-  <ul{{ attributes.addClass('list-inline', 'mrgn-bttm-0') }}>
+  <ul{{ attributes.addClass('list-inline') }}>
     {%- for key, item in links|reverse -%}
       {% if key == language %}
         {% set lang_curr = 'curr' %}
       {% else %}
         {% set lang_curr = '' %}
       {% endif %}
-      <li>
+      <li{{ item.attributes.addClass(key|clean_class).addClass(lang_curr) }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}

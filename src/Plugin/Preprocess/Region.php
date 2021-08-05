@@ -31,7 +31,7 @@ class Region extends PreprocessBase {
       $variables->addClass(['container']);
     }
 
-    if ($wxt_active == 'gcweb') {
+    if ($wxt_active == 'gcweb' || $wxt_active == 'gc_intranet') {
       if ($region === 'content_footer' && !empty($variables['content'])) {
         $variables->addClass(['pagedetails']);
         if (!empty($variables['is_front'])) {

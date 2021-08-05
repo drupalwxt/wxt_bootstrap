@@ -127,3 +127,13 @@ ol, ul {
     top: 0px;
   }
 }
+
+// Fix homepage
+.theme-gc-intranet {
+  .bg-gctheme {
+    background-color: #7f1322;
+  }
+  .bg-gctheme.well.header-rwd {
+    background-color: #7f1322;
+  }
+}

@@ -71,55 +71,43 @@
     %}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
       <div id="wb-bnr">
-        <div id="app-brand">
+        <div id="wb-bar">
           <div class="container">
             <div class="row">
-              <section class="col-lg-2 col-md-3 col-sm-9 col-xs-8">
-                <div class="app-name"><a href="https://intranet.canada.ca/index-eng.asp"><span><span class="bold-gc">GC</span> intranet</span></a></div>
-              </section>
-              <section id="wb-gctools" class="col-lg-6 visible-lg">
-              {% if language == 'fr' %}
-                <div class="pull-left tool-link"><a href="https://gcconnex.gc.ca/splash/" class="GCTBannerOnclick-fra"><span class="bold-gc">GC</span>connex</a></div>
-                <div class="pull-left tool-link"><a href="http://www.gcpedia.gc.ca/wiki/?setlang=fr" class="GCTBannerOnclick-fra"><span class="bold-gc">GC</span>pédia</a></div>
-                <div class="pull-left tool-link"><a href="http://gcdirectory-gcannuaire.gc.ca/fr/GCA/?pgid=002" class="GCTBannerOnclick-fra"><span class="bold-gc">GC</span>annuaire</a></div>
-                <div class="pull-left tool-link"><a href="https://gccollab.ca/splash/" class="GCTBannerOnclick-fra"><span class="bold-gc">GC</span>collab</a></div>
-              {% else %}
-                <div class="pull-left tool-link"><a href="https://gcconnex.gc.ca/splash/" class="GCTBannerOnclick-eng"><span class="bold-gc">GC</span>connex</a></div>
-                <div class="pull-left tool-link"><a href="http://www.gcpedia.gc.ca/wiki/?setlang=en" class="GCTBannerOnclick-eng"><span class="bold-gc">GC</span>pedia</a></div>
-                <div class="pull-left tool-link"><a href="http://gcdirectory-gcannuaire.gc.ca/en/GCD/?pgid=002" class="GCTBannerOnclick-eng"><span class="bold-gc">GC</span>directory</a></div>
-                <div class="pull-left tool-link"><a href="https://gccollab.ca/splash/" class="GCTBannerOnclick-eng"><span class="bold-gc">GC</span>collab</a></div>
-              {% endif %}
-              </section>
-              <section id="wb-lng" class="col-md-1 hidden-sm hidden-xs text-right">
-                <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
+              <img id="gcwu-sig" src='{{ logo_svg }}' alt='{{ 'Government of Canada'|t }}' />
+              <section id="wb-lng" class="visible-md visible-lg">
+                <h2>Language selection</h2>
                 {{ page.language_toggle }}
               </section>
-              {{ page.search }}
-              <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+              <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
                 <h2>{{ 'Search and menus'|t }}</h2>
-                <ul class="list-inline text-right chvrn">
-                  <li>
-                    <a href="#mb-pnl" title="{{ 'Search and menus'|t }}" aria-controls="mb-pnl" class="overlay-lnk" role="button">
-                      <span class="glyphicon glyphicon-search">
-                        <span class="glyphicon glyphicon-th-list">
-                          <span class="wb-inv">{{ 'Search and menus'|t }}</span>
-                        </span>
+                <ul class="pnl-btn list-inline text-right">
+                <li>
+                  <a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button">
+                    <span class="glyphicon glyphicon-search">
+                      <span class="glyphicon glyphicon-th-list">
+                        <span class="wb-inv">{{ 'Search and menus'|t }}</span>
                       </span>
-                    </a>
-                  </li>
+                    </span>
+                  </a>
+                </li>
                 </ul>
                 <div id="mb-pnl"></div>
               </section>
             </div>
           </div>
         </div>
-      </div>
-      <nav id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
-        <div class="pnl-strt {{ container }} nvbar">
-          <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+        <div class="container">
           <div class="row">
-            {{ page.navigation }}
+            {{ page.banner }}
+            {{ page.search }}
           </div>
+        </div>
+      </div>
+      <nav aria-labelledby="topicsMenu" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
+        <div class="pnl-strt {{ container }} nvbar">
+          <h2 id="topicsMenu" class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+          {{ page.navigation }}
         </div>
       </nav>
       {{ page.breadcrumb }}
@@ -130,7 +118,7 @@
 {# Main #}
 {% block main %}
 
-  <div class="{{ (is_front and wxt_homepage) ? "container-fluid" : container }}">
+  <div class="{{ container }}">
     <div class="row">
 
       {# Highlighted #}
@@ -149,7 +137,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
+      <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', 'js-quickedit-main-content') }}>
 
       {# Header #}
       {% if page.header %}
@@ -224,51 +212,17 @@
           </nav>
         {% endblock %}
       {% endif %}
-
     </div>
   </div>
 
 {% endblock %}
 
-{# GCWeb #}
-{% if gcweb_cdn_goc and not gcweb_election %}
-  <aside class="gc-nttvs {{ container }}">
-    <h2>{{ 'Government of Canada activities and initiatives'|t }}</h2>
-    <div id="gcwb_prts" class="wb-eqht row" data-ajax-replace="//cdn.canada.ca/gcweb-cdn-live/features/features-{{ language }}.html">
-      <p class="mrgn-lft-md">
-        <a href="http://www.canada.ca/activities.html">{{ 'Access Government of Canada activities and initiatives'|t }}</a>
-      </p>
-    </div>
-  </aside>
-{% endif %}
-
 {% if page.footer %}
-  {% if gcweb_cdn_footer_enable %}
-    <footer id="wb-info" data-ajax-append="{{ gcweb_cdn_footer_url }}{{ language }}.html .brand">
-      <div data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html .wb-navcurr"></div>
+  {% block footer %}
+    <footer class="visible-sm visible-md visible-lg wb-navcurr" id="wb-info">
+      <div class="{{ container }}">
+        {{ page.footer }}
+      </div>
     </footer>
-  {% else %}
-    {% block footer %}
-      <footer id="wb-info">
-        <div>
-          <div class="{{ container }}">
-            {{ page.footer }}
-          </div>
-        </div>
-        <div class="brand">
-          <div class="{{ container }}">
-            <div class="row ">
-              {{ page.banner }}
-              <div class="col-xs-6 visible-sm visible-xs tofpg">
-                <a href="#wb-cont">{{ 'Top of Page'|t }}<span class="glyphicon glyphicon-chevron-up"></span></a>
-              </div>
-              <div class="col-xs-6 col-md-4 text-right">
-                <img src='{{ logo_bottom_svg }}' alt='{{ 'Symbol of the Government of Canada'|t }}' />
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    {% endblock %}
-  {% endif %}
+  {% endblock %}
 {% endif %}

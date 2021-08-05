@@ -34,17 +34,17 @@ class Block extends PreprocessBase {
       if ($wxt_active == 'ogpl') {
         $variables['logo'] = $library_path . '/assets/logo.png';
       }
-      elseif ($wxt_active == 'gc_intranet') {
+      elseif ($wxt_active == 'gc_intranet_legacy') {
         $variables['logo_sttl_svg'] = $library_path . '/assets/wmms-intra.svg';
       }
       elseif ($wxt_active == 'gcwu_fegc') {
         $variables['logo_sttl_svg'] = $library_path . '/assets/wmms.svg';
       }
-      elseif ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy') {
+      elseif ($wxt_active == 'gcweb' || $wxt_active == 'gcweb_legacy' || $wxt_active == 'gc_intranet') {
         $variables['logo'] = $library_path . '/assets/sig-blk-' . $language . '.png';
         $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
       }
-      elseif ($wxt_active == 'gc_intranet') {
+      elseif ($wxt_active == 'gc_intranet_legacy') {
         $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
       }
     }
