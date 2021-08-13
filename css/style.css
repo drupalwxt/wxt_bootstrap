@@ -56,6 +56,12 @@
 .alert-sm {
   padding: 5px 10px; }
 
+.alert-dismissible button.close {
+  right: 15px; }
+
+.alert-dismissible > p {
+  padding-top: 15px; }
+
 .alert a {
   font-weight: bold; }
 

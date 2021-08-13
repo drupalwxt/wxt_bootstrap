@@ -63,7 +63,7 @@
       ]
     %}
     {# Reset the attribute classes and then add the message specific classes. #}
-    <div{{ attributes.setAttribute('class', classes).addClass(message_classes, 'mrgn-tp-md', 'mrgn-bttm-md').setAttribute('role', status_roles[type]).setAttribute('aria-label', status_headings[type]) }} tabindex="0">
+    <section{{ attributes.setAttribute('class', classes).addClass(message_classes, 'mrgn-tp-md', 'mrgn-bttm-md').setAttribute('role', status_roles[type]).setAttribute('aria-label', status_headings[type]) }} tabindex="0">
       <button type="button" role="button" class="close" data-dismiss="alert" aria-label="{{ 'Close'|t }}"><span aria-hidden="true">&times;</span></button>
       {% if status_headings[type] %}
         <h2 class="sr-only">{{ status_headings[type] }}</h2>
@@ -77,7 +77,7 @@
       {% else %}
         <p>{{ messages|first }}</p>
       {% endif %}
-    </div>
+    </section>
   {% endfor %}
   </div>
 </div>

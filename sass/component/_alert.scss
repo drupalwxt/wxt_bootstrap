@@ -5,6 +5,14 @@
   padding: 5px 10px;
 }
 
+.alert-dismissible button.close {
+  right: 15px;
+}
+
+.alert-dismissible > p {
+  padding-top: 15px;
+}
+
 // Treat all links inside alert as .alert-link
 .alert a {
   font-weight: $alert-link-font-weight;
