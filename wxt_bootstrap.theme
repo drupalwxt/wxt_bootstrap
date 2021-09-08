@@ -119,12 +119,12 @@ function wxt_bootstrap_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_block.
+ * Implements hook_preprocess_input__button.
  */
 function wxt_bootstrap_preprocess_input__button(&$vars) {
   if (isset($vars['attributes'])) {
     $attrObj = $vars['attributes'];
-    if ($attrObj->offsetExists('id') == 'wb-srch-sub') {
+    if ($attrObj->offsetExists('id') && $attrObj->offsetGet('id')->__toString() == 'wb-srch-sub') {
       $attrObj->setAttribute('title', t('Search'));
     }
   }
