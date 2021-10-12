@@ -45,7 +45,7 @@
           <li{{ item.attributes }}>
         {% endif %}
           {% if item.active %}
-            {{ link(item.title, item.url, { 'class':['active']}) }}
+            {{ link(item.title, item.url, { 'class':['active'], 'aria-current': 'page' }) }}
           {% else %}
             {{ link(item.title, item.url) }}
           {% endif %}
