@@ -35,10 +35,10 @@
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes }}>
+        <li role="presentation"{{ item.attributes }}>
         <a role="menuitem" class="item" href="{{ item.url }}">{{ item.title }}</a>
       {% else %}
-        <li{{ item.attributes }}>
+        <li role="presentation"{{ item.attributes }}>
         {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}

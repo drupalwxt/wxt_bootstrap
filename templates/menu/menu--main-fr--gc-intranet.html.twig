@@ -21,35 +21,24 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_name|clean_class, gcweb_cdn, gcweb_cdn_url, language) }}
+{{ menus.menu_links(items, attributes, 0, menu_name|clean_class) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_name, gcweb_cdn, gcweb_cdn_url, language) %}
+{% macro menu_links(items, attributes, menu_level, menu_name) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      {% if gcweb_cdn and gcweb_cdn_url %}
-        <ul class="list-inline menu" role="menu" aria-orientation="vertical" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html">
-      {% else %}
-        <ul class="list-inline menu" role="menu" aria-orientation="vertical">
-      {% endif %}
+      <ul role="menubar"{{ attributes.addClass('list-inline', 'menu') }}>
     {% elseif menu_level == 1 %}
       <ul role="menu"{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }}>
     {% else %}
       <ul role="menu"{{ attributes.addClass('dropdown-menu', menu_name) }}>
     {% endif %}
     {% for item in items %}
-      {%
-        set item_classes = [
-          item.is_expanded? 'expanded',
-          item.is_expanded and menu_level == 0 ? 'dropdown',
-          item.in_active_trail ? 'active',
-        ]
-      %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
-        <a role="menuitem" href="{{ item.url }}" class="dropdown-toggle item" data-toggle="dropdown">{{ item.title }}</a>
+        <li role="presentation"{{ item.attributes }}>
+        <a role="menuitem" class="item" href="{{ item.url }}">{{ item.title }}</a>
       {% else %}
-        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
+        <li role="presentation"{{ item.attributes }}>
         {{ link(item.title, item.url, {'role':['menuitem']}) }}
       {% endif %}
       {% if item.below %}
