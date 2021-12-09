@@ -820,6 +820,17 @@ ol, ul {
   right: 0px;
   top: 0px; }
 
+a.shr-opn {
+  width: 100%; }
+
+@media screen and (max-width: 768px) {
+  .pagedetails-wrapper.container {
+    padding: 0px; } }
+
+@media screen and (min-width: 768px) {
+  .pagedetails div + .wb-share-inited {
+    margin-top: 0px; } }
+
 .theme-gc-intranet .bg-gctheme {
   background-color: #7f1322; }
 

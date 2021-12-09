@@ -177,7 +177,9 @@
         {% block content %}
           <a id="main-content"></a>
           {{ page.content }}
-          {{ page.content_footer }}
+          <div class="pagedetails-wrapper{{ (is_front and wxt_homepage) ? " container" : "" }}">
+            {{ page.content_footer }}
+          <div>
         {% endblock %}
       </section>
 
