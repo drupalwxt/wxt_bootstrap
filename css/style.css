@@ -315,6 +315,10 @@ section.gc-nav h1 {
 .field--label-inline .field--label::after {
   content: ':'; }
 
+.align-center .field--type-image img {
+  margin-left: auto;
+  margin-right: auto; }
+
 /**
  * File (and Image Widget) styles.
  */

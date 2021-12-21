@@ -12,12 +12,11 @@
  * @ingroup themeable
  */
 #}
-<article{{ attributes }}>
-  <figure>
-    {{ title_suffix.contextual_links }}
 
-    {% if content %}
-      {{ content|without('name') }}
-    {% endif %}
-  </figure>
-</article>
+{% if attributes.class is empty %}
+  {{ content }}
+{% else %}
+  <div{{ attributes }}>
+    {{ content }}
+  </div>
+{% endif %}

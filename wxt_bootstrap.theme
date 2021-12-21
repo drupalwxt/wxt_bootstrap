@@ -151,3 +151,15 @@ function wxt_bootstrap_preprocess_input(&$variables) {
     $variables['search_submit'] = 'false';
   }
 }
+
+/**
+ * Implements hook_preprocess_filter_caption().
+ */
+function wxt_bootstrap_preprocess_filter_caption(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (!$node instanceof NodeInterface) {
+    // Show caption if not on a node page to ensure it displays in CKEditor
+    $variables['show_caption'] = TRUE;
+  }
+}
