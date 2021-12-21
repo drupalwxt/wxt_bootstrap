@@ -63,13 +63,19 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
 
     if ($node instanceof NodeInterface) {
       if (!empty($node->book)) {
+        /** @var \Drupal\wxt_library\LibraryService $wxt */
+        $wxt = \Drupal::service('wxt_library.service_wxt');
+        $wxt_active = $wxt->getLibraryName();
+
         if ($node->book['bid'] == $node->id()) {
           // Theme book index page
           $suggestions[] = $variables['theme_hook_original'] . '__book_index';
+          $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_index';
         }
         else {
           // Theme book child page
           $suggestions[] = $variables['theme_hook_original'] . '__book_page';
+          $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_page';
         }
       }
     }
