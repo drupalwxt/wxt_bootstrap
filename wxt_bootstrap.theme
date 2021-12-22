@@ -62,7 +62,7 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
     $node = \Drupal::routeMatch()->getParameter('node');
 
     if ($node instanceof NodeInterface) {
-      if (!empty($node->book)) {
+      if (!empty($node->book) && $node->book['bid'] != 0) {
         /** @var \Drupal\wxt_library\LibraryService $wxt */
         $wxt = \Drupal::service('wxt_library.service_wxt');
         $wxt_active = $wxt->getLibraryName();
