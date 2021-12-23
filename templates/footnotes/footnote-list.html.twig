@@ -1,0 +1,27 @@
+{# footnotes/footnote-list.html.twig #}
+
+<aside class="wb-fnote" role="note">
+  <h2 id="fn">{{ 'Footnotes'|t }}</h3>
+
+  <dl>
+    {% for fn in footnotes %}
+      {# Output normal footnote. #}
+      <dt>{{ 'Footnote'|t }} {{ fn.value }}</dt>
+      <dd id="fn{{ fn.value }}">
+        <p>
+          {{ fn.text|raw }}
+        </p>
+
+        <p class="fn-rtn">
+          {% if fn.ref_id is iterable %}
+            <a href="#fn{{ fn.value }}-1-rf">
+          {% else %}
+            <a href="#fn{{ fn.value }}-rf">
+          {% endif %}
+            <span class="wb-inv">{{ 'Return to footnote'|t }} </span>{{ fn.value }}<span class="wb-inv"> {{ 'referrer'|t }}</span>
+          </a>
+        </p>
+      </dd>
+    {% endfor %}
+  </dl>
+</aside>

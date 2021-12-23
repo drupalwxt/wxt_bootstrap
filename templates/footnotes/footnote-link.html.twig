@@ -1,0 +1,13 @@
+{# footnotes/footnote-link.html.twig #}
+
+{% if fn.instances > 1 %}
+	{% set id = 'fn' ~ fn.value ~ '-' ~ fn.instance ~ '-rf' %}
+{% else %}
+	{% set id = 'fn' ~ fn.value ~ '-rf' %}
+{% endif %}
+
+<sup id="{{ id }}">
+	<a class="fn-lnk" href="#fn{{ fn.value }}">
+		<span class="wb-inv">{{ 'Footnote'|t }} </span>{{ fn.value }}
+	</a>
+</sup>
