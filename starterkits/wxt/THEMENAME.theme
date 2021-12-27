@@ -8,7 +8,7 @@
  */
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function THEMENAME_theme_suggestions_block_alter(&$suggestions, $variables) {
 
