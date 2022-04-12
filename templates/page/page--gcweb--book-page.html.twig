@@ -142,25 +142,27 @@
         {# Content #}
         {% block content %}
           <a id="main-content"></a>
-          <section class="gc-nav">
-            <h1 id="gc-document-nav">{{ book_title }}</h1>
-            <nav aria-label="{{ 'Section menu'|t }}">
-              <h2 id="gc-navseq-header" class="mrgn-tp-0 hidden-xs hidden-sm">{{ 'Sections'|t }}</h2>
-              {{ book_navigation }}
-            </nav>
-          </section>
+          <div class="clearfix">
+            <section class="gc-nav">
+              <h1 id="gc-document-nav">{{ book_title }}</h1>
+              <nav aria-label="{{ 'Section menu'|t }}">
+                <h2 id="gc-navseq-header" class="mrgn-tp-0 hidden-xs hidden-sm">{{ 'Sections'|t }}</h2>
+                {{ book_navigation }}
+              </nav>
+            </section>
 
-          <section class="gc-nav-section experimental">
+            <section class="gc-nav-section experimental">
 
-            {# Header #}
-            {% if page.header %}
-              {% block header %}
-                {{ page.header }}
-              {% endblock %}
-            {% endif %}
+              {# Header #}
+              {% if page.header %}
+                {% block header %}
+                  {{ page.header }}
+                {% endblock %}
+              {% endif %}
 
-            {{ page.content }}
-          </section>
+              {{ page.content }}
+            </section>
+          </div>
 
           <div class="pagedetails-wrapper{{ (is_front and wxt_homepage) ? " container" : "" }}">
             {{ page.content_footer }}
