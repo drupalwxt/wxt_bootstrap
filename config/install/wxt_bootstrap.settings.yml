@@ -22,3 +22,5 @@ cdn_provider: ''
 breadcrumb_home: 1
 # Necessary for Layout Builder.
 modal_jquery_ui_bridge: 0
+# Remove current page title from breadcrumbs
+breadcrumb_title: 0
