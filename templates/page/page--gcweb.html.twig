@@ -56,7 +56,7 @@
  * @see html.html.twig
  */
 #}
-{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set container = theme.settings.fluid_container or fluid_container ? 'container-fluid' : 'container' %}
 
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
@@ -70,7 +70,7 @@
       ]
     %}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar">
-      <div id="wb-bnr" class="{{ container }}">
+      <div id="wb-bnr" class="container">
         <div class="row">
           <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
             <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
@@ -81,7 +81,7 @@
         </div>
       </div>
       <nav class="gcweb-menu" data-trgt="mb-pnl" typeof="SiteNavigationElement">
-        <div class="{{ container }}">
+        <div class="container">
           <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
           <button type="button" aria-haspopup="true" aria-expanded="false">{{ main_menu_label|raw }}</button>
           {{ page.navigation }}
@@ -111,7 +111,7 @@
           page.sidebar_first and page.sidebar_second ? 'col-md-6 col-md-push-3',
           page.sidebar_first and page.sidebar_second is empty ? 'col-md-9 col-md-push-3',
           page.sidebar_second and page.sidebar_first is empty ? 'col-md-9',
-          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
+          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
         ]
       %}
       <main property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
@@ -150,7 +150,7 @@
         {% block content %}
           <a id="main-content"></a>
           {{ page.content }}
-          <div class="pagedetails-wrapper{{ (is_front and wxt_homepage) ? " container" : "" }}">
+          <div class="pagedetails-wrapper{{ (is_front and wxt_homepage) or theme.settings.fluid_container or fluid_container ? ' container' : '' }}">
             {{ page.content_footer }}
           <div>
         {% endblock %}
@@ -218,12 +218,12 @@
     {% block footer %}
       <footer id="wb-info">
         <div class="landscape">
-          <div class="{{ container }}">
+          <div class="container">
             {{ page.footer }}
           </div>
         </div>
         <div class="brand">
-          <div class="{{ container }}">
+          <div class="container">
             <div class="row ">
               {{ page.branding }}
               <div class="col-xs-6 visible-sm visible-xs tofpg">

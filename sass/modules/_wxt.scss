@@ -145,6 +145,13 @@
   display:inline;
 }
 
+@media screen and (max-width: 767px) {
+  .pagedetails-wrapper.container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 /* Layout Builder */
 
 #drupal-off-canvas *:not(div), #drupal-off-canvas *:not(svg *),
