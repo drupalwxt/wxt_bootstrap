@@ -53,9 +53,13 @@
     'clearfix',
   ]
 %}
-<section{{ attributes.addClass(classes) }}>
+
+{% set element = label_display or display_title_invisible ? 'section' : 'div' %}
+<{{ element }}{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if label %}
+  {% if display_title_invisible %}
+    <h2{{ title_attributes.addClass('wb-inv') }}>{{ label }}</h2>
+  {% elseif label %}
     <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
@@ -63,4 +67,4 @@
   {% block content %}
     {{ content }}
   {% endblock %}
-</section>
+</{{ element }}>

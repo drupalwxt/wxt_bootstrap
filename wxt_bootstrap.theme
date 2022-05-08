@@ -122,6 +122,11 @@ function wxt_bootstrap_preprocess_block(&$variables) {
       $variables['label_opposite'] = 'Government of Canada';
     }
   }
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists('wxt_ext_blocks')) {
+    $variables['label_display'] = TRUE;
+  }
 }
 
 /**
