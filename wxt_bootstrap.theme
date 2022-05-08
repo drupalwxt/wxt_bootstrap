@@ -163,3 +163,14 @@ function wxt_bootstrap_preprocess_filter_caption(&$variables) {
     $variables['show_caption'] = TRUE;
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function wxt_bootstrap_preprocess_field(&$variables) {
+  if ($variables['element']['#bundle'] == 'remote_video') {
+    // Get title and URL of remote video.
+    $variables['video_title'] = $variables['element'][0]['#attributes']['title'];
+    $variables['video_url'] = $variables['element']['#items'][0]->getValue()['value'];
+  }
+}
