@@ -13,7 +13,7 @@ provider: null
 plugin: 'wxt_language_block:language_interface'
 settings:
   id: 'wxt_language_block:language_interface'
-  label: 'WxT Language switcher'
+  label: 'Language selection'
   provider: wxt_library
   label_display: visible
   wxt_theme: false
