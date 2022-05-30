@@ -175,7 +175,19 @@ function wxt_bootstrap_preprocess_filter_caption(&$variables) {
 function wxt_bootstrap_preprocess_field(&$variables) {
   if ($variables['element']['#bundle'] == 'remote_video') {
     // Get title and URL of remote video.
-    $variables['video_title'] = $variables['element'][0]['#attributes']['title'];
-    $variables['video_url'] = $variables['element']['#items'][0]->getValue()['value'];
+    $youtube_domains = [
+      'youtube.com',
+      'youtu.be',
+    ];
+
+    $video_url = $variables['element']['#items'][0]->getValue()['value'];
+
+    foreach ($youtube_domains as $domain) {
+      if (strpos($video_url, $domain) !== FALSE) {
+        $variables['video_title'] = $variables['element'][0]['#attributes']['title'];
+        $variables['video_url'] = $video_url;
+        break;
+      }
+    }
   }
 }

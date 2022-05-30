@@ -38,12 +38,26 @@
  * @see template_preprocess_field()
  */
 #}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
 
-<figure class="wb-mltmd" data-wb-mltmd='{"shareUrl": "{{ video_url }}"}'>
-  <video title="{{ video_title }}">
-    <source type="video/youtube" src="{{ video_url }}" />
-  </video>
-  <figcaption>
-    <p>{{ video_title }}</p>
-  </figcaption>
-</figure>
+{% if video_url %}
+  <figure class="wb-mltmd" data-wb-mltmd='{"shareUrl": "{{ video_url }}"}'>
+    <video title="{{ video_title }}">
+      <source type="video/youtube" src="{{ video_url }}" />
+    </video>
+    <figcaption>
+      <p>{{ video_title }}</p>
+    </figcaption>
+  </figure>
+{% else %}
+  {% for item in items %}
+    <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
+  {% endfor %}
+{% endif %}
