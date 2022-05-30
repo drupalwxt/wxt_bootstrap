@@ -54,7 +54,7 @@
   ]
 %}
 
-{% set element = label_display or display_title_invisible ? 'section' : 'div' %}
+{% set element = label or label_display or display_title_invisible ? 'section' : 'div' %}
 <{{ element }}{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if display_title_invisible %}
