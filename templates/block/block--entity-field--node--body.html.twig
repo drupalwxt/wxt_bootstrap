@@ -53,7 +53,8 @@
     'clearfix',
   ]
 %}
-<section{{ attributes.addClass(classes).removeClass('container') }}>
+{% set wrapper = label ? 'section' : 'div' %}
+<{{ wrapper }}{{ attributes.addClass(classes).removeClass('container') }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
@@ -63,4 +64,4 @@
   {% block content %}
     {{ content }}
   {% endblock %}
-</section>
+</{{ wrapper }}>
