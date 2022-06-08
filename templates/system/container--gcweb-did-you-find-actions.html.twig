@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override of a container used to wrap child elements.
+ *
+ * Used for grouped form items. Can also be used as a theme wrapper for any
+ * renderable element, to surround it with a <div> and HTML attributes.
+ * See the @link forms_api_reference.html Form API reference @endlink for more
+ * information on the #theme_wrappers render array property.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ * - has_parent: A flag to indicate that the container has one or more parent
+ *   containers.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_container()
+ */
+#}
+{%
+  set classes = [
+    'gc-pg-hlpfl-btn chkbxrdio-grp row row-no-gutters',
+  ]
+%}
+<fieldset{{ attributes.addClass(classes) }}>
+  <legend class="col-xs-12 col-sm-7 col-md-8 mrgn-tp-sm">
+    <span class="field-name"> {{ "Did you find what you were looking for?"|t }}</span>
+  </legend>
+  <div class="col-xs-8 col-sm-5 col-md-4 text-right">
+    {{ children }}
+  </div>
+</fieldset>
