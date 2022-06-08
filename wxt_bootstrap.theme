@@ -24,6 +24,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
 use Drupal\node\NodeInterface;
 
 /**
@@ -189,5 +190,21 @@ function wxt_bootstrap_preprocess_field(&$variables) {
         break;
       }
     }
+  }
+
+  if ($variables['element']['#bundle'] == 'video') {
+    $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $media = $variables['element']['#object'];
+
+    if ($lang == 'fr' && $media->hasTranslation($lang)) {
+      $media = $media->getTranslation($lang);
+    }
+
+    $fid = $media->get('field_media_video_file')->getValue()[0]['target_id'];
+    $file = File::load($fid);
+    $video_uri = $file->getFileUri();
+
+    $variables['video_uri'] = file_url_transform_relative(file_create_url($video_uri));
+    $variables['video_title'] = $media->getName();
   }
 }
