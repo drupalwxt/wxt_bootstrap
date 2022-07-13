@@ -13,9 +13,9 @@ theme: wxt_bootstrap
 region: navigation
 weight: -8
 provider: null
-plugin: 'system_menu_block:main_fr'
+plugin: 'system_menu_block:main-fr'
 settings:
-  id: 'system_menu_block:main_fr'
+  id: 'system_menu_block:main-fr'
   label: 'Menu principal'
   provider: system
   label_display: '0'
