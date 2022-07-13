@@ -64,7 +64,8 @@
   }
 }
 
-#wb-srch .block-title {
+#wb-srch .block-title,
+#mb-pnl .srch-pnl .block-title {
   clip: rect(1px,1px,1px,1px);
   height: 1px;
   margin: 0;
