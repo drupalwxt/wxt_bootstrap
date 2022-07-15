@@ -69,12 +69,12 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
         $wxt_active = $wxt->getLibraryName();
 
         if ($node->book['bid'] == $node->id()) {
-          // Theme book index page
+          // Theme book index page.
           $suggestions[] = $variables['theme_hook_original'] . '__book_index';
           $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_index';
         }
         else {
-          // Theme book child page
+          // Theme book child page.
           $suggestions[] = $variables['theme_hook_original'] . '__book_page';
           $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_page';
         }
@@ -165,7 +165,7 @@ function wxt_bootstrap_preprocess_filter_caption(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if (!$node instanceof NodeInterface) {
-    // Show caption if not on a node page to ensure it displays in CKEditor
+    // Show caption if not on a node page to ensure it displays in CKEditor.
     $variables['show_caption'] = TRUE;
   }
 }

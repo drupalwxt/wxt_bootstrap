@@ -18,11 +18,6 @@ class Comment extends PreprocessBase {
    * {@inheritdoc}
    */
   public function preprocessVariables(Variables $variables) {
-    $account = $variables['comment']->getOwner();
-    $username = [
-      '#theme' => 'username',
-      '#account' => $account,
-    ];
     $variables['author'] = \Drupal::service('renderer')->render($elements);
 
     // Getting the node creation time stamp from the comment object.
@@ -30,7 +25,10 @@ class Comment extends PreprocessBase {
 
     // Adjust submitted display.
     $variables['created'] = \Drupal::service('date.formatter')->format($date, 'wxt_standard');
-    $variables['submitted'] = $this->t('@username - <span class="comments-ago">@datetime </span>', ['@username' => $variables['author'], '@datetime' => $variables['created']]);
+    $variables['submitted'] = $this->t('@username - <span class="comments-ago">@datetime </span>', [
+      '@username' => $variables['author'],
+      '@datetime' => $variables['created'],
+    ]);
   }
 
 }

@@ -19,7 +19,7 @@ class MaintenancePage extends PreprocessBase {
   public function preprocess(array &$variables, $hook, array $info) {
     $config = \Drupal::config('wxt_library.settings');
     $variant = ($config->get('minimized.options')) ? 'minified' : 'source';
-    $wxt_libraries = _wxt_library_options() + ['wet-boew' => t('Core')];
+    $wxt_libraries = _wxt_library_options() + ['wet-boew' => $this->t('Core')];
     $wxt_active = $config->get('wxt.theme');
 
     foreach ($wxt_libraries as $wxt_library => $name) {

@@ -30,13 +30,13 @@ class SystemThemeSettings extends BootstrapSystemThemeSettings {
     $form['wxt_bootstrap'] = [
       '#type' => 'vertical_tabs',
       '#attached' => ['library' => ['bootstrap/theme-settings']],
-      '#prefix' => '<h2><small>' . t('WxT Bootstrap Settings') . '</small></h2>',
+      '#prefix' => '<h2><small>' . $this->t('WxT Bootstrap Settings') . '</small></h2>',
       '#weight' => -10,
     ];
     $groups = [
-      'accessibility' => t('Accessibility'),
-      'customization' => t('Customization'),
-      'gcweb' => t('GCWeb'),
+      'accessibility' => $this->t('Accessibility'),
+      'customization' => $this->t('Customization'),
+      'gcweb' => $this->t('GCWeb'),
     ];
     foreach ($groups as $group => $title) {
       $form[$group] = [
