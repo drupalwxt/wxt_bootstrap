@@ -192,7 +192,7 @@ function wxt_bootstrap_preprocess_field(&$variables) {
     }
   }
 
-  if ($variables['element']['#bundle'] == 'video') {
+  if ($variables['element']['#bundle'] == 'video' && $variables['element']['#field_name'] == 'field_media_video_file') {
     $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $media = $variables['element']['#object'];
 
