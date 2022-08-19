@@ -16,3 +16,6 @@ cdn_provider: ''
 # Allow for breadcrumb to be shown.
 breadcrumb_home: 1
 breadcrumb_title: 0
+# Use favicon from theme
+favicon:
+  use_default: 1
