@@ -30,7 +30,7 @@
   {%- endif -%}
 
   {%- if items -%}
-    <{{ list_type }}{{ attributes.addClass('list-unstyled') }}>
+    <{{ list_type }}{{ attributes.addClass('list-unstyled', 'clearfix') }}>
       {%- for item in items -%}
         <li{{ item.attributes }}>{{ item.value }}</li>
       {%- endfor -%}

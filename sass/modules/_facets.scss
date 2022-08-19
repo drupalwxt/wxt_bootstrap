@@ -2,17 +2,52 @@
 
 ul.js-facets-checkbox-links {
   list-style-type: none;
+  margin-bottom: 0px;
   padding-left: 0px;
   .facet-item {
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+      border-bottom: 0;
+    }
+    input {
+      margin-top: 7px;
+    }
     label {
+      margin-bottom: 0px;
       margin-left: 5px;
-      display: inline;
+      display: flex;
+      flex: 1;
+      .facet-value {
+        flex: 1;
+        font-weight: 400;
+        padding-right: 5px;
+      }
     }
   }
 }
 
+ul.js-facets-links {
+  margin-bottom: 0px;
+  a {
+    display: flex;
+  }
+  .facet-value {
+    flex: 1;
+  }
+}
+
 .block-facets-summary {
-  .clear-filters {
-    margin-top: 15px;
+  li {
+    float: left;
+  }
+  a {
+    padding: 5px 15px;
+    font-size: 0.9em;
+  }
+  .glyphicon-remove {
+    font-size: 0.8em;
   }
 }

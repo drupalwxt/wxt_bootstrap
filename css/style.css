@@ -961,13 +961,43 @@ header.navbar-default {
 
 ul.js-facets-checkbox-links {
   list-style-type: none;
+  margin-bottom: 0px;
   padding-left: 0px; }
+  ul.js-facets-checkbox-links .facet-item {
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd; }
+  ul.js-facets-checkbox-links .facet-item:last-child {
+      border-bottom: 0; }
+  ul.js-facets-checkbox-links .facet-item input {
+    margin-top: 7px; }
   ul.js-facets-checkbox-links .facet-item label {
+    margin-bottom: 0px;
     margin-left: 5px;
-    display: inline; }
+    display: flex;
+    flex: 1; }
+  ul.js-facets-checkbox-links .facet-item label .facet-value {
+    flex: 1;
+    font-weight: 400;
+    padding-right: 5px; }
 
-.block-facets-summary .clear-filters {
-  margin-top: 15px; }
+ul.js-facets-links {
+  margin-bottom: 0px; }
+  ul.js-facets-links a {
+      display: flex; }
+  ul.js-facets-links .facet-value {
+    flex: 1; }
+
+.block-facets-summary li {
+  float: left; }
+
+.block-facets-summary a {
+  padding: 5px 15px;
+  font-size: 0.9em; }
+
+.block-facets-summary .glyphicon-remove {
+    font-size: 0.8em; }
 
 .flag a {
   text-decoration: none; }

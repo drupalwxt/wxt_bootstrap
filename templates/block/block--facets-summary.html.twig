@@ -47,8 +47,6 @@
 #}
 {%
   set classes = [
-    'panel',
-    'panel-primary',
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
@@ -56,21 +54,19 @@
     'clearfix',
   ]
 %}
-<section{{ attributes.addClass(classes) }}>
+{% set element = label ? 'section' : 'div' %}
+<{{ element }}{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <header class="panel-heading">
-      <h2{{ title_attributes.addClass('panel-title') }}>
-        <span class="glyphicon glyphicon-filter"></span>
-        {{ label }}
-      </h2>
-    </header>
+    <h2{{ title_attributes }}>
+      {{ label }}
+    </h2>
   {% endif %}
   {{ title_suffix }}
 
   {% block content %}
-    <div class="panel-body">
+    <div class="search-terms">
       {{ content }}
     </div>
   {% endblock %}
-</section>
+</{{ element }}>

@@ -124,6 +124,14 @@ function wxt_bootstrap_preprocess_block(&$variables) {
     }
   }
 
+  if (strpos($plugin_id, 'facet_block') !== FALSE) {
+    $theme_name = \Drupal::theme()->getActiveTheme()->getName();
+    $collapsible_facets = theme_get_setting('wxt_facets_collapsible', $theme_name);
+    $facet_panel_type = theme_get_setting('wxt_facets_panel_type', $theme_name);
+    $variables['collapsible_facets'] = $collapsible_facets;
+    $variables['facet_panel_type'] = $facet_panel_type;
+  }
+
   $moduleHandler = \Drupal::service('module_handler');
   if (!$moduleHandler->moduleExists('wxt_ext_blocks')) {
     $variables['label_display'] = TRUE;

@@ -48,29 +48,43 @@
 {%
   set classes = [
     'panel',
-    'panel-primary',
+    facet_panel_type,
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'mrgn-tp-lg',
     'clearfix',
   ]
 %}
-<section{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <header class="panel-heading">
-      <h2{{ title_attributes.addClass('panel-title') }}>
-        <span class="glyphicon glyphicon-filter"></span>
-        {{ label }}
-      </h2>
-    </header>
-  {% endif %}
-  {{ title_suffix }}
 
-  {% block content %}
-    <div class="panel-body">
-      {{ content }}
-    </div>
-  {% endblock %}
-</section>
+{% if collapsible_facets %}
+  <details{{ attributes.addClass('mrgn-bttm-0', classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <summary class="panel-heading">
+        <h2{{ title_attributes.addClass('panel-title') }}>
+          {{ label }}
+        </h2>
+      </summary>
+    {% endif %}
+    {{ title_suffix }}
+
+    {{ content }}
+  </details>
+{% else %}
+  <section{{ attributes.addClass('mrgn-tp-lg', classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <header class="panel-heading">
+        <h2{{ title_attributes.addClass('panel-title') }}>
+          <span class="glyphicon glyphicon-filter"></span>
+          {{ label }}
+        </h2>
+      </header>
+    {% endif %}
+    {{ title_suffix }}
+
+      <div class="panel-body">
+        {{ content }}
+      </div>
+  </section>
+{% endif %}

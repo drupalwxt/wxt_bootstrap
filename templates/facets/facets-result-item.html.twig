@@ -11,4 +11,19 @@
  * @ingroup themeable
  */
 #}
-{{ value }} {% if show_count %}<span class="facet-count badge">{{ count }}</span>{% endif %}
+
+<span class="facet-value">
+  {{ value }}
+</span>
+
+{% if show_count %}
+  <span class="badge-wrapper">
+    <span class="facet-count badge">{{ count }} <span class="wb-inv">
+      {% if count == 1 %}
+        {% trans %}result available{% endtrans %}
+      {% else %}
+        {% trans %}results available{% endtrans %}
+      {% endif %}
+    </span></span>
+  </span>
+{% endif %}
