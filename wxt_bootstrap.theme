@@ -216,3 +216,10 @@ function wxt_bootstrap_preprocess_field(&$variables) {
     $variables['video_title'] = $media->getName();
   }
 }
+
+/**
+ * Implements hook_preprocess_media().
+ */
+function wxt_bootstrap_preprocess_media(&$variables) {
+  $variables['attributes']['class'][] = 'wxt-media-' . str_replace('_', '-', $variables['view_mode']);
+}

@@ -1,0 +1,39 @@
+/**
+ * Responsive image.
+ */
+.align-left.wxt-media-small {
+  margin: 0.5em 0.75em 0.5em 0;
+  max-width: 45%;
+}
+
+.align-right.wxt-media-small {
+  margin: 0.5em 0em 0.5em 0.75em;
+}
+
+@media all and (min-width: 768px) {
+  .align-left.wxt-media-small {
+    margin: 0.5em 1.25em 0.5em 0;
+  }
+
+  .align-right.wxt-media-small {
+    margin: 0.5em 0em 0.5em 1.25em;
+  }
+
+  .align-left.wxt-media-medium,
+  .align-left.wxt-media-large {
+    margin: 0.5em 1.25em 0.5em 0;
+  }
+
+  .align-right.wxt-media-medium,
+  .align-right.wxt-media-large {
+    margin: 0.5em 0em 0.5em 1.25em;
+  }
+
+  .wxt-media-large {
+    max-width: 66.66%;
+  }
+
+  .wxt-media-medium {
+    max-width: 50%;
+  }
+}
