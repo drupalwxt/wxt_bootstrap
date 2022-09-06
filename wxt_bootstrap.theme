@@ -106,6 +106,33 @@ function wxt_bootstrap_theme_suggestions_book_tree_alter(array &$suggestions, ar
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_views_view_alter(&$suggestions, $variables) {
+  $view = $variables['view'];
+  $suggestions[] = "views_view__" . $view->id();
+  $suggestions[] = "views_view__" . $view->id() . "__" . $view->current_display;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_views_view_unformatted_alter(&$suggestions, $variables) {
+  $view = $variables['view'];
+  $suggestions[] = "views_view_unformatted__" . $view->id();
+  $suggestions[] = "views_view_unformatted__" . $view->id() . "__" . $view->current_display;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function wxt_bootstrap_theme_suggestions_views_view_list_alter(&$suggestions, $variables) {
+  $view = $variables['view'];
+  $suggestions[] = "views_view_list__" . $view->id();
+  $suggestions[] = "views_view_list__" . $view->id() . "__" . $view->current_display;
+}
+
+/**
  * Implements hook_preprocess_block().
  */
 function wxt_bootstrap_preprocess_block(&$variables) {
@@ -146,6 +173,20 @@ function wxt_bootstrap_preprocess_input__button(&$vars) {
     $attrObj = $vars['attributes'];
     if ($attrObj->offsetExists('id') && $attrObj->offsetGet('id')->__toString() == 'wb-srch-sub') {
       $attrObj->setAttribute('title', t('Search'));
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_image().
+ */
+function wxt_bootstrap_preprocess_image(&$vars) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'page_manager.page_view_blog_blog-panels_variant-0') {
+    if ($vars['style_name'] == 'blog_spotlight') {
+      unset($vars['attributes']['width']);
+      unset($vars['attributes']['height']);
+      $vars['attributes']['class'] = 'mrgn-bttm-md thumbnail';
     }
   }
 }
