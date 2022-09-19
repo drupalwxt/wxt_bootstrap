@@ -47,9 +47,11 @@ function wxt_bootstrap_preprocess_page(&$variables) {
 
   if ($language == 'en') {
     $variables['main_menu_label'] = '<span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span>';
+    $variables['lang_iso_639_2'] = 'eng';
   }
   elseif ($language == 'fr') {
     $variables['main_menu_label'] = 'Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span>';
+    $variables['lang_iso_639_2'] = 'fra';
   }
 }
 
