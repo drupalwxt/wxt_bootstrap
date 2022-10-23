@@ -77,13 +77,20 @@ wxt:
 <?php
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function THEMENAME_theme_suggestions_block_alter(&$suggestions, $variables) {
-
   // Load theme suggestions for blocks from parent theme.
-  foreach ($suggestions as &$suggestion) {
-    $suggestion = str_replace('THEMENAME_', 'wxt_bootstrap_', $suggestion);
+  // https://www.drupal.org/project/wxt/issues/3310485#comment-14715969
+  for ($i = 0; $i < count($suggestions); $i++) {
+    if (str_contains($suggestions[$i], 'THEMENAME_')) {
+      $new_suggestions = [
+        str_replace('THEMENAME_', '', $suggestions[$i]),
+        str_replace('THEMENAME_', 'wxt_bootstrap_', $suggestions[$i]),
+      ];
+      array_splice($suggestions, $i, 0, $new_suggestions);
+      $i += 2;
+    }
   }
 }
 
