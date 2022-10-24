@@ -41,7 +41,7 @@ class Region extends PreprocessBase {
       $config = \Drupal::config('wxt_library.settings');
       $menu_type = $config->get('wxt.menu_type');
       if ($region === 'search' && $menu_type) {
-          $variables->addClass(['visible-md visible-lg']);
+        $variables->addClass(['visible-md visible-lg']);
       }
     }
   }
