@@ -21,21 +21,33 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_name|clean_class, gcweb_cdn, gcweb_cdn_url, language) }}
+{{ menus.menu_links(menu_type, items, attributes, 0, menu_name|clean_class, gcweb_cdn, gcweb_cdn_url, language) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_name, gcweb_cdn, gcweb_cdn_url, language) %}
+{% macro menu_links(menu_type, items, attributes, menu_level, menu_name, gcweb_cdn, gcweb_cdn_url, language) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
       {% if gcweb_cdn and gcweb_cdn_url %}
         <ul role="menu" aria-orientation="vertical" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html">
       {% else %}
-        <ul role="menu" aria-orientation="vertical">
+        {% if menu_type == 'default' %}
+          <ul role="menu" aria-orientation="vertical">
+        {% elseif menu_type == 'horizontal' %}
+          <ul role="menubar"{{ attributes.addClass('list-inline', 'menu') }}>
+        {% endif %}
       {% endif %}
     {% elseif menu_level == 1 %}
-      <ul role="menu" aria-orientation="vertical"{{ attributes.removeClass('menu', 'list-inline') }}>
+      {% if menu_type == 'default' %}
+        <ul role="menu" aria-orientation="vertical"{{ attributes.removeClass('menu', 'list-inline') }}>
+      {% elseif menu_type == 'horizontal' %}
+        <ul role="menu"{{ attributes.addClass('sm', 'list-unstyled').removeClass('menu', 'list-inline') }} aria-expanded="false" aria-hidden="true">
+      {% endif %}
     {% else %}
-      <ul role="menu" aria-orientation="vertical">
+      {% if menu_type == 'default' %}
+        <ul role="menu" aria-orientation="vertical">
+      {% elseif menu_type == 'horizontal' %}
+        <ul role="menu"{{ attributes.addClass('dropdown-menu', menu_name) }}>
+      {% endif %}
     {% endif %}
     {% for item in items %}
       {%
@@ -46,14 +58,24 @@
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
-        <a role="menuitem" href="{{ item.url }}" tabindex="-1" aria-haspopup="true" aria-controls="{{ item.title | clean_id }}" aria-expanded="false">{{ item.title }}</a>
+        {% if menu_type == 'default' %}
+          <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
+          <a role="menuitem" href="{{ item.url }}" tabindex="-1" aria-haspopup="true" aria-controls="{{ item.title | clean_id }}" aria-expanded="false">{{ item.title }}</a>
+        {% elseif menu_type == 'horizontal' %}
+          <li role="presentation"{{ item.attributes }}>
+          <a role="menuitem" class="dropdown-toggle item" href="{{ item.url }}">{{ item.title }}</a>
+        {% endif %}
       {% else %}
-        <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
-        {{ link(item.title, item.url, {'role':['menuitem']}) }}
+        {% if menu_type == 'default' %}
+          <li role="presentation"{{ item.attributes.addClass(item_classes) }}>
+          {{ link(item.title, item.url, {'role':['menuitem']}) }}
+        {% elseif menu_type == 'horizontal' %}
+          <li role="presentation"{{ item.attributes }}>
+          {{ link(item.title, item.url, {'role':['menuitem']}) }}
+        {% endif %}
       {% endif %}
       {% if item.below %}
-        {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}
+        {{ menus.menu_links(menu_type, item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}
       {% endif %}
       </li>
     {% endfor %}

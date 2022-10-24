@@ -81,6 +81,16 @@ class Menu extends PreprocessBase {
       }
     }
 
+    // Determine menu orientation.
+    $config = \Drupal::config('wxt_library.settings');
+    $menu_type = $config->get('wxt.menu_type');
+    if ($menu_type) {
+      $variables['menu_type'] = 'horizontal';
+    }
+    else {
+      $variables['menu_type'] = 'default';
+    }
+
     parent::preprocess($variables, $hook, $info);
   }
 
