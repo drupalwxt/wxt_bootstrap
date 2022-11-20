@@ -41,11 +41,13 @@ class Menu extends PreprocessBase {
       if (!$this->theme->getSetting('wxt_megamenu_more_link')) {
         foreach ($variables['items'] as $key => &$item) {
           if (isset($item['below']) && $item['below']) {
-            $mb_more = $item;
-            $mb_more['title'] = $mb_more['title'] . ' ' . $this->t('– More');
-            $mb_more['attributes']->addClass('slflnk');
-            unset($mb_more['below']);
-            $item['below'][$key] = $mb_more;
+            if (!empty($item['url']->toString())) {
+              $mb_more = $item;
+              $mb_more['title'] = $mb_more['title'] . ' ' . $this->t('– More');
+              $mb_more['attributes']->addClass('slflnk');
+              unset($mb_more['below']);
+              $item['below'][$key] = $mb_more;
+            }
           }
         }
       }
