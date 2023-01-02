@@ -255,7 +255,7 @@ function wxt_bootstrap_preprocess_field(&$variables) {
     $file = File::load($fid);
     $video_uri = $file->getFileUri();
 
-    $variables['video_uri'] = file_url_transform_relative(file_create_url($video_uri));
+    $variables['video_uri'] = \Drupal::service('file_url_generator')->generateString($video_uri);
     $variables['video_title'] = $media->getName();
   }
 }
