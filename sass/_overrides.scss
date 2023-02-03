@@ -44,6 +44,43 @@ ol, ul {
   border-top: 1px solid #E5E5E5;
 }
 
+#wb-info h3 {
+  margin-top: 0;
+}
+
+#wb-info .gc-contextual {
+  background-color: #33465c;
+}
+
+#wb-info .gc-contextual nav {
+  padding-bottom: 0px;
+}
+
+#wb-info .gc-contextual h3 {
+  color: #fff;
+}
+
+#wb-info .gc-main-footer {
+  color: #fff;
+}
+
+#wb-info .gc-main-footer h4 {
+  margin: 0px;
+}
+
+#wb-info .gc-main-footer h4::before {
+  border-bottom: 4px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1.5em;
+  width: 2.25em;
+}
+
+.pad-tp-0 {
+  padding-top: 0px !important;
+}
+
 // Help region.
 .region-help {
   > .glyphicon {

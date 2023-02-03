@@ -37,15 +37,20 @@
   set classes = [
     'container',
     'wb-navcurr',
+    'pad-tp-0',
   ]
 %}
-<nav{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  <h2>{{ 'About government'|t }}</h2>
-  {{ title_suffix }}
-  {% block content %}
-    <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-    {{ content }}
-    </ul>
-  {% endblock %}
-</nav>
+<div class="gc-main-footer">
+  <nav{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    <h4>
+      <span class="wb-inv">{{ 'Themes and topics'|t }}</span>
+    </h4>
+    {{ title_suffix }}
+    {% block content %}
+      <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+      {{ content }}
+      </ul>
+    {% endblock %}
+  </nav>
+</div>

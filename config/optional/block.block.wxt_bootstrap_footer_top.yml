@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.footer-top
   module:
     - language
     - system
   theme:
     - wxt_bootstrap
-id: wxt_bootstrap_footer_fr
+id: wxt_bootstrap_footer_top
 theme: wxt_bootstrap
 region: footer
-weight: 0
+weight: -1
 provider: null
-plugin: 'system_menu_block:footer-fr'
+plugin: 'system_menu_block:footer-top'
 settings:
-  id: 'system_menu_block:footer-fr'
-  label: 'Pied de page'
+  id: 'system_menu_block:footer-top'
+  label: 'Footer top'
   provider: system
   label_display: '0'
   level: 1
@@ -24,8 +24,8 @@ settings:
 visibility:
   language:
     id: language
-    langcodes:
-      fr: fr
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en

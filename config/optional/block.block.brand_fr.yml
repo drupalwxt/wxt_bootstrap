@@ -13,10 +13,10 @@ theme: wxt_bootstrap
 region: branding
 weight: 0
 provider: null
-plugin: 'system_menu_block:brand_fr'
+plugin: 'system_menu_block:brand-fr'
 settings:
-  id: 'system_menu_block:brand_fr'
-  label: 'À propos de ce site'
+  id: 'system_menu_block:brand-fr'
+  label: 'Organisation du gouvernement du Canada'
   provider: system
   label_display: visible
   level: 1

@@ -1,0 +1,7 @@
+langcode: fr
+status: true
+dependencies: {  }
+id: footer-top-fr
+label: 'Haut de pied de page'
+description: 'Haut de pied de page en francais.'
+locked: false
