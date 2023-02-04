@@ -30,21 +30,26 @@
  * See http://juicystudio.com/article/screen-readers-display-none.php and
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  *
- * @ingroup themeable
+ * @ingroup templates
  */
 #}
-{% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass('col-md-10', 'ftr-urlt-lnk')|without('role', 'aria-labelledby') }}>
-  {# Label. If not displayed, we still provide it for screen readers. #}
-  {% if not configuration.label_display %}
-    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-  {% endif %}
-  {{ title_prefix }}
-  <h3{{ title_attributes.addClass('wb-inv').setAttribute('id', heading_id) }}>{{ configuration.label }}</h3>
-  {{ title_suffix }}
-
-  {# Menu. #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</nav>
+{%
+  set classes = [
+    'container',
+    'wb-navcurr',
+  ]
+%}
+<div class="gc-main-footer">
+  <div clas="container">
+    <nav{{ attributes.addClass(classes) }}>
+      {{ title_prefix }}
+      <h3>{{ 'Government of Canada'|t }}</h3>
+      {{ title_suffix }}
+      {% block content %}
+        <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+        {{ content }}
+        </ul>
+      {% endblock %}
+    </nav>
+  </div>
+</div>

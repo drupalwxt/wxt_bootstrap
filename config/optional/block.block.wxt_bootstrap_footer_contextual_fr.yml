@@ -2,30 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.footer-contextual-fr
   module:
     - language
     - system
   theme:
     - wxt_bootstrap
-id: wxt_bootstrap_footer_fr
+id: wxt_bootstrap_footer_contextual_fr
 theme: wxt_bootstrap
 region: footer
-weight: 0
+weight: -3
 provider: null
-plugin: 'system_menu_block:footer-fr'
+plugin: 'system_menu_block:footer-contextual-fr'
 settings:
-  id: 'system_menu_block:footer-fr'
-  label: 'Pied de page'
+  id: 'system_menu_block:footer-contextual-fr'
+  label: '[Bande du pied de page contextuel]'
   provider: system
-  label_display: '0'
+  label_display: '1'
   level: 1
   depth: 0
 visibility:
   language:
     id: language
-    langcodes:
-      fr: fr
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+    langcodes:
+      fr: fr

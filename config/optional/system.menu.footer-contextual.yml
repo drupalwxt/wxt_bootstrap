@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer-contextual
+label: GC contextual footer
+description: 'Contextual footer menu to display above the global footer menus.'
+locked: false
