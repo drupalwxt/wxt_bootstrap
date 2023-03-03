@@ -1,7 +1,7 @@
 name: WxT Bootstrap
 description: WxT theme(s) support leveraging Bootstrap.
 type: theme
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'WxT'
 base theme: bootstrap
 ckeditor_stylesheets:
