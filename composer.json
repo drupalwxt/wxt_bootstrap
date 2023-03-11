@@ -12,8 +12,8 @@
     "require": {
         "cweagans/composer-patches": "^1.6.0",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
-        "drupal/core": "8.* || 9.* || 10.*",
-        "drupal/bootstrap": "3.25"
+        "drupal/core": "9.* || 10.*",
+        "drupal/bootstrap": "3.27"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
