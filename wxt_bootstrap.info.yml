@@ -4,8 +4,8 @@ type: theme
 core_version_requirement: '^9 || ^10'
 package: 'WxT'
 base theme: bootstrap
-ckeditor_stylesheets:
-  - css/ckeditor.css
+ckeditor5-stylesheets:
+  - css/ckeditor5.css
 
 regions:
   branding: 'Branding'
