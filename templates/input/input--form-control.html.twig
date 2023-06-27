@@ -20,13 +20,13 @@
  * @see template_preprocess_input()
  */
 #}
-{% block input %}
-  {%
-    set classes = [
+
+  {% block input %}{% apply spaceless %}
+    {%
+      set classes = [
       'form-control',
     ]
-  %}
-  {% apply spaceless %}
+    %}
     <input{{ attributes.addClass(classes) }} />
-  {% endapply %}
-{% endblock %}
+  {% endapply %}{% endblock %}
+

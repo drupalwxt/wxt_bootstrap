@@ -22,15 +22,15 @@
  * @see template_preprocess_input()
  */
 #}
-{% apply spaceless %}
-  {%
-    set classes = [
+
+  {% block input %}{% apply spaceless %}
+    {%
+      set classes = [
       'btn',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
     ]
-  %}
-  {% block input %}
+    %}
     {% if icon_only %}
       <button{{ attributes.addClass(classes, 'icon-only') }}>
         <span class="sr-only">{{ label }}</span>
@@ -54,5 +54,5 @@
       <span class="sr-only">{{ 'Toggle Dropdown'|t }}</span>
     </button>
     {{ children }}
-  {% endblock %}
-{% endapply %}
+  {% endapply %}{% endblock %}
+

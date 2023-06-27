@@ -22,16 +22,14 @@
  * @see template_preprocess_input()
  */
 #}
-{% block input %}
-  {% apply spaceless %}
+  {% block input %}{% apply spaceless %}
     {%
       set classes = [
-        'btn',
-        type == 'submit' ? 'js-form-submit',
-        icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
-      ]
+      'btn',
+      type == 'submit' ? 'js-form-submit',
+      icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
+    ]
     %}
-
     {% if search_submit == 'true' %}
       {% if wxt_theme == 'gcweb' %}
         <button{{ attributes.addClass(classes) }}>{{ icon }}<span class="wb-inv">{{ 'Search'|t }}</span></button>{{ children }}
@@ -53,5 +51,4 @@
       {% endif %}
     {% endif %}
     {{ children }}
-  {% endapply %}
-{% endblock %}
+  {% endapply %}{% endblock %}
