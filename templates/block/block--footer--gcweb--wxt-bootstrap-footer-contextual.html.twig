@@ -40,16 +40,14 @@
   ]
 %}
 <div class="gc-contextual">
-  <div clas="container">
-    <nav{{ attributes.addClass(classes) }}>
-      {{ title_prefix }}
-      <h3>{{ label }}</h3>
-      {{ title_suffix }}
-      {% block content %}
-        <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-        {{ content }}
-        </ul>
-      {% endblock %}
-    </nav>
-  </div>
+  <nav{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    <h3>{{ label }}</h3>
+    {{ title_suffix }}
+    {% block content %}
+      <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+      {{ content }}
+      </ul>
+    {% endblock %}
+  </nav>
 </div>
