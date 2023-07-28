@@ -42,7 +42,9 @@
 <div class="gc-contextual">
   <nav{{ attributes.addClass(classes) }}>
     {{ title_prefix }}
-    <h3>{{ label }}</h3>
+    {% if label %}
+      <h3>{{ label }}</h3>
+    {% endif %}
     {{ title_suffix }}
     {% block content %}
       <ul class="list-unstyled colcount-sm-2 colcount-md-3">
