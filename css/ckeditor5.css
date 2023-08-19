@@ -2,4 +2,5 @@
  * CKEditor5 styles.
  */
 
-/*# sourceMappingURL=ckeditor5.css.map */
+.ck-content {
+	min-height: 250px; }
