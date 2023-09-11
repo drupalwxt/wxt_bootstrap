@@ -1,5 +1,5 @@
 name: WxT Bootstrap
-description: WxT theme(s) support leveraging Bootstrap.
+description: 'Provides Templates to adhere to the WET-BOEW and Canada.ca Design System and C&IA Specification.'
 type: theme
 core_version_requirement: '^9 || ^10'
 package: 'WxT'
