@@ -1023,24 +1023,24 @@ ul.js-facets-checkbox-links {
     display: flex;
     align-items: flex-start;
     border-bottom: 1px solid #ddd; }
-  ul.js-facets-checkbox-links .facet-item:last-child {
+    ul.js-facets-checkbox-links .facet-item:last-child {
       border-bottom: 0; }
-  ul.js-facets-checkbox-links .facet-item input {
-    margin-top: 7px; }
-  ul.js-facets-checkbox-links .facet-item label {
-    margin-bottom: 0px;
-    margin-left: 5px;
-    display: flex;
-    flex: 1; }
-  ul.js-facets-checkbox-links .facet-item label .facet-value {
-    flex: 1;
-    font-weight: 400;
-    padding-right: 5px; }
+    ul.js-facets-checkbox-links .facet-item input {
+      margin-top: 7px; }
+    ul.js-facets-checkbox-links .facet-item label {
+      margin-bottom: 0px;
+      margin-left: 5px;
+      display: flex;
+      flex: 1; }
+      ul.js-facets-checkbox-links .facet-item label .facet-value {
+        flex: 1;
+        font-weight: 400;
+        padding-right: 5px; }
 
 ul.js-facets-links {
   margin-bottom: 0px; }
   ul.js-facets-links a {
-      display: flex; }
+    display: flex; }
   ul.js-facets-links .facet-value {
     flex: 1; }
 
@@ -1052,7 +1052,7 @@ ul.js-facets-links {
   font-size: 0.9em; }
 
 .block-facets-summary .glyphicon-remove {
-    font-size: 0.8em; }
+  font-size: 0.8em; }
 
 .flag a {
   text-decoration: none; }
@@ -1130,20 +1130,20 @@ ul.js-facets-links {
 .theme-gcweb-legacy .wb-srch-multi {
   padding-top: 1em; }
 
+.theme-gcweb #wb-tphp,
+.theme-gcweb-legacy #wb-tphp {
+  position: relative; }
+
 .theme-wet-boew .highlighted .region-highlighted {
   background-color: #fff; }
 
 .theme-wet-boew #edit-submit-container {
   width: inherit !important; }
 
-#wb-srch .block-title {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: 0;
-  overflow: hidden;
-  position: absolute;
-  width: 1px; }
+.theme-wet-boew #wb-tphp {
+  position: relative; }
 
+#wb-srch .block-title,
 #mb-pnl .srch-pnl .block-title {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
