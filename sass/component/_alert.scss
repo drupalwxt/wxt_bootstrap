@@ -15,7 +15,7 @@
 
 // Treat all links inside alert as .alert-link
 .alert a {
-  font-weight: $alert-link-font-weight;
+  font-weight: $headings-font-weight;
 }
 .alert-success a {
   color: darken($alert-success-text, 10%);
