@@ -98,17 +98,17 @@
         </div>
       </div>
       {% if menu_type == 'default' %}
-        <nav class="gcweb-menu" data-trgt="mb-pnl" typeof="SiteNavigationElement">
+        <nav aria-labelledby="gcweb-main-menu" class="gcweb-menu" data-trgt="mb-pnl" typeof="SiteNavigationElement">
           <div class="container">
-            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+            <h2 id="gcweb-main-menu" class="wb-inv">{{ 'Menu'|t }}</h2>
             <button type="button" aria-haspopup="true" aria-expanded="false">{{ main_menu_label|raw }}</button>
             {{ page.navigation }}
           </div>
         </nav>
       {% elseif menu_type == 'horizontal' %}
-        <nav aria-labelledby="topicsMenu" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
+        <nav aria-labelledby="gcweb-main-menu" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
           <div class="pnl-strt {{ container }} nvbar">
-            <h2 id="topicsMenu" class="wb-inv">{{ 'Menu'|t }}</h2>
+            <h2 id="gcweb-main-menu" class="wb-inv">{{ 'Menu'|t }}</h2>
             {{ page.navigation }}
           </div>
         </nav>

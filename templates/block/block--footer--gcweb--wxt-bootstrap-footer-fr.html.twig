@@ -41,9 +41,9 @@
   ]
 %}
 <div class="gc-main-footer">
-  <nav{{ attributes.addClass(classes) }}>
+  <nav{{ attributes.addClass(classes) }} aria-labelledby="themes-and-topics">
     {{ title_prefix }}
-    <h4>
+    <h4 id="themes-and-topics">
       <span class="wb-inv">{{ 'Themes and topics'|t }}</span>
     </h4>
     {{ title_suffix }}

@@ -40,9 +40,9 @@
   ]
 %}
 <div class="gc-main-footer">
-  <nav{{ attributes.addClass(classes) }}>
+  <nav{{ attributes.addClass(classes) }} aria-labelledby="gcweb-menu-footertop">
     {{ title_prefix }}
-    <h3>{{ 'Government of Canada'|t }}</h3>
+    <h3 id="gcweb-menu-footertop">{{ 'Government of Canada'|t }}</h3>
     {{ title_suffix }}
     {% block content %}
       <ul class="list-unstyled colcount-sm-2 colcount-md-3">

@@ -40,10 +40,10 @@
   ]
 %}
 <div class="gc-contextual">
-  <nav{{ attributes.addClass(classes) }}>
+  <nav{{ attributes.addClass(classes) }} aria-labelledby="gc-department-menu">
     {{ title_prefix }}
     {% if label %}
-      <h3>{{ label }}</h3>
+      <h3 id="gc-department-menu">{{ label }}</h3>
     {% endif %}
     {{ title_suffix }}
     {% block content %}
