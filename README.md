@@ -30,11 +30,18 @@ All dependencies are included as part of the [Drupal WxT][drupal_wxt]
 distribution and come completely configured alongside with additional
 integrations and workflow improvements.
 
-- [WxT][wxt] (8.x-1.x)
+- [WxT][wxt]
+
+> Note: We heavily recommend that you use the distribution method.
+> Limited support is provided for standalone.
+>
+> * Extra configuration of WxT components and additional custom plugins
+> * Drupal application lifecycle and timely updates of core
+> * Workflow improvements and configuration of key contributed modules
 
 ### StandAlone
 
-WxT Library at a minimum requires the following dependencies:
+WxT Bootstrap at a minimum requires the following dependencies:
 
 - [Bootstrap][bootstrap]
 - [WxT Library][wxt_library]
@@ -46,14 +53,11 @@ You can easily retrieve these dependencies via composer:
 
 ```sh
 composer require drupal/wxt_bootstrap
+composer require drupal/wxt_library
 ```
 
-> Note: We heavily recommend that you use the distribution method.
-> Limited support is provided for standalone.
->
-> * Extra configuration of WxT components and additional custom plugins
-> * Drupal application lifecycle and timely updates of core and additional Lightning extensions
-> * Workflow improvements from Lightning and configuration of key contributed modules
+> Note: Please take a look at the composer.json file located in WxT Library which pulls in all of
+the theme assets using a custom [composer repository][composer_extdeps].
 
 ## Setup
 
@@ -69,13 +73,13 @@ template for inheriting from `wxt_bootstrap`.
 > from the wxt_bootstrap base theme you need to select your new sub-theme under the
 > Theme Visibility settings (`/admin/config/wxt/wxt_library`).
 
-## Sass Compilation
+## SCSS Compilation
 
 You will need to have the following required dependencies for the following
 commands to execute successfully:
 
-- NodeJS (v11.0.0) + NPM (v6.4.1) + Yarn (v1.17.3)
-- Grunt or Gulp install globally with the -g option
+- NodeJS (v18.10.0) + NPM (v9.6.6) + Yarn (v1.22.19)
+- Gulp install globally with the -g option
 
 Inside the theme directory run the following to install the required NodeJS
 dependencies:
@@ -91,43 +95,20 @@ sub-theme. After it has been extracted, the directory should be renamed
 ships with the compiled bootstrap files as libraries we still need the source
 files to compile the bootstrap overrides.
 
-### Option 1: With Gulp (Preferred + Tested)
+### With Gulp
 
-Run the following commands inside the theme directory to compile SASS to CSS:
+Run the following commands inside the theme directory to compile SCSS to CSS:
 
-- `gulp sass` (Creates the initial css file)
-- `gulp sass:watch` (Watches the sass folder for changes)
-
-### Option 2: With Grunt (Needs Work)
-
-Run the following commands inside the theme directory to compile SASS to CSS:
-
-- `grunt init` (Creates the initial css file)
-- `grunt watch` (Watches the sass folder for changes)
-
-## BROWSERSYNC
-
-Adding Browsersync to workflow
-
-1. Install the Drupal browsersync module from:
-https://www.drupal.org/project/browsersync
-
-2. In "Themes" -> "Appearance" -> "Settings" scroll down and enable browsersync
-for the appropriate theme.
-
-3. Edit the proxy address in the gruntfile.js / gulpfile.js file to match the
-IP or hostname of your Drupal website.
-
-4. Run `grunt browsersync` or `gulp browsersync`  (Watches the sass folder, and
-sets up a browsersync session.)
+- `gulp scss` (Creates the initial css file)
 
 <!-- Links Referenced -->
 
-[bootstrap]:      https://drupal.org/project/bootstrap
-[bootstrap_sass]: https://github.com/twbs/bootstrap-sass
-[drupal_wxt]:     https://drupal.org/project/wxt
-[wet_boew]:       https://github.com/drupalwxt/composer-extdeps
-[wxt]:            https://drupal.org/project/wxt
-[wxt_library]:    https://drupal.org/project/wxt_library
-[wxt_bootstrap]:  https://drupal.org/project/wxt_bootstrap
-[readme]:         https://github.com/drupalwxt/wxt_bootstrap/blob/8.x-1.x/README.md
+[bootstrap]:        https://drupal.org/project/bootstrap
+[bootstrap_sass]:   https://github.com/twbs/bootstrap-sass
+[drupal_wxt]:       https://drupal.org/project/wxt
+[wet_boew]:         https://github.com/wet-boew/wet-boew
+[composer_extdeps]: https://github.com/drupalwxt/composer-extdeps
+[wxt]:              https://drupal.org/project/wxt
+[wxt_library]:      https://drupal.org/project/wxt_library
+[wxt_bootstrap]:    https://drupal.org/project/wxt_bootstrap
+[readme]:           https://github.com/drupalwxt/wxt_bootstrap/blob/8.x-7.x/README.md
