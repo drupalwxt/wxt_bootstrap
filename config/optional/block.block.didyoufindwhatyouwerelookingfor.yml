@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.gcweb_did_you_find
+  module:
+    - block_class
+    - wxt_ext_blocks
+    - wxt_ext_webform
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'col-sm-7 col-lg-6'
+  wxt_ext_blocks:
+    display_title_invisible: 0
+id: didyoufindwhatyouwerelookingfor
+theme: wxt_bootstrap
+region: content_footer
+weight: -10
+provider: null
+plugin: find_what_you_looking_for
+settings:
+  id: find_what_you_looking_for
+  label: 'Did You Find What You Were Looking For'
+  label_display: '0'
+  provider: wxt_ext_webform
+  webform_id: gcweb_did_you_find
+visibility: {  }

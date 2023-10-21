@@ -50,15 +50,17 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'col-sm-7 col-lg-6',
     'clearfix',
   ]
 %}
+
 {% if display %}
-  {% set wrapper = label ? 'section' : 'div' %}
-  <{{ wrapper }}{{ attributes.addClass(classes) }}>
+  {% set element = label or label_display or display_title_invisible ? 'section' : 'div' %}
+  <{{ element }}{{ attributes.addClass(classes) }}>
     {{ title_prefix }}
-    {% if label %}
+    {% if display_title_invisible %}
+      <h2{{ title_attributes.addClass('wb-inv') }}>{{ label }}</h2>
+    {% elseif label %}
       <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
     {% endif %}
     {{ title_suffix }}
@@ -66,5 +68,5 @@
     {% block content %}
       {{ content }}
     {% endblock %}
-  </{{ wrapper }}>
+  </{{ element }}>
 {% endif %}

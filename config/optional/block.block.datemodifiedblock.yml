@@ -7,7 +7,7 @@ dependencies:
     - wxt_bootstrap
 third_party_settings:
   block_class:
-    classes: 'col-md-12'
+    classes: 'col-xs-12'
 id: datemodifiedblock
 theme: wxt_bootstrap
 region: content_footer
