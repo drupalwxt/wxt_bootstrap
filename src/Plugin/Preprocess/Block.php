@@ -4,7 +4,6 @@ namespace Drupal\wxt_bootstrap\Plugin\Preprocess;
 
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\node\NodeInterface;
-use Drupal\block\BlockRepository;
 
 /**
  * Pre-processes variables for the "block" theme hook.
@@ -70,7 +69,7 @@ class Block extends PreprocessBase {
       $did_you_find_webform = $this->activateDidYouFindWebform();
       $variables['display'] = TRUE;
 
-      if ($did_you_find_webform){
+      if ($did_you_find_webform) {
         if ($variables['plugin_id'] == 'share_widget_block') {
           $variables['attributes']['class'] = [
             'col-sm-3',
@@ -124,7 +123,7 @@ class Block extends PreprocessBase {
    *
    * @return bool
    *   TRUE if the webform block should be displayed, FALSE otherwise.
-   */  
+   */
   public function activateDidYouFindWebform() {
     $node = \Drupal::routeMatch()->getParameter('node');
 
