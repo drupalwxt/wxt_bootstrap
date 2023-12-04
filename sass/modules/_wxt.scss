@@ -136,7 +136,7 @@
   }
 }
 
-#drupal-off-canvas {
+#drupal-off-canvas-wrapper {
   .modal-dialog {
     margin: 0px auto;
   }
@@ -161,7 +161,7 @@
 
 /* Layout Builder */
 
-#drupal-off-canvas *:not(div), #drupal-off-canvas *:not(svg *),
-#drupal-off-canvas *:after, #drupal-off-canvas *:before {
+#drupal-off-canvas-wrapper *:not(div), #drupal-off-canvas-wrapper *:not(svg *),
+#drupal-off-canvas-wrapper *:after, #drupal-off-canvas-wrapper *:before {
   all: revert;
 }

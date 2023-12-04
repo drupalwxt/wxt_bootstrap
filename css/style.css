@@ -1459,10 +1459,10 @@ ul.js-facets-links .facet-value {
   margin-right: -5px;
 }
 
-#drupal-off-canvas .modal-dialog {
+#drupal-off-canvas-wrapper .modal-dialog {
   margin: 0px auto;
 }
-#drupal-off-canvas [data-drupal-selector^=edit-layout-settings] select {
+#drupal-off-canvas-wrapper [data-drupal-selector^=edit-layout-settings] select {
   -webkit-appearance: listbox;
   -moz-appearance: menulist;
 }
@@ -1478,7 +1478,7 @@ ul.js-facets-links .facet-value {
   }
 }
 /* Layout Builder */
-#drupal-off-canvas *:not(div), #drupal-off-canvas *:not(svg *),
-#drupal-off-canvas *:after, #drupal-off-canvas *:before {
+#drupal-off-canvas-wrapper *:not(div), #drupal-off-canvas-wrapper *:not(svg *),
+#drupal-off-canvas-wrapper *:after, #drupal-off-canvas-wrapper *:before {
   all: revert;
 }
