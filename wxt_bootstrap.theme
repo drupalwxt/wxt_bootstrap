@@ -273,11 +273,9 @@ function wxt_bootstrap_preprocess_media(&$variables) {
 function wxt_bootstrap_preprocess_page_title(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof NodeInterface && $node->hasField('field_lead_title')) {
+  $checkFieldName = 'field_lead_title';
+  if ($node instanceof NodeInterface && $node->hasField($checkFieldName) && !$node->get($checkFieldName)->isEmpty() ) {
     $variables['gc_thickline'] = TRUE;
-
-    if (!empty($node->get('field_lead_title')->getValue()[0]['value'])) {
-      $variables['lead_title'] = $node->get('field_lead_title')->getValue()[0]['value'];
-    }
+    $variables['lead_title'] = $node->get($checkFieldName)->first()->getString();
   }
 }
