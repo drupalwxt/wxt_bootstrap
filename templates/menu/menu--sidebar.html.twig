@@ -32,15 +32,15 @@
       <ul role="menu"{{ attributes }}>
     {% endif %}
     {% for item in items %}
-      {% if menu_level == 0 %}
       {%
         set item_classes = [
-          item.is_expanded? 'expanded',
-          item.is_expanded and menu_level == 0 ? 'dropdown',
-          item.in_active_trail ? 'active',
-          item.in_active_trail ? 'wb-navcurr',
-        ]
+        item.is_expanded? 'expanded',
+        item.is_expanded and menu_level == 0 ? 'dropdown',
+        item.in_active_trail ? 'active',
+        item.in_active_trail ? 'wb-navcurr',
+      ]
       %}
+      {% if menu_level == 0 %}
         <li role="presentation"{{ item.attributes }}>
         <h3><a role="menuitem" href="{{ item.url }}">{{ item.title }}</a></h3>
       {% else %}
