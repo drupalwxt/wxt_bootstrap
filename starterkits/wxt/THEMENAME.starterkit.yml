@@ -1,7 +1,7 @@
-name: 'WxT Sub-Theme'
+name: 'WxT THEMENAME'
 description: 'WxT sub-theme(s) support leveraging WxT Bootstrap. Source files for Bootstrap are defined as part of the WxT Library module.'
 type: theme
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^10 || ^11
 package: 'WxT'
 base theme: wxt_bootstrap
 

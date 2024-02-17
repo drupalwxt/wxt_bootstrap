@@ -16,6 +16,10 @@ function THEMENAME_theme_suggestions_block_alter(&$suggestions, $variables) {
   // Load theme suggestions for blocks from parent theme.
   // https://www.drupal.org/project/wxt/issues/3310485#comment-14715969
   for ($i = 0; $i < count($suggestions); $i++) {
+    if (!isset($suggestions[$i])) {
+      // PHP 8.2 weird, may not be a $i element but there will be $i++.
+      continue;
+    }
     if (str_contains($suggestions[$i], 'THEMENAME_')) {
       $new_suggestions = [
         str_replace('THEMENAME_', '', $suggestions[$i]),
@@ -43,12 +47,12 @@ function THEMENAME_theme_suggestions_page_alter(array &$suggestions, array $vari
         $wxt_active = $wxt->getLibraryName();
 
         if ($node->book['bid'] == $node->id()) {
-          // Theme book index page
+          // Theme book index page.
           $suggestions[] = $variables['theme_hook_original'] . '__book_index';
           $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_index';
         }
         else {
-          // Theme book child page
+          // Theme book child page.
           $suggestions[] = $variables['theme_hook_original'] . '__book_page';
           $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_page';
         }

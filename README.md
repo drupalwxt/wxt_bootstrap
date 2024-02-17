@@ -5,7 +5,7 @@ A modern, component based and accessible theme powered by the
 [Bootstrap][bootstrap] base theme and integrated extensively with the
 [WxT][wet_boew] jQuery Framework.
 
-This theme will strive to always work with the native Drupal 8 workflow which
+This theme will strive to always work with the native Drupal 10 workflow which
 consists of leveraging block layouts and twig templates by default. Over time
 full support for various contributed modules such as Display Suite and Panels
 will be added for more complex layout functionality.
@@ -15,7 +15,7 @@ will be added for more complex layout functionality.
 ## Installation
 
 There are two possible installation methods to leverage the
-[WxT Bootstrap][wxt_bootstrap] theme in Drupal 8:
+[WxT Bootstrap][wxt_bootstrap] theme in Drupal 10:
 
 - *distribution (recommended)*
 - *standalone*
@@ -68,6 +68,34 @@ set it to be the default active theme in Drupal.
 
 We provide a starterkit under the `starterkits` folder that contains the
 template for inheriting from `wxt_bootstrap`.
+
+- Step 1) copy the starterkit/wxt folder into `projectroot/html/themes/custom/mythemename`
+- Step 2) rename the following files:
+
+`cd projectroot/html/themes/custom/mythemename`
+
+`mv THEMENAME.libraries.yml mythemename.libraries.yml`
+
+`mv THEMENAME.starterkit.yml mythemename.info.yml`
+
+`mv THEMENAME.theme mythemename.theme`
+
+`cd projectroot/html/themes/custom/mythemename/config/install`
+
+`mv THEMENAME.settings.yml mythemename.settings.yml`
+
+`cd projectroot/html/themes/custom/mythemename/config/schema`
+
+`mv THEMENAME.schema.yml wxtthemename.schema.yml`
+
+- Step 3) search and replace THEMENAME with mythemename throughout the projectroot/html/themes/custom/mythemename folder.
+
+`cd projectroot/html/themes/custom/mythemename`
+
+`find . -type f -exec sed -i 's/THEMENAME/mythemename/g' {} +`
+
+Rebuild the cache and then the theme will show up in /admin/appearance/settings.
+
 
 > Note: In order for your new sub-theme to inherit styles (and maybe other things)
 > from the wxt_bootstrap base theme you need to select your new sub-theme under the
