@@ -86,13 +86,19 @@ template for inheriting from `wxt_bootstrap`.
 
 `cd projectroot/html/themes/custom/mythemename/config/schema`
 
-`mv THEMENAME.schema.yml wxtthemename.schema.yml`
+`mv THEMENAME.schema.yml mythemename.schema.yml`
 
 - Step 3) search and replace THEMENAME with mythemename throughout the projectroot/html/themes/custom/mythemename folder.
 
 `cd projectroot/html/themes/custom/mythemename`
 
+If using bash (Most often Linux, default terminal type):
+
 `find . -type f -exec sed -i 's/THEMENAME/mythemename/g' {} +`
+
+If using zsh (Mac and BSD often use zsh)
+
+`sed -i -- 's/THEMENAME/mythemename/g' **/*(D.)`
 
 Rebuild the cache and then the theme will show up in /admin/appearance/settings.
 
