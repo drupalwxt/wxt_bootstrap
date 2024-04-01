@@ -25,7 +25,7 @@
     </p>
   {% endif %}
 
-  {% if is_book or gc_thickline %}
+  {% if is_book or gc_thickline or gc_thickline is null or gc_thickline is not defined %}
     {% if lead_title %}
       <h1 property="name" id="wb-cont" class="gc-thickline mrgn-tp-0">{{ title }}</h1>
     {% else %}

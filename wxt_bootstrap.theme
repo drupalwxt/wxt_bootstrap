@@ -275,7 +275,6 @@ function wxt_bootstrap_preprocess_page_title(&$variables) {
 
   $checkFieldName = 'field_lead_title';
   if ($node instanceof NodeInterface && $node->hasField($checkFieldName) && !$node->get($checkFieldName)->isEmpty()) {
-    $variables['gc_thickline'] = TRUE;
     $variables['lead_title'] = $node->get($checkFieldName)->first()->getString();
   }
 }
