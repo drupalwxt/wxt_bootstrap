@@ -28,4 +28,4 @@ visibility:
       fr: fr
     negate: false
     context_mapping:
-      language: '@language.current_language_context:language_interface'
+      language: '@language.current_language_context:language_content'
