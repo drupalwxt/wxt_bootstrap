@@ -2,12 +2,22 @@
  * Contributirs (byline).
  */
 
-.gc-contributors {
-    margin-top: 38px
+.page-node-type-topic {
+ 	.gc-contributors {
+    	margin-top: 38px;
+    }
+}
 
+.page-node-type-page {
+ 	.gc-contributors {
+    	margin-bottom: 30px;
+    }
+}
+
+.gc-contributors {
     h2,
     ul {
-    	font-size: 87%;
+    	font-size: 1em;
     	margin-top: 0;
     }
 
