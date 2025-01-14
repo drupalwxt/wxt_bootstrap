@@ -25,7 +25,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_form_alter().
@@ -182,14 +184,19 @@ function wxt_bootstrap_preprocess_input__button(&$vars) {
 /**
  * Implements hook_preprocess_image().
  */
-function wxt_bootstrap_preprocess_image(&$vars) {
+function wxt_bootstrap_preprocess_image(&$variables) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   if ($route_name == 'page_manager.page_view_blog_blog-panels_variant-0') {
-    if ($vars['style_name'] == 'blog_spotlight') {
-      unset($vars['attributes']['width']);
-      unset($vars['attributes']['height']);
-      $vars['attributes']['class'] = 'mrgn-bttm-md thumbnail';
+    if ($variables['style_name'] == 'blog_spotlight') {
+      unset($variables['attributes']['width']);
+      unset($variables['attributes']['height']);
+      $variables['attributes']['class'] = 'mrgn-bttm-md thumbnail';
     }
+  }
+
+  // Optionally, add a class based on image style.
+  if (!empty($variables['style_name']) && $variables['style_name'] == 'featured') {
+    $variables['attributes']['class'][] = 'full-width';
   }
 }
 
@@ -258,6 +265,19 @@ function wxt_bootstrap_preprocess_field(&$variables) {
     $variables['video_uri'] = \Drupal::service('file_url_generator')->generateString($video_uri);
     $variables['video_title'] = $media->getName();
   }
+
+  if ($variables['element']['#field_name'] === 'field_social_media_block') {
+    // Access each referenced block content entity.
+    foreach ($variables['items'] as $delta => $item) {
+      if (isset($item['content']['#block_content']) && $item['content']['#block_content']->hasField('field_display_horizontal')) {
+        // Retrieve the boolean value of 'field_display_horizontal'.
+        $is_horizontal = $item['content']['#block_content']->get('field_display_horizontal')->value;
+
+        // Set a variable that can be used in the template.
+        $variables['is_horizontal'] = $is_horizontal;
+      }
+    }
+  }
 }
 
 /**
@@ -276,5 +296,46 @@ function wxt_bootstrap_preprocess_page_title(&$variables) {
   $checkFieldName = 'field_lead_title';
   if ($node instanceof NodeInterface && $node->hasField($checkFieldName) && !$node->get($checkFieldName)->isEmpty()) {
     $variables['lead_title'] = $node->get($checkFieldName)->first()->getString();
+  }
+
+  // Check if the current page is displaying a node.
+  if ($node instanceof NodeInterface) {
+    // Check if the node is of type "topic".
+    if ($node->bundle() === 'topic' && $node->hasField('field_featured_image') && !$node->get('field_featured_image')->isEmpty()) {
+      $variables['intro'] = $node->get('field_introduction')->getValue();
+
+      // Load the media entity from the featured image field.
+      $media = $node->get('field_featured_image')->entity;
+
+      // Check if the media entity has an image file.
+      if ($media && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        // Get the image file entity.
+        $file = $media->get('field_media_image')->entity;
+
+        if ($file) {
+          // Generate the URL with the specified image style.
+          $image_url = $file->getFileUri();
+          $variables['topic_image_url'] = ImageStyle::load('topic_image')->buildUrl($image_url);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function wxt_bootstrap_preprocess_paragraph(&$variables) {
+  // Check if this is a 'social_media_link' paragraph type.
+  if ($variables['paragraph']->bundle() === 'social_media_link') {
+    // Retrieve the key of the field_link_provider.
+    $key = $variables['paragraph']->get('field_link_provider')->value;
+
+    // Load the field definition to get allowed values.
+    $field_definition = $variables['paragraph']->getFieldDefinition('field_link_provider');
+    $allowed_values = $field_definition->getSetting('allowed_values');
+
+    // Get the label for the key.
+    $variables['link_provider_label'] = $allowed_values[$key] ?? $key;
   }
 }

@@ -1,0 +1,63 @@
+/**
+ * Contributirs (byline).
+ */
+
+.page-node-type-topic {
+ 	.gc-contributors {
+    	margin-top: 38px;
+    }
+}
+
+.page-node-type-page {
+ 	.gc-contributors {
+    	margin-bottom: 30px;
+    }
+}
+
+.gc-contributors {
+    h2,
+    ul {
+    	font-size: 1em;
+    	margin-top: 0;
+    }
+
+    ul {
+	    -webkit-padding-start: 20px;
+	    padding-inline-start:20px;
+
+	    li {
+	    	font-weight: 700;
+	    }
+    }
+}
+
+@media screen and (min-width: 992px) {
+	.gc-contributors {
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+
+	    h2 {
+		    line-height: 1.8em;
+		}
+
+		ul {
+			-webkit-padding-start: 5px;
+	    	padding-inline-start:5px;
+
+	    	li {
+	    		display: inline-block;
+	    		margin-right: .5em;
+
+	    		&:after {
+				    content: "\2022";
+				    margin-left: .7em;
+				}
+
+				&:last-child::after {
+				    content: none
+				}
+	    	}
+		}
+	}
+}

@@ -349,6 +349,56 @@ section.gc-nav h1 {
   }
 }
 /**
+ * Contributirs (byline).
+ */
+.page-node-type-topic .gc-contributors {
+  margin-top: 38px;
+}
+
+.page-node-type-page .gc-contributors {
+  margin-bottom: 30px;
+}
+
+.gc-contributors h2,.gc-contributors ul {
+  font-size: 1em;
+  margin-top: 0;
+}
+
+.gc-contributors ul {
+  -webkit-padding-start: 20px;
+  padding-inline-start:20px;
+}
+
+.gc-contributors ul li {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+  .gc-contributors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .gc-contributors h2 {
+    line-height: 1.8em;
+  }
+  .gc-contributors ul {
+    -webkit-padding-start: 5px;
+    padding-inline-start:5px;
+  }
+  .gc-contributors ul li {
+    display: inline-block;
+    margin-right: .5em;
+  }
+  .gc-contributors ul li::after {
+    content: "\2022";
+    margin-left: .7em;
+  }
+  .gc-contributors ul li:last-child::after {
+    content: none;
+  }
+}
+/**
  * $file
  * Visual styles for fields.
  */
