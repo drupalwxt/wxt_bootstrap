@@ -27,7 +27,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
-use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_form_alter().
@@ -268,7 +267,7 @@ function wxt_bootstrap_preprocess_field(&$variables) {
 
   if ($variables['element']['#field_name'] === 'field_social_media_block') {
     // Access each referenced block content entity.
-    foreach ($variables['items'] as $delta => $item) {
+    foreach ($variables['items'] as $item) {
       if (isset($item['content']['#block_content']) && $item['content']['#block_content']->hasField('field_display_horizontal')) {
         // Retrieve the boolean value of 'field_display_horizontal'.
         $is_horizontal = $item['content']['#block_content']->get('field_display_horizontal')->value;
