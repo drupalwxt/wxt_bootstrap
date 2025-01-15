@@ -61,36 +61,6 @@ class Block extends PreprocessBase {
       }
     }
 
-    // Determine which webform to display in footer.
-    $block_exists_1 = $this->checkBlockExistence('didyoufindwhatyouwerelookingfor');
-    $block_exists_2 = $this->checkBlockExistence('reportproblemblock');
-
-    if ($block_exists_1 && $block_exists_2) {
-      $did_you_find_webform = $this->activateDidYouFindWebform();
-      $variables['display'] = TRUE;
-
-      if ($did_you_find_webform) {
-        if ($variables['plugin_id'] == 'share_widget_block') {
-          $variables['attributes']['class'] = [
-            'col-sm-3',
-            'col-sm-offset-2',
-            'col-lg-offset-3',
-          ];
-        }
-
-        if ($variables['plugin_id'] == 'report_problem_block') {
-          $variables['display'] = FALSE;
-          $variables['content'] = [];
-        }
-      }
-      else {
-        if ($variables['plugin_id'] == 'find_what_you_looking_for') {
-          $variables['display'] = FALSE;
-          $variables['content'] = [];
-        }
-      }
-    }
-
     parent::preprocess($variables, $hook, $info);
   }
 

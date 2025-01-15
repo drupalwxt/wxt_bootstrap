@@ -8,7 +8,7 @@ dependencies:
     - wxt_bootstrap
 third_party_settings:
   block_class:
-    classes: 'col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5'
+    classes: 'col-sm-5 col-lg-6'
 id: sharewidgetblock
 theme: wxt_bootstrap
 region: content_footer

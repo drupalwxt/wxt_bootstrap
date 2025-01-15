@@ -54,19 +54,17 @@
   ]
 %}
 
-{% if display %}
-  {% set element = label or label_display or display_title_invisible ? 'section' : 'div' %}
-  <{{ element }}{{ attributes.addClass(classes) }}>
-    {{ title_prefix }}
-    {% if display_title_invisible %}
-      <h2{{ title_attributes.addClass('wb-inv') }}>{{ label }}</h2>
-    {% elseif label %}
-      <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
+{% set element = label or label_display or display_title_invisible ? 'section' : 'div' %}
+<{{ element }}{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if display_title_invisible %}
+    <h2{{ title_attributes.addClass('wb-inv') }}>{{ label }}</h2>
+  {% elseif label %}
+    <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
 
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </{{ element }}>
-{% endif %}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</{{ element }}>
