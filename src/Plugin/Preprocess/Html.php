@@ -28,13 +28,18 @@ class Html extends PreprocessBase {
 
     // Assign skip link variables.
     $variables['wxt_skip_link_primary'] = $this->theme->getSetting('wxt_skip_link_primary');
+
+    // Retrieve the settings.
     // For some reason getSetting sometimes returns an object.
     // Cast to (string) to make sure t() can handle it.
-    $variables['wxt_skip_link_primary_text'] = $this->t((string) $this->theme->getSetting('wxt_skip_link_primary_text'));
+    $primary_text = (string) $this->theme->getSetting('wxt_skip_link_primary_text');
+    $secondary_text = (string) $this->theme->getSetting('wxt_skip_link_secondary_text');
+
+    // For some reason getSetting sometimes returns an object.
+    // Cast to (string) to make sure t() can handle it.
+    $variables['wxt_skip_link_primary_text'] = $this->t('@text', ['@text' => $primary_text]);
+    $variables['wxt_skip_link_secondary_text'] = $this->t('@text', ['@text' => $secondary_text]);
     $variables['wxt_skip_link_secondary'] = $this->theme->getSetting('wxt_skip_link_secondary');
-    // For some reason getSetting sometimes returns an object.
-    // Cast to (string) to make sure t() can handle it.
-    $variables['wxt_skip_link_secondary_text'] = $this->t((string) $this->theme->getSetting('wxt_skip_link_secondary_text'));
 
     parent::preprocess($variables, $hook, $info);
   }

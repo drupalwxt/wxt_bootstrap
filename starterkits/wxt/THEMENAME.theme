@@ -9,6 +9,8 @@
 
 use Drupal\node\NodeInterface;
 
+// @phpcs:disable Drupal.NamingConventions.ValidFunctionName.InvalidName
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
