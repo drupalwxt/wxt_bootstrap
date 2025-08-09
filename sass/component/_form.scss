@@ -71,21 +71,6 @@
   }
 }
 
-// Use CSS for required mark.
-// Inspired from https://www.drupal.org/node/2152217.
-.form-required:after {
-  content:"";
-  background-image: url(../images/required.svg);
-  display: inline-block;
-  line-height:1;
-  color: #e00;
-  background-size:7px 7px;
-  width: 7px;
-  vertical-align: super;
-  margin-left: 4px;
-  height: 7px;
-}
-
 .form-item {
   h4.label {
     border: none;

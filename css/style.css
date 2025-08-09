@@ -895,19 +895,6 @@ html:lang(fr) .cnjnctn-type-or > [class*=cnjnctn-col]:not(:first-child):before {
   color: #8a6d3b;
 }
 
-.form-required:after {
-  content: "";
-  background-image: url(../images/required.svg);
-  display: inline-block;
-  line-height: 1;
-  color: #e00;
-  background-size: 7px 7px;
-  width: 7px;
-  vertical-align: super;
-  margin-left: 4px;
-  height: 7px;
-}
-
 .form-item h4.label {
   border: none;
   padding: 0px;
