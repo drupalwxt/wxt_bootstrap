@@ -836,7 +836,6 @@ html:lang(fr) .cnjnctn-type-or > [class*=cnjnctn-col]:not(:first-child):before {
 }
 
 .select-wrapper {
-  display: inline-block;
   position: relative;
   width: fit-content;
 }

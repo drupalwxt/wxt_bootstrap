@@ -9,7 +9,6 @@
 // around the select element to style it properly.
 // $see http://stackoverflow.com/q/21103542
 .select-wrapper {
-  display: inline-block;
   position: relative;
   width: fit-content;
   .form-inline & {
