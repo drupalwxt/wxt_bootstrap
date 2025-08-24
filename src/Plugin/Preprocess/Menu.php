@@ -78,8 +78,8 @@ class Menu extends PreprocessBase {
         $variables['gcweb']['footer'] = $this->theme->getSetting('wxt_gcweb_footer');
         $variables['logo'] = $library_path . '/assets/sig-blk-' . $language . '.png';
         $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
-        $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk' . '.png';
-        $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk' . '.svg';
+        $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk.png';
+        $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk.svg';
       }
     }
 

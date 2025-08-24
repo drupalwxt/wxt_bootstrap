@@ -92,8 +92,8 @@ class Page extends BootstrapPage {
       ];
       $variables['logo'] = $library_path . '/assets/sig-blk-' . $language . '.png';
       $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
-      $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk' . '.png';
-      $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk' . '.svg';
+      $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk.png';
+      $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk.svg';
     }
     elseif ($wxt_active == 'gc_intranet' || $wxt_active == 'gc_intranet_legacy') {
       $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language . '.svg';
