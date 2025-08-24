@@ -22,7 +22,11 @@
         "discard-changes": true,
         "sort-packages": true,
         "allow-plugins": {
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "oomphinc/composer-installers-extender": true,
+            "cweagans/composer-patches": true
         }
     },
     "extra": {
