@@ -25,7 +25,7 @@
     title_display == 'invisible' and not (is_checkbox or is_radio) ? 'sr-only',
     required ? 'js-form-required',
     required ? 'form-required',
-    required ? 'required'
+    required and not (is_checkbox or is_radio) ? 'required'
   ]
 -%}
 {% if title is not empty and title_display == 'invisible' and (is_checkbox or is_radio) -%}

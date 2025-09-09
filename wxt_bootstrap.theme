@@ -338,3 +338,12 @@ function wxt_bootstrap_preprocess_paragraph(&$variables) {
     $variables['link_provider_label'] = $allowed_values[$key] ?? $key;
   }
 }
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function wxt_bootstrap_preprocess_form_element(array &$variables) {
+  if (!empty($variables['element']['#required'])) {
+    $variables['required'] = TRUE;
+  }
+}
