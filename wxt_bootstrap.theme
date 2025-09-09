@@ -347,3 +347,21 @@ function wxt_bootstrap_preprocess_form_element(array &$variables) {
     $variables['required'] = TRUE;
   }
 }
+
+/**
+ * Implements hook_preprocess_fieldset().
+ */
+function wxt_bootstrap_preprocess_fieldset(array &$variables) {
+  $element = $variables['element'] ?? [];
+  $checkbox_radio_group = [
+    'radios',
+    'checkboxes',
+  ];
+
+  if (in_array($element['#type'], $checkbox_radio_group)) {
+    // Fieldset wrapper uses {{ attributes }} in Twig, so add the class here.
+    if (isset($variables['attributes'])) {
+      $variables['attributes']['class'][] = 'chkbxrdio-grp';
+    }
+  }
+}
