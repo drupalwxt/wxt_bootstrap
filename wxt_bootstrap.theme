@@ -343,8 +343,19 @@ function wxt_bootstrap_preprocess_paragraph(&$variables) {
  * Implements hook_preprocess_form_element().
  */
 function wxt_bootstrap_preprocess_form_element(array &$variables) {
+  // Mirror #required from the render array to Twig's $required so the template
+  // can add required classes/markers (used by GCWeb/WET and legend styling).
   if (!empty($variables['element']['#required'])) {
     $variables['required'] = TRUE;
+  }
+
+  // Webform context: if this is the single "checkbox" plugin, force Bootstrap's
+  // form-group wrapper and flag it as a single checkbox so spacing/markup match
+  if (!empty($variables['element']['#webform_plugin_id'])) {
+    if ($variables['element']['#webform_plugin_id'] == 'checkbox') {
+      $variables['is_form_group'] = TRUE;
+      $variables['is_single_checkbox'] = TRUE;
+    }
   }
 }
 
@@ -358,8 +369,9 @@ function wxt_bootstrap_preprocess_fieldset(array &$variables) {
     'checkboxes',
   ];
 
+  // When the fieldset is a radios/checkboxes group, add a marker class so
+  // WET/GCWeb can style spacing/legend consistently.
   if (in_array($element['#type'], $checkbox_radio_group)) {
-    // Fieldset wrapper uses {{ attributes }} in Twig, so add the class here.
     if (isset($variables['attributes'])) {
       $variables['attributes']['class'][] = 'chkbxrdio-grp';
     }
