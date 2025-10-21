@@ -23,6 +23,7 @@
  * @see \Drupal\bootstrap\Registry
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
@@ -212,6 +213,29 @@ function wxt_bootstrap_preprocess_input(&$variables) {
   }
   else {
     $variables['search_submit'] = 'false';
+  }
+
+  // Only for checkboxes.
+  $type_attr = $variables['attributes']['type'] ?? NULL;
+  $type = $type_attr ? (string) $type_attr->value() : NULL;
+
+  if ($type == 'checkbox') {
+    // We need inputs that look like name="base[option]".
+    $name_attr = $variables['attributes']['name'] ?? NULL;
+    $name = $name_attr ? (string) $name_attr->value() : NULL;
+    if (!$name || !preg_match('/^([^\\[]+)\\[.+\\]$/', $name, $m)) {
+      return;
+    }
+
+    $base = $m[1];
+    // Build a stable, CSS-safe class per base name.
+    $group_class = 'js-wet-group-' . Html::getClass($base);
+    $selector = '.' . $group_class;
+
+    // Attach the shared class and the validation rule to every checkbox in the group.
+    $variables['attributes']->addClass($group_class);
+    $variables['attributes']->setAttribute('data-rule-require_from_group', '[1,"' . $selector . '"]');
+    $variables['attributes']->setAttribute('data-rule-required', 'false');
   }
 }
 
