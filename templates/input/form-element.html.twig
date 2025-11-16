@@ -57,11 +57,12 @@
     'js-form-item-' ~ name|clean_class,
     title_display not in ['after', 'before'] ? 'form-no-label',
     disabled == 'disabled' ? 'form-disabled',
-    is_form_group ? 'form-group',
     is_radio ? 'radio',
     is_checkbox ? 'checkbox',
+    is_single_checkbox ? 'checkbox-standalone',
     is_autocomplete ? 'form-autocomplete',
-    has_error ? 'error has-error'
+    has_error ? 'error has-error',
+    required ? 'required',
   ]
 %}{%
   set description_classes = [
@@ -70,6 +71,11 @@
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
+
+{% if is_form_group %}
+  <div class="form-group">
+{% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -99,3 +105,7 @@
     </div>
   {% endif %}
 </div>
+
+{% if is_form_group %}
+  </div>
+{% endif %}
