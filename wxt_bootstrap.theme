@@ -375,7 +375,7 @@ function wxt_bootstrap_preprocess_form_element(array &$variables) {
   }
 
   // Webform context: if this is the single "checkbox" plugin, force Bootstrap's
-  // form-group wrapper and flag it as a single checkbox so spacing/markup match.
+  // form-group wrapper and flag as a single checkbox so spacing/markup match.
   if (!empty($variables['element']['#webform_plugin_id'])) {
     if ($variables['element']['#webform_plugin_id'] == 'checkbox') {
       $variables['is_form_group'] = TRUE;
