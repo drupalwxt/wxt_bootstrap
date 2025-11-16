@@ -232,7 +232,8 @@ function wxt_bootstrap_preprocess_input(&$variables) {
     $group_class = 'js-wet-group-' . Html::getClass($base);
     $selector = '.' . $group_class;
 
-    // Attach the shared class and the validation rule to every checkbox in the group.
+    // Attach the shared class and the validation rule to every
+    // checkbox in the group.
     $variables['attributes']->addClass($group_class);
     $variables['attributes']->setAttribute('data-rule-require_from_group', '[1,"' . $selector . '"]');
     $variables['attributes']->setAttribute('data-rule-required', 'false');
@@ -374,7 +375,7 @@ function wxt_bootstrap_preprocess_form_element(array &$variables) {
   }
 
   // Webform context: if this is the single "checkbox" plugin, force Bootstrap's
-  // form-group wrapper and flag it as a single checkbox so spacing/markup match
+  // form-group wrapper and flag it as a single checkbox so spacing/markup match.
   if (!empty($variables['element']['#webform_plugin_id'])) {
     if ($variables['element']['#webform_plugin_id'] == 'checkbox') {
       $variables['is_form_group'] = TRUE;
