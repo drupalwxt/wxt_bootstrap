@@ -67,12 +67,13 @@ function wxt_bootstrap_theme_suggestions_page_alter(array &$suggestions, array $
     $node = \Drupal::routeMatch()->getParameter('node');
 
     if ($node instanceof NodeInterface) {
-      if (!empty($node->book) && $node->book['bid'] != 0) {
+      $book_array = $node->getBook();
+      if (!empty($book_array) && $book_array['bid'] != 0) {
         /** @var \Drupal\wxt_library\LibraryService $wxt */
         $wxt = \Drupal::service('wxt_library.service_wxt');
         $wxt_active = $wxt->getLibraryName();
 
-        if ($node->book['bid'] == $node->id()) {
+        if ($book_array['bid'] == $node->id()) {
           // Theme book index page.
           $suggestions[] = $variables['theme_hook_original'] . '__book_index';
           $suggestions[] = $variables['theme_hook_original'] . '__' . $wxt_active . '__book_index';
