@@ -23,8 +23,6 @@
   set classes = [
     title_display == 'after' ? 'option',
     title_display == 'invisible' and not (is_checkbox or is_radio) ? 'sr-only',
-    required ? 'js-form-required',
-    required ? 'form-required',
     required and not (is_checkbox or is_radio) ? 'required'
   ]
 -%}
