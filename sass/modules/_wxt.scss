@@ -165,3 +165,25 @@
 #drupal-off-canvas-wrapper *:after, #drupal-off-canvas-wrapper *:before {
   all: revert;
 }
+
+/* GC Intranet */
+.theme-gc-intranet {
+  #wb-info {
+    background: #e1e4e7;
+
+    nav li {
+      margin-bottom: .75em;
+    }
+
+    .brand {
+      background: #fff;
+
+      img {
+        height: 40px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        width: auto;
+      }
+    }
+  }
+}

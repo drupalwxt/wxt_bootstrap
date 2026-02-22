@@ -1825,3 +1825,22 @@ ul.js-facets-links .facet-value {
 #drupal-off-canvas-wrapper *:after, #drupal-off-canvas-wrapper *:before {
   all: revert;
 }
+/* GC Intranet */
+.theme-gc-intranet #wb-info {
+    background: #e1e4e7;
+}
+
+.theme-gc-intranet #wb-info nav li {
+  margin-bottom: .75em;
+}
+
+.theme-gc-intranet #wb-info .brand {
+  background: #fff;
+}
+
+.theme-gc-intranet #wb-info .brand img {
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  width: auto;
+}
