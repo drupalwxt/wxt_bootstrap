@@ -239,16 +239,16 @@
 {% if page.footer %}
   {% if gcweb_cdn_footer_enable %}
     <footer id="wb-info" data-ajax-append="{{ gcweb_cdn_footer_url }}{{ language }}.html .brand">
-      <div class="landscape" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html .wb-navcurr"></div>
+      <div class="gc-main-footer" data-ajax-replace="{{ gcweb_cdn_footer_url }}{{ language }}.html .wb-navcurr"></div>
     </footer>
   {% else %}
     {% block footer %}
       <footer id="wb-info">
         <h2 class="wb-inv">{{ 'About this site'|t }}</h2>
-        <div class="landscape">
+        <div class="gc-main-footer">
           {{ page.footer }}
         </div>
-        <div class="brand">
+        <div class="gc-sub-footer">
           <div class="{{ container }}">
             <div class="row">
               {{ page.branding }}
