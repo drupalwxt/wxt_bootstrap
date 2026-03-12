@@ -5,6 +5,16 @@
    width: 100%;
  }
 
+div.wb-frmvld {
+  div.webform-type-date {
+    label {
+      display: block;
+    }
+    input.form-text {
+      display: inline-block;
+    }
+  }
+}
 // Browsers do not recognize pseudo :after selectors, we must create a wrapper
 // around the select element to style it properly.
 // $see http://stackoverflow.com/q/21103542

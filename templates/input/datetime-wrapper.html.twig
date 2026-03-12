@@ -18,11 +18,28 @@
 {%
   set title_classes = [
     'control-label',
-    required ? 'form-required',
+    required ? 'form-required required',
   ]
 %}
+{# Prefer real input id, otherwise fallback. #}
+{% set for_id = element.date['#id'] ?? null
+%}
 {% if title %}
-  <label{{ title_attributes.addClass(title_classes) }}>{{ title }}</label>
+  {% if for_id and not title_attributes.hasAttribute('for') %}
+    <label{{ title_attributes.addClass(title_classes).setAttribute('for', for_id) }}>
+      <span class="field-name">{{ title }}</span>
+      {% if required %}
+         <strong class="required" aria-hidden="true">({{ 'required'|t }})</strong>
+      {% endif %}
+    </label>
+  {% else %}
+    <label{{ title_attributes.addClass(title_classes) }}>
+      <span class="field-name">{{ title }}</span>
+      {% if required %}
+        <strong class="required" aria-hidden="true">({{ 'required'|t }})</strong>
+      {% endif %}
+    </label>
+  {% endif %}
 {% endif %}
 {{ content }}
 {% if errors %}

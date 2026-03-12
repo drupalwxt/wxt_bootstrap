@@ -835,6 +835,12 @@ html:lang(fr) .cnjnctn-type-or > [class*=cnjnctn-col]:not(:first-child):before {
   width: 100%;
 }
 
+div.wb-frmvld div.webform-type-date label {
+  display: block;
+}
+div.wb-frmvld div.webform-type-date input.form-text {
+  display: inline-block;
+}
 .select-wrapper {
   position: relative;
   width: fit-content;

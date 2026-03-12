@@ -19,16 +19,18 @@
  */
 #}
 
+{# Convert title to plain text safely (works if title is string, markup, or render array). #}
+{% set title_text = title is not empty ? (title|render|striptags|trim) : '' %}
+{% set is_date = 'date' in (title_text|lower) %}
+
 {%-
   set classes = [
     title_display == 'after' ? 'option',
-    title_display == 'invisible' and not (is_checkbox or is_radio) ? 'sr-only',
-    required ? 'js-form-required',
-    required ? 'form-required',
+    title_display == 'invisible' and not (is_checkbox or is_radio or is_date) ? 'sr-only',
     required and not (is_checkbox or is_radio) ? 'required'
   ]
 -%}
-{% if title is not empty and title_display == 'invisible' and (is_checkbox or is_radio) -%}
+{% if title is not empty and title_display == 'invisible' and (is_checkbox or is_radio or is_date) -%}
   {# Make invisible labels for checkboxes/radios to make them screen-reader friendly #}
   {%- set attributes = attributes.setAttribute('title', title) -%}
   {%- set title = null -%}
