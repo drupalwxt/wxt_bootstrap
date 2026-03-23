@@ -65,6 +65,11 @@
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
+
+    {% if wxt_noscript_href %}
+      <noscript><link rel="stylesheet" href="{{ wxt_noscript_href }}"></noscript>
+    {% endif %}
+
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
