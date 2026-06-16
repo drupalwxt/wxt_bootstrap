@@ -18,12 +18,12 @@ class Comment extends PreprocessBase {
    * {@inheritdoc}
    */
   public function preprocessVariables(Variables $variables) {
-    $variables['author'] = \Drupal::service('renderer')->render($elements);
+    $variables['author'] = NULL;
     $owner = $variables['comment']->getOwner();
-    if (empty($variables['author']) && $owner->id() === 0) {
+    if ($owner->id() === 0) {
       $variables['author'] = $this->t('Anonymous');
     }
-    if (empty($variables['author']) && $owner->isAuthenticated()) {
+    elseif ($owner->isAuthenticated()) {
       if ($owner->hasField('field_first_name') && $owner->hasField('field_last_name')) {
         $first_name = $owner->get('field_first_name')->getString();
         $last_name = $owner->get('field_last_name')->getString();
