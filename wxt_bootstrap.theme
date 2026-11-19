@@ -353,11 +353,11 @@ function wxt_bootstrap_preprocess_paragraph(&$variables) {
   // Check if this is a 'social_media_link' paragraph type.
   if ($variables['paragraph']->bundle() === 'social_media_link') {
     // Retrieve the key of the field_link_provider.
-    $key = $variables['paragraph']->get('field_link_provider')->value;
+    $key = $variables['paragraph']->hasfield('field_link_provider') ? $variables['paragraph']->get('field_link_provider')->value : NULL;
 
     // Load the field definition to get allowed values.
-    $field_definition = $variables['paragraph']->getFieldDefinition('field_link_provider');
-    $allowed_values = $field_definition->getSetting('allowed_values');
+    $field_definition = $key ? $variables['paragraph']->getFieldDefinition('field_link_provider') : NULL;
+    $allowed_values = $field_definition?->getSetting('allowed_values');
 
     // Get the label for the key.
     $variables['link_provider_label'] = $allowed_values[$key] ?? $key;
