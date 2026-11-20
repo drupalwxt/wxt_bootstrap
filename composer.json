@@ -12,7 +12,7 @@
     "require": {
         "composer/installers": "^1.2 || ^2.1",
         "cweagans/composer-patches": "^1.7",
-        "oomphinc/composer-installers-extender": "^1.1 || ^2",
+        "mnsami/composer-custom-directory-installer": "^2.1",
         "drupal/core": "^11.2",
         "drupal/bootstrap": "^3.39"
     },
@@ -22,10 +22,9 @@
         "discard-changes": true,
         "sort-packages": true,
         "allow-plugins": {
-            "oomphinc/composer-installers-extender": true,
+            "mnsami/composer-custom-directory-installer": true,
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
-            "oomphinc/composer-installers-extender": true,
             "cweagans/composer-patches": true
         }
     },
