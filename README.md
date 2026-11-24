@@ -5,7 +5,7 @@ A modern, component based and accessible theme powered by the
 [Bootstrap][bootstrap] base theme and integrated extensively with the
 [WxT][wet_boew] jQuery Framework.
 
-This theme will strive to always work with the native Drupal 10 workflow which
+This theme will strive to always work with the native Drupal workflow which
 consists of leveraging block layouts and twig templates by default. Over time
 full support for various contributed modules such as Display Suite and Panels
 will be added for more complex layout functionality.
@@ -15,7 +15,7 @@ will be added for more complex layout functionality.
 ## Installation
 
 There are two possible installation methods to leverage the
-[WxT Bootstrap][wxt_bootstrap] theme in Drupal 10:
+[WxT Bootstrap][wxt_bootstrap] theme in Drupal:
 
 - *distribution (recommended)*
 - *standalone*

@@ -30,9 +30,9 @@ variables:
   SKIP_PHPUNIT: '1'
   OPT_IN_TEST_CURRENT: '0'
   OPT_IN_TEST_NEXT_MAJOR: '0'
-#   _CURL_TEMPLATES_REF: 'main'
+  _PARALLEL_LINT_EXTRA: '--exclude html/core/modules/system/tests/modules/router_test_directory'
 
 composer:
   variables:
-    DRUPAL_CORE: 11.3.22
+    DRUPAL_CORE: 11.4.4
     _WEB_ROOT: "html"
